@@ -4,81 +4,85 @@
 		<div class="row">
 			<div class="col-md-1 col-2 motor-img p-0 ">
 				<img src="../../assets/motor_policy.PNG">
-			</div>
-			<div class="col-md-11 col-9 pr-0 m-auto">
-				<div class="row">
-					<div class="col-md-9 col-12 p-0"> <span class="middle-heading text-small">Motor Third party Liability Policy</span>
+				</div>
+				<div class="col-md-11 col-9 pr-0 m-auto">
+					<div class="row">
+						<div class="col-md-9 col-12 p-0">
+							<span class="middle-heading text-small">Motor Third party Liability Policy</span>
+						</div>
+						<div class="col-md-3 col-12 p-0">
+							<div>
+								<div class="num">324
+									<span class="nearelm">,00 BGN</span>
+								</div>
+								<div class="text-small">Four payments</div>
+							</div>
+						</div>
 					</div>
-					<div class="col-md-3 col-12 p-0">
-						<div>
-							<div class="num">324<span class="nearelm">,00 BGN</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row pt-3">
+			<div class="col-md-4 p-0">
+				<label class="text-color">Select payment method</label>
+			</div>
+			<div class="col-md-8 radio-container p-0">
+				<div class="row justify-content-around">
+					<div class="col-md-5 radio mb-3 p-0">
+						<label class="radio-inner d-flex flex-sm-column">
+							<div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline">
+								<mat-radio-button color="primary" [checked]="Ppayment==='Card'" name="optradio" (click)="check()" id="optradio1"></mat-radio-button>
 							</div>
-							<div class="text-small">Four payments</div>
+							<div class="text-center d-flex flex-sm-column align-items-center">
+								<div class="radio-img">
+									<img src="../../assets/credit-card.PNG">
+									</div>
+									<div class="text-color">Credit/debit card</div>
+								</div>
+							</label>
+						</div>
+						<div class="col-md-5 radio mb-3 p-0">
+							<label class="radio-inner d-flex flex-sm-column">
+								<div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline">
+									<mat-radio-button color="primary" [checked]="Ppayment==='EPay'" name="optradio" id="optradio2" (click)="check()"></mat-radio-button>
+								</div>
+								<div class="text-center d-flex flex-sm-column align-items-center">
+									<div class="radio-img">
+										<img src="../../assets/e-pay.PNG">
+										</div>
+										<div class="text-color">ePay</div>
+									</div>
+								</label>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container-fluid">
-	<div class="row pt-3">
-		<div class="col-md-4 p-0">
-			<label class="text-color">Select payment method</label>
-		</div>
-		<div class="col-md-8 radio-container p-0">
-			<div class="row justify-content-around">
-				<div class="col-md-5 radio mb-3 p-0">
-					<label class="radio-inner d-flex flex-sm-column">
-						<div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline">
-							<mat-radio-button color="primary" [checked]="Ppayment==='Card'" name="optradio" (click)="check()" id="optradio1"></mat-radio-button>
-						</div>
-						<div class="text-center d-flex flex-sm-column align-items-center">
-							<div class="radio-img">
-								<img src="../../assets/credit-card.PNG">
+				<div *ngIf="optradio">
+					<div class="row">
+						<div class="col-md-12 p-0 pl-3 mb-4">
+							<mat-card class="payment">
+								<img mat-card-image src="../../assets/user-key.png">
+									<mat-card-content>
+										<p class="card-text pl-3 text-color" style="text-align: justify; padding-right: 15px; padding-top: 15px; padding-bottom: 10px;">If you are not the card holder, you will be asked to sign the policy with e-Signature. If you don't own an e-Signature, please pay with your own card</p>
+									</mat-card-content>
+								</mat-card>
 							</div>
-							<div class="text-color">Credit/debit card</div>
 						</div>
-					</label>
-				</div>
-				<div class="col-md-5 radio mb-3 p-0">
-					<label class="radio-inner d-flex flex-sm-column">
-						<div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline">
-							<mat-radio-button color="primary" [checked]="Ppayment==='EPay'" name="optradio" id="optradio2" (click)="check()"></mat-radio-button>
-						</div>
-						<div class="text-center d-flex flex-sm-column align-items-center">
-							<div class="radio-img">
-								<img src="../../assets/e-pay.PNG">
+						<div class="row">
+							<mat-card class="col-lg mb-5">
+								<mat-card-content >
+									<input type="checkbox" (change)="box($event)" id="cbox" name="cbox">
+                    I declare I am owner of the card for this payment
+                
+									</mat-card-content>
+								</mat-card>
 							</div>
-							<div class="text-color">ePay</div>
 						</div>
-					</label>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div *ngIf="optradio">
-		<div class="row">
-			<div class="col-md-12 p-0 pl-3 mb-4">
-				<mat-card>
-					<img mat-card-image src="../../assets/user-key.png">
-					<mat-card-content>
-						<p class="card-text pl-3 text-color" style="text-align: justify; padding-right: 15px; padding-top: 15px; padding-bottom: 10px;">If you are not the card holder, you will be asked to sign the policy with e-Signature. If you don't own an e-Signature, please pay with your own card</p>
-					</mat-card-content>
-				</mat-card>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col shadow-lg p-3 mb-5 bg-white rounded d-flex align-items-baseline">
-				<input type="checkbox" (change)="box($event)" id="cbox" name="cbox">
-				<label class="text-color"> I declare I am owner of the card for this payment</label>
-				<br>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12 p-0">
-			<button mat-raised-button color="primary" [disabled]="enable" (click)="action();getData()" id="paybtn" name="paybtn">Buy Policy</button>
-		</div>
-	</div>
-</div>
+						<div class="row">
+							<div class="col-md-12 p-0">
+								<button mat-raised-button color="primary" [disabled]="enable" (click)="action();getData()" id="paybtn" name="paybtn">Buy Policy</button>
+							</div>
+						</div>
+					</div>

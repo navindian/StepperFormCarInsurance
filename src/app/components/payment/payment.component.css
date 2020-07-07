@@ -65,14 +65,20 @@ input[type="checkbox" i] {
 .mat-raised-button{
   background-color:blue;
 } 
-::ng-deep .mat-card{
+/* ::ng-deep .mat-card{
     border-width: thin;
     border-style: solid;
     border-color: yellow;
     border-radius: 5px;
     padding: 25px;
+ } */
+ .payment{
+ border-width: thin;
+    border-style: solid;
+    border-color: yellow;
+    border-radius: 5px;
+    padding: 25px;
  }
-
  
 @media all and (max-width: 767px) {
   .text-small {
