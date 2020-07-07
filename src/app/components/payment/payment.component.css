@@ -58,13 +58,13 @@ input[type="checkbox" i] {
   font-size: 20px;
   padding-left: 0%;
 }
-::ng-deep .mat-checkbox-checked .mat-checkbox-background{
+/* ::ng-deep .mat-checkbox-checked .mat-checkbox-background{
   background-color: blue !important;
   border-color: black;
 }
 .mat-raised-button{
   background-color:blue;
-} 
+}  */
 /* ::ng-deep .mat-card{
     border-width: thin;
     border-style: solid;
