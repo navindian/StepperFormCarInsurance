@@ -1,4 +1,4 @@
-<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+<!-- <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
   <div class="container">
     <div class="card login-card">
       <div class="row no-gutters">
@@ -38,4 +38,94 @@
       </div>
     </div>
   </div>
-</main>
+</main> -->
+<!-- <div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+  <mat-card >
+   
+      <mat-card-header>
+    <mat-card-title>Login Page</mat-card-title>
+  </mat-card-header>
+  <mat-card-content fxLayout="column">
+    <mat-form-field>
+      <input matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="password">
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary">Login</button>
+  </mat-card-actions>
+
+ 
+  </mat-card>
+  </div> -->
+<!-- <div fxLayout="column" fxLayoutAlign="center stretch" >
+    <mat-card >
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" >
+<div fxFlex="40"  >
+  <img mat-card-image src="../../../assets/cardimg.jpeg" alt="Photo">
+</div>
+    
+       
+        
+     <div fxFlex="50" fxLayoutAlign=" center" >
+      <div fxLayout="column" fxLayoutAlign="center center" >
+        <mat-form-field>
+          <input matInput placeholder="Email">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="password" matInput placeholder="password">
+        </mat-form-field>
+      </div>
+      
+    </div>
+     </div> 
+
+    </mat-card>
+  
+   
+  
+  </div>
+  -->
+
+<mat-card class="container">
+  <mat-card-content>
+    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center center">
+      <div fxFlex="40%">
+        <img mat-card-image src="../../../assets/cardimg.jpeg" alt="Photo">
+      </div>
+     
+      <div fxFlex="50%" >
+        <p class="login-card-description">Sign In</p>
+        <form fxLayout="column" fxLayoutAlign="center" [formGroup]="loginForm">
+          <mat-form-field appearance="outline" >
+            <mat-label>Email
+            </mat-label>
+            <input matInput placeholder="Email" id="email" formControlName='email'>
+            <mat-error *ngIf="loginForm.controls.email.errors?.required">Required</mat-error>
+          </mat-form-field>
+          
+          <mat-form-field appearance='outline'>
+            <mat-label>
+              Password
+            </mat-label>
+            <input type="password" matInput placeholder="password" id="password"  formControlName='password'>
+            <mat-error *ngIf="loginForm.controls.password.errors?.required">Required</mat-error>
+          </mat-form-field>
+        
+          <button class="example-button-row"  color="primary" mat-raised-button (click)="login()" value="Login" [disabled]="!loginForm.valid" >Login</button>
+         
+           
+           
+          
+        
+        </form>
+        <p class="login-card-footer-text">You can create your account at the end of the process <a
+          [routerLink]="['/signUp']" class="text-reset"><u>Register here</u></a></p>
+      </div>
+
+    </div>
+  </mat-card-content>
+
+</mat-card>
