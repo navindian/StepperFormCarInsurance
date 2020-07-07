@@ -1,18 +1,12 @@
 <h1><b>Personal Details</b></h1>
-<div  layout="column" ng-cloak>
+
 <form [formGroup]="personalForm" (submit)="success()">
   
-    <!--  class="col-sm-8 col-form-label" -->
-    <div layout-gt-sm="row">
-    <label for="lnch" class="md-block" flex-gt-sm >LNCH</label>
-    <div flex="1" hide-xs hide-sm>
-      <!-- Spacer //-->
-    </div>
-        <mat-form-field appearance="outline" class="md-block" flex-gt-sm>
+    <div fxLayout="row" fxLayout.lt-lg="column"> 
+    <label for="lnch"  fxFlex="60%">LNCH</label>
+        <mat-form-field appearance="outline"  fxFlex="40%"> 
           <mat-label>LNCH</mat-label>
           <input matInput formControlName="lnch" id="lnch" name="lnch" placeholder="Enter LNCH" (change)="change()" [(ngModel)]="plnch">
-        
-    
       <mat-error
         *ngIf="personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)"
         class="error">This field is mandatory</mat-error>
@@ -20,14 +14,15 @@
         *ngIf="personalForm.controls.lnch.hasError('pattern') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)"
         class="error">Only 10 digit numerical value allowed</mat-error>
       </mat-form-field>
-   
   </div>
+
   <mat-divider class="line"></mat-divider>
+
   <div formGroupName="fullname">
     <label class="">Full Name</label><br>
-    <div class="form-group row">
-   
-        <mat-form-field appearance="outline" class="col-lg-4">
+    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between"> 
+        <mat-form-field appearance="outline" fxFlex="31%">
+          <mat-label>Firstname</mat-label>
         <input matInput id="firstname"  placeholder="Enter firstname"
           formControlName="firstname" name="firstname" (change)="change()" [(ngModel)]="pfirstname">
         <mat-error
@@ -41,7 +36,8 @@
           class="error">Max length can be 20 characters</mat-error>
           </mat-form-field>
   
-        <mat-form-field appearance="outline" class="col-lg-4">
+        <mat-form-field appearance="outline" fxFlex="31%">
+          <mat-label>Middlename</mat-label>
         <input matInput  id="lastname"  placeholder="Enter middlename"
           formControlName="lastname" name="lastname" (change)="change()" [(ngModel)]="plastname">
         <mat-error
@@ -49,7 +45,8 @@
           class="error">Only alphabets allowed</mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="outline" class="col-lg-4"> 
+        <mat-form-field appearance="outline" fxFlex="31%" > 
+          <mat-label>Lastname</mat-label>
         <input matInput id="surname"  placeholder="Enter lastname"
           formControlName="surname" name="suname" (change)="change()" [(ngModel)]="psurname">
         <mat-error
@@ -64,11 +61,14 @@
         </mat-form-field>
     </div>
   </div>
+
   <mat-divider class="line"></mat-divider>
+
   <div formGroupName="fullnameeng">
     <label>Full Name in English</label><br>
-    <div class="form-group row">
-        <mat-form-field appearance="outline" class="col-lg-4">
+   <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between"> 
+        <mat-form-field appearance="outline"  fxFlex="31%">
+          <mat-label>Firstname</mat-label>
         <input matInput  id="firstnameeng" 
           placeholder="Enter firstname" formControlName="firstnameeng" name="firstnameeng" (change)="change()" [(ngModel)]="pfirstnameeng">
         <mat-error
@@ -82,7 +82,8 @@
           class="error">Max length can be 20 characters</mat-error>
           </mat-form-field>
 
-        <mat-form-field appearance="outline" class="col-lg-4">
+        <mat-form-field appearance="outline" fxFlex="31%">
+          <mat-label>Middlename</mat-label>
         <input matInput  id="lastnameeng" 
           placeholder="Enter middlename" formControlName="lastnameeng" name="lastnameeng" (change)="change()" [(ngModel)]="plastnameeng">
         <mat-error
@@ -90,8 +91,9 @@
           class="error">Only alphabets allowed</mat-error>
         </mat-form-field>
     
-        <mat-form-field appearance="outline" class="col-lg-4">
-        <input matInput id="surnameeng" placeholder="Enter lastname"
+        <mat-form-field appearance="outline"  fxFlex="31%">
+          <mat-label>Lastname</mat-label>
+        <input matInput id="surnameeng" name="surnameeng" placeholder="Enter lastname"
           formControlName="surnameeng" (change)="change()"  [(ngModel)]="psurnameeng">
         <mat-error
           *ngIf="personalForm.get('fullnameeng').get('surnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)"
@@ -105,15 +107,16 @@
         </mat-form-field>
     </div>
   </div>
-  <div class="panel col-lg-12">
+  <div class="panel" fxLayout="column">
     <img class="user-key" src="../../assets/excl.jpg">
     Please compare data in latin with data in vehicle registration certificate
     or identity document.Data will be used for printout of Green Card Certificate.
   </div>
-  <div class="form-group row">
-    <label for="citizen" class="col-lg-8">Citizenship</label>
+  <div fxLayout="row" fxLayout.lt-lg="column"> 
+    <label for="citizen" fxFlex="60%">Citizenship</label>
 
-      <mat-form-field appearance="outline" class="col-lg-4">
+      <mat-form-field appearance="outline" fxFlex="40%">
+        <mat-label>Citizenship</mat-label>
       <mat-select  id="citizen"  formControlName="citizen" name="citizen"
         (change)="change()" [(ngModel)]="pcitizen">
         <mat-option selected disabled value="">--SELECT--</mat-option>
@@ -125,11 +128,14 @@
       </mat-form-field>
 
   </div>
+
   <mat-divider class="line"></mat-divider>
-  <div class="form-group row">
-    <label for="birth" class="col-lg-8" >Birth Date</label>
+
+  <div fxLayout="row" fxLayout.lt-lg="column"> 
+    <label for="birth" fxFlex="60%" >Birth Date</label>
    
-      <mat-form-field appearance="outline" class="col-lg-4">
+      <mat-form-field appearance="outline" fxFlex="40%">
+        <mat-label>DateOfBirth</mat-label>
       <input  matInput [matDatepicker]="picker"  id="birth"
         placeholder="Enter Birth date" formControlName="birth" name="birth" (change)="change()" [ngModel]="pdob | date: 'yyyy-MM-dd'">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -144,4 +150,3 @@
   <button  mat-raised-button matStepperNext color="primary" type="submit" id="personalbtn" name="personalbtn" class="rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn"
      [disabled]="!personalForm.valid">Next</button>
 </form>
-</div>
