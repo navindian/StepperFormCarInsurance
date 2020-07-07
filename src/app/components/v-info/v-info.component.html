@@ -6,6 +6,7 @@
         <div class=" col-12 col-sm-7 col-md-8 col-lg-8 col-auto">
             <label for="registrationNumber">Vehicle Registration Number</label>
         </div>
+        
         <div class=" col-12 col-sm-5 col-md-4 col-lg-4 col-auto">
             <input class="form-control" id="registrationNumber" type="text" placeholder="XX0000XX"
                 formControlName="registrationNumber" (change)="change()" [(ngModel)]="registrationNo">
@@ -19,7 +20,8 @@
             </div>
         </div>
     </div>
-    <hr class="line">
+    <br>
+    <mat-divider></mat-divider>
     <br>
     <div class="form-row">
         <div class=" col-12 col-sm-7  col-md-8 col-lg-8">
@@ -38,7 +40,8 @@
             </div>
         </div>
     </div>
-    <hr class="line">
+    <br>
+    <mat-divider></mat-divider>
     <br>
     <div class="form-row">
         <div class=" col-12 col-sm-7 col-md-8 col-lg-8">
@@ -57,7 +60,8 @@
             </div>
         </div>
     </div>
-    <hr class="line">
+    <br>
+    <mat-divider></mat-divider>
     <br>
     <div class="form-row">
         <div class=" col-12 col-sm-7 col-md-8 col-lg-8">
@@ -72,8 +76,18 @@
                 [(ngModel)]="drivingOutsideYesNo" [checked]="drivingOutsideYesNo=='No'"> &nbsp; No
         </div>
     </div>
-    <hr class="line">
+
     <br>
-    <button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" type="submit" matStepperNext
-        [disabled]="!vehicleInfoForm.valid">Next</button>
+    <mat-divider></mat-divider>
+    <br>
+    
+    <button mat-flat-button  class="btn btn-primary n"  style="width : 10em; "  type="submit"  matStepperNext
+    [disabled]="!vehicleInfoForm.valid">Next</button>
+   
 </form>
+
+
+
+
+
+

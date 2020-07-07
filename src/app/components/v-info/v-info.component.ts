@@ -4,6 +4,7 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { CommonDataService } from 'src/app/common-data.service';
 
 
+
 @Component({
   selector: 'app-v-info',
   templateUrl: './v-info.component.html',

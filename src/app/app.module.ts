@@ -43,6 +43,8 @@ import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +68,7 @@ import { TabComponent } from './tab/tab.component';
     ContactComponent,
     SignUpComponent,
     OrdinalPipe
+    
   ],
   imports: [
     BrowserModule,
