@@ -42,6 +42,7 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { TabComponent } from './tab/tab.component';
     MatDividerModule,
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   providers: [
     CdkStepper,
