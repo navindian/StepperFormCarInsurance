@@ -85,9 +85,12 @@ mat-card img{
   font-size: 20px;
 }
 .example-button-row{
-  padding: 10px 20px 10px;
+ 
 
   border-radius: 20px;
   font-size: 15px;
  
+}
+.login-card-footer-text {
+  color: gray;
 }

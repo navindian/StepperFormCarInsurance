@@ -17,10 +17,10 @@ export class LoginComponent implements OnInit {
   name: string;
   email: string;
   password: string;
-  errorMessage;
+  errorMessage:string;
   loginForm:FormGroup
 
-  ngOnInit() {
+  ngOnInit() :void{
 this.loginForm=this.fb.group({
   email:['',[Validators.required]],
   password:['',[Validators.required]]
@@ -43,7 +43,6 @@ this.loginForm=this.fb.group({
           sessionStorage.setItem('id', response.id);
           sessionStorage.setItem('token', response.token);
           sessionStorage.setItem('isLoggedIn', 'true');
-          // alert('logged in successfully')
           this.name = prompt('How do you like to call you!!');
           console.log(this.name);
           if (this.name != null) {
@@ -65,8 +64,7 @@ this.loginForm=this.fb.group({
       );
   }
 
-  redirect() {
+  redirect():void {
     this.asGuestLogin.emit('logged in as a guest');
-    // this.router.navigate(["tab"]);
   }
 }
