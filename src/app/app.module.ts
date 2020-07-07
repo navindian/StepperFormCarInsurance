@@ -42,10 +42,9 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
 
 @NgModule({
   declarations: [
@@ -95,7 +94,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     MatButtonModule,
     MatRadioModule,
-    FlexLayoutModule 
+    FlexLayoutModule
   ],
   providers: [
     CdkStepper,
