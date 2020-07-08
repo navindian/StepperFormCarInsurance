@@ -22,7 +22,7 @@ export class PaymentComponent implements OnInit {
     this.optradio = true;
   }
   box(e) {
-    if (e.target.checked) {
+    if (e.checked) {
       this.enable = false;
     } else {
       this.enable = true;
