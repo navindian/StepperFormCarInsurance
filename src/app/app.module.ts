@@ -69,7 +69,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ContactComponent,
     SignUpComponent,
     OrdinalPipe
-    
   ],
   imports: [
     BrowserModule,
