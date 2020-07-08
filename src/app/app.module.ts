@@ -88,6 +88,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatGridListModule,
     MatTabsModule,
     MatCheckboxModule,
+    MatRadioModule,
     MatDividerModule,
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule,
