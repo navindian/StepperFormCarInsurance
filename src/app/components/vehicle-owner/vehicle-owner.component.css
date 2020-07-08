@@ -2,42 +2,39 @@
     width:180px
 } */
 
+.user-key {
+  width: 40px;  
+}
 h1 {
   color: rgb(8, 56, 95);
-  font-family: "Trebuchet MS", Arial, sans-serif;
   font-weight: bold;
-}
-h2 {
-  color: rgb(8, 56, 95);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Trebuchet MS", Arial, sans-serif;
 }
 label {
   color: rgb(8, 56, 95);
   font-family: Arial, Helvetica, sans-serif;
 }
-/* .col-sm-4{
-    padding-left: 205px;
-   
-} */
 
 .panel {
+  border-width: thin;
+  border-style: solid;
   border-color: yellow;
-  /* width: 555px; */
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: 20px;
 }
 .error {
   color: red;
 }
-
+.line{
+  margin-bottom: 10px;
+}
 @media screen and (max-width: 800px) {
   .line {
     display: none;
   }
 }
-@media screen and (max-width: 1090px) {
-  .space {
-    padding: 4px;
-  }
-}
+
 @media screen and (max-width: 575px) {
   .nextbtn {
     width: 250px;
@@ -45,14 +42,9 @@ label {
     display: block;
   }
 }
-/* .col-sm-2
-{
-    
-   /* width:200px;  
-} */
-.user-key {
-  width: 40px;
-  position: absolute;
-  top: 10px;
-  left: -17px;
+
+@media screen and (max-width: 1090px) {
+  .col-lg-4 {
+    padding: 4px;
+  }
 }
