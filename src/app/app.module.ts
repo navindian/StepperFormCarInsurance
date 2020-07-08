@@ -92,13 +92,9 @@ import { MatRadioModule } from '@angular/material/radio';
     MatSelectModule,
     MatStepperModule,
     MatTabsModule,
-<<<<<<< HEAD
-    FlexLayoutModule,
-=======
     MatCheckboxModule,
     MatRadioModule,
     MatDividerModule,
->>>>>>> 8d0a44026e61ae6f89f966d65c0dec8966ac824d
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule,
     HttpClientModule,
