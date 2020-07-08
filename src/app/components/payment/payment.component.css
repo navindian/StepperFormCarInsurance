@@ -36,15 +36,12 @@ input[type="checkbox" i] {
 .buy-btn {
   border-radius: 20px;
 }
-.user-key {
-  width: 40px;
-  position: absolute;
-  z-index: 1;
-  top: 15px;
-  left: -17px;
+.marginSet{
+  margin: 1.25rem;
 }
 .text-color {
   color: #003564;
+  font-size: 15px;
 }
 .nearelm {
   font-size: 20px;
@@ -57,6 +54,34 @@ input[type="checkbox" i] {
   font-size: 20px;
   padding-left: 0%;
 }
+.mat-card{
+  margin-bottom: 21px;
+  }
+  .img-payment{
+    width: 40px;
+    position: absolute;
+    z-index: 1;
+    top: 64px;
+    left: 0px;
+  }
+  .mat-card-image:first-child {
+    margin-top: -37px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+   .payment{
+   border-width: thin;
+      border-style: solid;
+      border-color: yellow;
+      border-radius: 5px;
+      padding: 25px;
+   }
+/* ::ng-deep .mat-checkbox-checked .mat-checkbox-background{
+  background-color: blue !important;
+  border-color: black;
+}
+
+ 
 @media all and (max-width: 767px) {
   .text-small {
     font-size: 11px;

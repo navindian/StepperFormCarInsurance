@@ -2,17 +2,17 @@
     style="color:rgb(8,56,95);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
     <b>Vehicle Information</b></h1>
 
-<form [formGroup]="vehicleInfoForm" (submit)="submit()" style="color:rgb(8,56,95)"  ><br>
-    <div  fxLayout>
-        <div >
+<form [formGroup]="vehicleInfoForm" (submit)="submit()" style="color:rgb(8,56,95)" ><br>
+    <div  fxLayout="row" fxLayoutGap="100px">
+        <div fxFlex="40%" fxLayout="column" >
             <mat-label for="registrationNumber">Vehicle Registration Number</mat-label>
             
         </div>
         
-        <mat-form-field appearance="outline" >
-            <textarea matInput  class="form-control" id="registrationNumber"  placeholder="XX0000XX"
-                formControlName="registrationNumber" (change)="change()" [(ngModel)]="registrationNo" ></textarea>
-                <div>
+        <mat-form-field appearance="outline" fxFlex="60%" fxLayout="column" >
+            <input matInput  class="form-control" id="registrationNumber"  placeholder="XX0000XX"
+                formControlName="registrationNumber" (change)="change()" [(ngModel)]="registrationNo" >
+                
             <mat-error
                 *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
                 <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required
@@ -20,20 +20,20 @@
                 <div
                     *ngIf="formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength">
                     Vehicle Registartion Number Should be 8 characters </div>
-            </mat-error></div>
+            </mat-error>
         </mat-form-field>
     </div>
-    <br>
-    <mat-divider></mat-divider>
-    <br>
-    <div >
-        <div >
+    
+    <mat-divider></mat-divider><br>
+    
+    <div  fxLayout="row" fxLayoutGap="100px">
+        <div fxFlex="40%" fxLayout="column" >
             <mat-label for="certificateNumber"> Vehicle Certificate Number<br>
                 <a href=""><u>Where can I find this number?</u></a></mat-label>
         </div>
-        <mat-form-field appearance="outline">
-            <textarea matInput class="form-control" id="certificateNumber"  placeholder="000000000"
-                formControlName="certificateNumber" (change)="change()" [(ngModel)]="certificateNo"></textarea>
+        <mat-form-field appearance="outline" fxFlex="60%" fxLayout="column" >
+            <input matInput  class="form-control" id="certificateNumber"  placeholder="000000000"
+                formControlName="certificateNumber" (change)="change()" [(ngModel)]="certificateNo">
             <mat-error *ngIf="formsControl.certificateNumber.touched && formsControl.certificateNumber.errors">
                 <div *ngIf="formsControl.certificateNumber.errors.required">Vehicle Certificate Number is required
                 </div>
@@ -43,16 +43,16 @@
             </mat-error>
         </mat-form-field>
     </div>
-    <br>
-    <mat-divider></mat-divider>
-    <br>
-    <div >
-        <div>
+    
+    <mat-divider></mat-divider><br>
+    
+    <div fxLayout="row" fxLayoutGap="100px">
+        <div fxFlex="40%" fxLayout="column">
             <mat-label for="purpose"> What purpose does this vehicle serve?</mat-label>
         </div>
-        <div >
-          <mat-select formControlName="purpose" class="form-control" (change)="change()" [(ngModel)]="purposeSelected">
-                <mat-option  disabled value="" id="purpose">--SELECT--</mat-option>
+        <div fxFlex="60%" fxLayout="column"> 
+          <mat-select formControlName="purpose" class="form-control"  placeholder="--SELECT--"(change)="change()" [(ngModel)]="purposeSelected">
+                <mat-option value=""disabled>--SELECT--</mat-option>
                 <mat-option *ngFor="let p of purposeList" value='p'>{{p}}</mat-option>
             </mat-select>
             <mat-error *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
@@ -64,18 +64,19 @@
     <br>
     <mat-divider></mat-divider>
     <br>
-    <div>
-        <div >
+    
+    <div fxLayout="row" fxLayoutGap="100px">
+        <div fxFlex="40%" fxLayout="column">
             <mat-label>
                 Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
             </mat-label>
         </div>
-        <div>
-        <mat-radio-group  >
+        <div fxFlex="60%" fxLayout="column">
+        <mat-radio-group color="primary">
             <mat-radio-button id="DrivingYes" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes"
-                [(ngModel)]="drivingOutsideYesNo" > &nbsp; Yes &nbsp;&nbsp;</mat-radio-button>
+                [(ngModel)]="drivingOutsideYesNo" [checked]="drivingOutsideYesNo=='Yes'" > &nbsp; Yes &nbsp;&nbsp;</mat-radio-button>
             <mat-radio-button  id="DrivingNo" name="yesNo" (change)="change()" formControlName="yesNo" value="No"
-                [(ngModel)]="drivingOutsideYesNo" > &nbsp; No </mat-radio-button>
+                [(ngModel)]="drivingOutsideYesNo" [checked]="drivingOutsideYesNo=='No'" > &nbsp; No </mat-radio-button>
         </mat-radio-group >
         
        </div>
