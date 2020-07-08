@@ -46,6 +46,7 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,11 @@ import { TabComponent } from './tab/tab.component';
     FlexLayoutModule,
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule,
-    HttpClientModule       
+    HttpClientModule,
+    MatButtonModule,
+    MatRadioModule,
+    FlexLayoutModule
+
   ],
   providers: [
     CdkStepper,

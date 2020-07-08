@@ -18,6 +18,12 @@ export class PolicyDetailsComponent implements OnInit {
   day = '';
   month = '';
   mindate = '';
+  policyLength = [
+    {value: 1, name: '1 Month'},
+    {value: 3, name: '3 Months'},
+    {value: 6, name: '6 Months'},
+    {value: 12, name: '12 Months'}
+  ];
 
   constructor(
     private formBuilder: FormBuilder,
