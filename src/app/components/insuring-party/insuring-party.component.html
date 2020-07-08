@@ -31,6 +31,7 @@
       </div>
     
       <mat-divider class="line"></mat-divider>
+      <br/>
     
     <!-- <div class="form-row">
         <div class="col-12 col-sm-7  col-md-8 col-lg-8">
@@ -59,12 +60,13 @@
             <mat-option *ngFor='let a of addressList' value="{{a}}">{{a}}</mat-option>
           </mat-select>
           <mat-error
-            *ngIf="formsControl.address.errors.required">
+            *ngIf="formsControl.address.errors?.required">
             This field is mandatory</mat-error>
         </mat-form-field>
         
       </div>
       <mat-divider class="line"></mat-divider>
+      <br/>
 <!--     
     <div class="form-row">
         <div class="col-12 col-sm-7 col-md-8 col-lg-8">
@@ -85,14 +87,13 @@
               <mat-label>Email</mat-label>
               <input matInput formControlName="email" id="email" name="email" (change)="change()" >
           <mat-error
-          *ngIf="formsControl.email.touched && formsControl.email.errors">This field is mandatory</mat-error>
+          *ngIf="(formsControl.email.touched && formsControl.email.errors) && formsControl.email.errors.required">This field is mandatory</mat-error>
           <mat-error
-          *ngIf="formsControl.email.errors.pattern">Please enter a valid email</mat-error>
+          *ngIf="(formsControl.email.touched && formsControl.email.errors) && formsControl.email.errors.pattern">Please enter a valid email</mat-error>
           </mat-form-field>
       </div>
-      <mat-divider class="line"></mat-divider>
     
-    <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" matStepperNext
+    <button type="submit" matStepperNext
     mat-raised-button color="primary" [disabled]="insuringParty.invalid">Next</button>
     
 </form>
