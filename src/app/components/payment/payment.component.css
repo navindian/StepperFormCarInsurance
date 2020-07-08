@@ -15,7 +15,7 @@
   height: 100%;
   align-items: center;
 }
-.radio {
+.radio { 
   border-radius: 10px;
   -webkit-box-shadow: 0 0 10px #ccc;
   box-shadow: 0 0 10px #ccc;
@@ -76,6 +76,14 @@ input[type="checkbox" i] {
       border-radius: 5px;
       padding: 25px;
    }
+   img { 
+    width: 70%; 
+    height: 70%; 
+    object-fit: contain; 
+   }
+
+
+   
 /* ::ng-deep .mat-checkbox-checked .mat-checkbox-background{
   background-color: blue !important;
   border-color: black;
