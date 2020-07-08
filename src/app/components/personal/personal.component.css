@@ -1,11 +1,7 @@
 
 
 .user-key {
-  width: 40px;
-  position: absolute;
-  z-index: 1;
-  top: 15px;
-  left: -25px;
+  width: 40px;  
 }
 h1 {
   color: rgb(8, 56, 95);
