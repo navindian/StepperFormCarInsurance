@@ -12,6 +12,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
+import {MatRadioModule} from '@angular/material/radio';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,6 +43,7 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 
 
@@ -88,10 +90,12 @@ import { TabComponent } from './tab/tab.component';
     MatGridListModule,
     MatTabsModule,
     MatCheckboxModule,
+    MatRadioModule,
     MatDividerModule,
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule
   ],
   providers: [
     CdkStepper,
