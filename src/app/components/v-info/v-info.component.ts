@@ -26,7 +26,7 @@ export class VInfoComponent implements OnInit {
       registrationNumber: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
       certificateNumber: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
       purpose: ['', Validators.required],
-      yesNo: ['Yes', Validators.required]
+      yesNo: ['', Validators.required]
     });
   }
   submit = () => {
