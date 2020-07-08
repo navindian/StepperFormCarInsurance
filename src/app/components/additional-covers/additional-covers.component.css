@@ -7,9 +7,15 @@
 }*/
 .mon {
   padding-left: 25px;
-  text-align: left;
+  width: 500px;
   font-size: 15px;
   /* background-color: burlywood; */
+}
+.best{
+  padding-left: 25px;
+  padding-right: 0px;
+  font-size: 15px;
+  width: 150px;
 }
 /* .none{
   
@@ -165,33 +171,40 @@
 }
 
 .spc {
-  padding-left: 2%;
+  margin-left: 45px ;
 }
 
 .car {
   margin-left: -5px;
 }
 
-/* @media screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
   .mon {
     margin-top: 0px;
   }
   .bgn {
-    margin-left: 18px;
+    margin-left: 30px;
+    padding-left: 20px;
+    font-size: 12px;
   }
   .whitecard .months {
     padding-left: 0%;
-    margin-left: 10px;
+    margin-left: 25px;
   }
   .whitecard .num {
-    margin-left: 10px;
+    margin-left: 25px;
   }
   .num {
-    margin-left: 30px;
+    margin-left: 50px;
+    font-size: 20px ;
+  }
+  .nearelm{
+    font-size: 15px ;
   }
    .middle-heading {
    padding-top: -20;
-   font-size: 30px;
+   padding-left: 50px;
+   font-size: 15px;
    color: white;
   } 
   .col-lg-12 {
@@ -200,10 +213,11 @@
   .spc {
     margin-top: 0px;
   }
-} */
+} 
 /* @media all and (max-width: 767px) {
-  .text-small {
-    font-size: 11px;
+  .premium{
+    padding-left: 50px;
+   
   }
 } */
 /* @media all and (max-width: 767px) {
@@ -243,11 +257,11 @@
   .spc {
     padding-left: 6%;
   }
-}
+} */
 @media screen and (max-width: 575px) {
   .nextbtn {
     width: 250px;
     margin: auto;
     display: block;
   }
-} */
+}
