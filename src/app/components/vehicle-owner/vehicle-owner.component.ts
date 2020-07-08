@@ -35,7 +35,7 @@ export class VehicleOwnerComponent implements OnInit {
 
   Details: FormGroup;
   citizens = ['Indian', 'American', 'African'];
-
+  cities =['Hyderabad','Mumbai','Pune','Chennai','Bangalore','Goa','Maharashtra'];
   private selectedLink = 'Yes';
   button = false;
 

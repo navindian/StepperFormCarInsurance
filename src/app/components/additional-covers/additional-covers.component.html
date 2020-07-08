@@ -1,15 +1,15 @@
 <h1 class="heading ">Additional covers</h1><br>
 <form [formGroup]="additionalcoverForm" (submit)="next()">
-    <div fxLayout="row wrap">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between">
         <mat-card class="mat-elevation-z8 thirdparty">
             <mat-card-content>
                 <div fxLayout="row">
-                    <div fxFlex="10%">
+                    <div fxFlex="15%">
                         <img src="../../assets/motor_policy.PNG">
                     </div>
-                    <div fxFlex="90%">
-                        <div fxLayout.xs="column" fxLayout="row">
-                            <div fxFlex="50%">
+                    <div fxFlex="80%">
+                        <div fxLayout.xs="column" fxLayout="row" fxLayoutAlign.gt-xs="space-between center">
+                            <div fxFlex="50%" fxLayoutAlign="start">
                                 <span class="middle-heading none text-small">Motor Third party Liability Policy</span>
                             </div>
                             <div fxFlex="50%" fxLayoutAlign.xs="start center" fxLayoutAlign="end end">
@@ -28,153 +28,162 @@
         </mat-card>
     </div>
 
-    <mat-card class="mat-elevation-z8 firstcard">
-        <mat-card-content>
-            <div fxLayout="row" class="cardrow">
-                <div fxFlex="100">
-                    <label>
-
-                        <mat-radio-button type="radio" name="cover" formControlName="cover" value="none"
-                            (change)="change()" [checked]="coverSelected==='None'" [(ngModel)]="coverSelected">
-                            <span class="sub-head">None</span>
-                        </mat-radio-button>
-                    </label>
-                    <div class="mon ">Description of additional cover here</div>
-                </div>
-            </div>
-        </mat-card-content>
-    </mat-card>
-
-
-
-
-    <mat-card class="mat-elevation-z8 secondcard">
-        <mat-card-content>
-            <div fxLayout.xs="column" fxLayout="row" class="cardrow">
-                <div fxFlex="75%">
-                    <label >
-                        <mat-radio-button type="radio" name="cover" formControlName="cover" value="premium"
-                            (change)="change()" [checked]="coverSelected==='Premium'" [(ngModel)]="coverSelected">
-                        </mat-radio-button>
-                        <span class="sub-head">Premium</span>
-                    </label>
-
-                    <div fxLayout.xs="column" fxLayout="row" fxLayoutAlign="start-start" >
-                        <div class="best none" fxFlex="20%">
-                            <button mat-raised-button color="primary">Best Value</button>
+    <div fxlayout="column">
+        <mat-radio-group formControlName="cover" (change)="change()">
+            <div fxLayout="column" fxLayoutGap="5%">
+                 <mat-card class="mat-elevation-z8 firstcard">
+                    <mat-card-content fxLayout="column">
+                        <div fxFlex="40">
+                            <mat-radio-button class="sub-head" value="none">None</mat-radio-button>
                         </div>
-                        <div style="padding-top: 5px;" fxFlex="95%" fxFlex.sm="70%" fxFlex.md="75%" >
-                            <span class="mon premium none">Description of additional cover here</span>
+                        <div fxFlex="40" class="mon ">
+                            Description of additional cover here
                         </div>
-                    </div>
-                </div>
-                <div fxLayout.xs="row" fxLayout="column" fxFlex="25%" fxLayoutAlign.xs="start center" fxLayoutAlign="end end" class="whitecard">
-                    <div class="num" fxFlex.xs="50%">+25<span class="nearelm">,00 BGN</span></div>
-                    <div class="months" fxFlex.xs="50%">
-                        for 12 months
-                    </div>
-                </div>
+                    </mat-card-content>
+                </mat-card>
+
+
+                 <mat-card class="mat-elevation-z8 secondcard">
+                    <mat-card-content fxLayout="column">
+                        <div fxFlex="40" fxLayout.xs="column" fxLayout="row" class="cardrow">
+                            <div fxFlex="40">
+                                <mat-radio-button class="sub-head" value="premium">Premium</mat-radio-button>
+                            </div>
+                            <div fxFlex="60%" fxLayoutAlign="end end" fxLayout="column">
+                                <div class="num">+25<span class="nearelm">,00 BGN</span></div>
+                                <div class="months">
+                                    for 12 months
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex="40" class="mon ">
+                            <div fxLayout.xs="column" fxLayout="row" fxLayoutAlign="start-start" fxLayoutGap.xs="5%">
+                                <div fxFlex="20%">
+                                    <button mat-raised-button color="primary">Best Value</button>
+                                </div>
+                                <div fxFlex="70%" flexLayoutAlign="start">
+                                    Description of additional cover here
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card>
+                    <mat-card-content fxLayout="column">
+                        <div fxFlex="40" fxLayout="row">
+                            <div fxFlex="40">
+                                <mat-radio-button class="sub-head" value="vip">VIP</mat-radio-button>
+                            </div>
+                            <div fxFlex="60%" fxLayoutAlign="end end" fxLayout="column">
+                                <div class="num">+80<span class="nearelm">,00 BGN</span></div>
+                                <div class="months">
+                                    for 12 months
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex="40" class="mon ">
+                            <div fxLayout="column" fxLayoutGap.gt-xs="5%" fxLayoutGap.xs="10%">
+                                <div fxFlex="20%" flexLayoutAlign="start">
+                                    Description of additional cover here
+                                </div>
+                                <div fxFlex="60%">
+                                    <div class="textcolor">
+                                        <p><b>Services provded under the "PREMIUM" clause, but with higher
+                                                limits when transporting vehicles</b></p>
+                                        <div fxLayout="row">
+                                            <div class="image none" fxFlex="10%">
+                                                <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                                            <span fxFlex="90%" fxLayout="column"> In case of an insurance event(no limit
+                                                in the number of
+                                                transports
+                                                and up to 900 km
+                                                mileage)</span>
+                                        </div>
+                                        <div fxLayout="row">
+                                            <div class="image" fxFlex="10%">
+                                                <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                                            <span fxFlex="90%" fxLayout="column"> Technical failure(no mileage limit and
+                                                up to 2
+                                                transports)</span>
+                                        </div>
+                                        <div fxLayout="row">
+                                            <div class="image" fxFlex="10%">
+                                                <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                                            <span fxFlex="90%" fxLayout="column"> Wrong fuet(disposable)</span>
+                                        </div>
+                                        <br>
+
+                                        <p><b>And more:</b></p>
+                                        <div fxLayout="row">
+                                            <div class="image" fxFlex="10%">
+                                                <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                                            <span fxFlex="90%" fxLayout="column"> Stay in the parking lot of the damaged
+                                                car</span>
+                                        </div>
+                                        <div fxLayout="row">
+                                            <div class="image" fxFlex="10%">
+                                                <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                                            <span fxFlex="90%" fxLayout="column"> Overview in a hotel of the driver of
+                                                the vehicle </span>
+                                        </div>
+                                        <div fxLayout="row">
+                                            <div class="image" fxFlex="10%">
+                                                <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                                            <span fxFlex="90%" fxLayout="column"> Transportation of persons traveling in
+                                                vehicles, in case the
+                                                vehicle
+                                                has suffered damage</span>
+                                        </div>
+                                        <div fxLayout="row">
+                                            <div class="image" fxFlex="10%">
+                                                <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                                            <span fxFlex="90%" fxLayout="column"> Medical transportation in case of an
+                                                accident</span>
+                                        </div>
+                                        <div fxLayout="row">
+                                            <div class="image" fxFlex="10%">
+                                                <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                                            <span fxFlex="90%" fxLayout="column">Costs of examinations, medical
+                                                examinations and manipulations
+                                                in
+                                                case of bodily
+                                                injuries to the driver and / or persons traveling in the vehicle as a
+                                                result of the
+                                                accident</span>
+                                        </div>
+                                        <div fxLayout="row">
+                                            <div class="image" fxFlex="10%">
+                                                <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                                            <span fxFlex="90%" fxLayout="column">In case of damages covered by Casco +
+                                                insurance - up to 2
+                                                vehicle inspections at
+                                                the address indicated by the client</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+                <button mat-raised-button color="primary" type="submit"
+                    class="btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn"
+                    [disabled]="!additionalcoverForm.valid" matStepperNext>
+                    Next</button>
+
             </div>
-            <div fxLayout="column" style="padding-top: 1.5%;">
-                <a href="www.google.com"><u class="spc">See what's more</u></a>
-            </div>
-        </mat-card-content>
-    </mat-card>
+
+        </mat-radio-group>
 
 
 
+    </div>
 
-    <mat-card class="mat-elevation-z8 thirdcard">
-        <mat-card-content>
-            <div fxLayout.xs="column" fxLayout="row" class="cardrow">
-                <div fxFlex="75%" >
-                    <label  >
-                        <mat-radio-button type="radio" name="cover" formControlName="cover" value="vip"
-                            (change)="change()" [checked]="coverSelected==='VIP'" [(ngModel)]="coverSelected">
-                        </mat-radio-button>
-                        <span class="sub-head">VIP</span>
-                    </label>
-                    <div class="mon">Description of additional cover here</div>
-                </div>
-
-                <div fxLayout.xs="row" fxLayout="column" fxFlex="25%" fxLayoutAlign.xs="start center" fxLayoutAlign="end end" class="whitecard none">
-                    <div class="num">+80<span class="nearelm">,00 BGN</span></div>
-                    <div class="months">for 12 months</div>
-                </div>
-            </div>
-            <br />
-            <br />
-            <div class="textcolor">
-                <p><b>Services provded under the "PREMIUM" clause, but with higher
-                        limits when transporting vehicles</b></p>
-                <div fxLayout="row">
-                    <div class="image" fxFlex="5%" fxFlex.xs="10%" >
-                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                    <span fxFlex="90%" fxLayout="column"> In case of an insurance event(no limit in the number of
-                        transports
-                        and up to 900 km
-                        mileage)</span>
-                </div>
-                <div fxLayout="row">
-                    <div class="image" fxFlex="5%" fxFlex.xs="10%">
-                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                    <span fxFlex="90%" fxLayout="column"> Technical failure(no mileage limit and up to 2
-                        transports)</span>
-                </div>
-                <div fxLayout="row">
-                    <div class="image" fxFlex="5%" fxFlex.xs="10%">
-                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                    <span fxFlex="90%" fxLayout="column"> Wrong fuet(disposable)</span>
-                </div>
-                <br>
-
-                <p><b>And more:</b></p>
-                <div fxLayout="row">
-                    <div class="image" fxFlex="5%" fxFlex.xs="10%">
-                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                    <span fxFlex="90%" fxLayout="column"> Stay in the parking lot of the damaged car</span>
-                </div>
-                <div fxLayout="row">
-                    <div class="image" fxFlex="5%" fxFlex.xs="10%">
-                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                    <span fxFlex="90%" fxLayout="column"> Overview in a hotel of the driver of the vehicle </span>
-                </div>
-                <div fxLayout="row">
-                    <div class="image" fxFlex="5%" fxFlex.xs="10%">
-                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                    <span fxFlex="90%" fxLayout="column"> Transportation of persons traveling in vehicles, in case the
-                        vehicle
-                        has suffered damage</span>
-                </div>
-                <div fxLayout="row">
-                    <div class="image" fxFlex="5%" fxFlex.xs="10%">
-                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                    <span fxFlex="90%" fxLayout="column"> Medical transportation in case of an accident</span>
-                </div>
-                <div fxLayout="row">
-                    <div class="image" fxFlex="5%" fxFlex.xs="10%">
-                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                    <span fxFlex="90%" fxLayout="column">Costs of examinations, medical examinations and manipulations
-                        in
-                        case of bodily
-                        injuries to the driver and / or persons traveling in the vehicle as a result of the
-                        accident</span>
-                </div>
-                <div fxLayout="row">
-                    <div class="image" fxFlex="5%" fxFlex.xs="10%" >
-                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                    <span fxFlex="99%" fxLayout="column">In case of damages covered by Casco + insurance - up to 2
-                        vehicle inspections at
-                        the address indicated by the client</span>
-                </div>
-            </div>
-            <a href="www.google.com"><u class="spc">Hide what's included</u></a>
-        </mat-card-content>
-    </mat-card>
-    <br />
-    
-    <!-- <button mat-raised-button color="primary" type="submit" class=" nextbtn"
-    [disabled]="!additionalcoverForm.valid" matStepperNext> Next</button> -->
 
 
 </form>
