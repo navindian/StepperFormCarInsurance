@@ -5,14 +5,14 @@
         <div class="heading" fxFlex="50%">
             Delivery Address
         </div>
-        <div fxLayout="column" fxLayout.lt-md="column" fxLayoutWrap>
-            <div fxLayout="row">
-                <div class="form-group" fxFlex="70%">
+        <div fxLayout="column" fxLayoutWrap>
+            <div fxLayout="row" fxLayout.lt-md="column">
+                <div class="form-group" fxFlex="100%">
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>
                             Full Name
                         </mat-label>
-                        <input matInput placeholder="Andrew Roberts" formControlName="fullName" required>
+                        <input matInput placeholder="Andrew Roberts" formControlName="fullName" (change)="change()">
                         <mat-error class="error" *ngIf="formControls.fullName.touched && formControls.fullName.errors">
                             <mat-error *ngIf="formControls.fullName.errors.required">This field is mandatory</mat-error>
                             <mat-error *ngIf="formControls.fullName.errors.pattern">Only alphabets are allowed</mat-error>
@@ -20,11 +20,12 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div fxLayout="row" fxLayoutWrap fxLayoutGap="2%">
-                <div class="form-group" fxFlex="38%" fxLayout="column">
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="2%">
+                <div class="form-group" fxFlex="53%" fxLayout="column">
                     <mat-form-field appearance="fill">
                         <mat-label>Choose City</mat-label>
-                        <mat-select formControlName="city">
+                        <mat-select formControlName="city" (selectionChange)="change()">
+                            <mat-option>None</mat-option>
                             <mat-option *ngFor="let city of provincesArray" [value]="city.pname">
                                 {{city.pname}}
                             </mat-option>
@@ -34,10 +35,10 @@
                         </mat-error>                        
                     </mat-form-field>
                 </div>
-                <div class="form-group" fxFlex="30%">
+                <div class="form-group" fxFlex="45%">
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Pincode</mat-label>
-                        <input matInput placeholder="123456" formControlName="pincode" required>
+                        <input matInput placeholder="123456" formControlName="pincode" (change)="change()">
                         <mat-error class="error" *ngIf="formControls.pincode.touched && formControls.pincode.errors">
                             <mat-error *ngIf="formControls.pincode.errors.required">This field is manadatory</mat-error>
                             <mat-error *ngIf="formControls.pincode.errors.maxLength">Only 6 characters are allowed</mat-error>
@@ -45,52 +46,52 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div fxLayout="row" fxLayoutWrap fxLayoutGap="2%">
-                <div class="form-group" fxFlex="38%" fxLayout="column">
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="2%">
+                <div class="form-group" fxFlex="53%" fxLayout="column">
                     <mat-form-field appearance="outline">
                         <mat-label>Street</mat-label>
-                        <input matInput placeholder="Nelson Street" formControlName="street" required>
+                        <input matInput placeholder="Nelson Street" formControlName="street" (change)="change()">
                         <mat-error class="error" *ngIf="formControls.street.touched && formControls.street.errors">
                             <mat-error *ngIf="formControls.street.errors.required">This field is required</mat-error>
                             <mat-error *ngIf="formControls.street.errors.minlength">Street should be atleast 3 characters</mat-error>
                         </mat-error>                        
                     </mat-form-field>
                 </div>
-                <div class="form-group" fxFlex="30%">
+                <div class="form-group" fxFlex="45%">
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Number</mat-label>
-                        <input matInput placeholder="A3" formControlName="number" required>
+                        <input matInput placeholder="A3" formControlName="number" (change)="change()">
                         <mat-error class="error" *ngIf="formControls.number.touched && formControls.number.errors">
                             <mat-error *ngIf="formControls.number.errors.required">Number is required</mat-error>
                         </mat-error>                        
                     </mat-form-field>
                 </div>
             </div>
-            <div fxLayout="row" fxLayoutWrap fxLayoutGap="2%">
-                <div class="form-group" fxFlex=22%>
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="2%">
+                <div class="form-group" fxFlex=32%>
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Block</mat-label>
-                        <input matInput placeholder="South Block" formControlName="block" required>
+                        <input matInput placeholder="South Block" formControlName="block" (change)="change()">
                         <mat-hint>Optional</mat-hint>
                         <mat-error class="error" *ngIf="formControls.block.touched && formControls.block.errors">
                             <mat-error *ngIf="formControls.block.errors.required">Block is required</mat-error>
                         </mat-error>
                     </mat-form-field>
                 </div>
-                <div class="form-group" fxFlex=22%>
+                <div class="form-group" fxFlex=32%>
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Entrance</mat-label>
-                        <input matInput placeholder="East Gate" formControlName="entrance" required>
+                        <input matInput placeholder="East Gate" formControlName="entrance" (change)="change()">
                         <mat-hint>Optional</mat-hint>
                         <mat-error class="error" *ngIf="formControls.entrance.touched && formControls.entrance.errors">
                             <mat-error *ngIf="formControls.entrance.errors.required">Entrance is required</mat-error>
                         </mat-error>
                     </mat-form-field>
                 </div>
-                <div class="form-group" fxFlex=22%>
+                <div class="form-group" fxFlex=32%>
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Appt</mat-label>
-                        <input matInput placeholder="Nelson Appartment" formControlName="block" required>
+                        <input matInput placeholder="Nelson Appartment" formControlName="appt" (change)="change()">
                         <mat-hint>Optional</mat-hint>
                         <mat-error class="error" *ngIf="formControls.appt.touched && formControls.appt.errors">
                             <mat-error *ngIf="formControls.appt.errors.required">Appartment is required</mat-error>
@@ -101,15 +102,15 @@
         </div>               
     </div>
     <br>
-    <div fxLayout="column" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="3%">
-        <div class="heading-1" fxFlex="50%">
+    <div fxLayout="column" fxLayoutWrap fxLayoutGap="3%">
+        <div class="heading-1" fxFlex="80%">
             Additional Details
         </div>
-        <div fxLayout="row">
-            <div fxFlex="50%" fxLayout="column" class="form-group">
+        <div fxLayout="row" fxLayout.lt-md="column">
+            <div fxFlex="70%" fxLayout="column" class="form-group">
                 <mat-form-field appearance="outline">
                     <mat-label>Contact</mat-label>
-                    <input matInput formControlName="contact" placeholder="987654321" required>
+                    <input matInput formControlName="contact" placeholder="987654321" (change)="change()">
                     <mat-error class="error" *ngIf="formControls.contact.touched && formControls.contact.errors">
                         <mat-error *ngIf="formControls.contact.errors.required">This field is mandatory</mat-error>
                         <mat-error *ngIf="formControls.contact.errors.min">Minimum 8 characters are required</mat-error>
@@ -118,7 +119,7 @@
                 </mat-form-field>
             </div>
         </div>
-        <div fxLayout="row">
+        <div fxLayout="row" fxLayout.lt-md="column">
             <div fxFlex="50%" fxLayout="column">
                 <span class="heading-2">
                     Type of Address
@@ -129,29 +130,29 @@
                 </p>
             </div>
             <div fxFlex="50%" fxLayout="column" class="form-group">
-                <mat-radio-group aria-label="Select an option">
-                    <mat-radio-button value="home" formControlName="business" name="business">Home</mat-radio-button>
-                    <mat-radio-button value="business" formControlName="business" name="business">Business</mat-radio-button>
+                <mat-radio-group aria-label="Select an option" formControlName="business" (change)="change()">
+                    <mat-radio-button value="Home" name="business">Home</mat-radio-button>
+                    <mat-radio-button value="Business" name="business">Business</mat-radio-button>
                 </mat-radio-group>
             </div>
         </div>
-        <div fxLayout="row">
-            <div fxFlex="50%" fxLayout="column">
+        <div fxLayout="row" fxLayout.lt-md="column">
+            <div fxFlex="80%" fxLayout="column">
                 <mat-form-field appearance="outline">
                     <mat-label>Additional Notes</mat-label>
                     <mat-hint>Optional</mat-hint>
-                    <textarea style="resize: none;" matInput placeholder="Additional Notes" formControlName="notes" cols="30" rows="10"></textarea>
+                    <textarea style="resize: none;" matInput placeholder="Additional Notes" formControlName="notes" cols="30" rows="10" (change)="change()"></textarea>
                 </mat-form-field>
             </div>
         </div>
-        <div fxLayout="row">
-            <div fxFlex="70%" fxLayout="column" class="delivery">
+        <div fxLayout="row" fxLayout.lt-md="column">
+            <div fxFlex="100%" fxLayout="column" class="delivery">
                 <b>Estimated delivery in your area is 2 days</b>
                 <p><a href="#">More info here</a></p>
             </div>
         </div>
         <div fxLayout="row">
-            <button type="submit" mat-raised-button color="primary" class="rounded-pill">Next</button>
+            <button type="submit" matStepperNext [disabled]="detailsForm.invalid" mat-raised-button color="primary" class="rounded-pill">Next</button>
         </div>
     </div>
 </form>
