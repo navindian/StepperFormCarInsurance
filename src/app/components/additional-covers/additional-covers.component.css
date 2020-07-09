@@ -7,15 +7,9 @@
 }*/
 .mon {
   padding-left: 25px;
-  width: 500px;
+  text-align: left;
   font-size: 15px;
   /* background-color: burlywood; */
-}
-.best{
-  padding-left: 25px;
-  padding-right: 0px;
-  font-size: 15px;
-  width: 150px;
 }
 /* .none{
   
@@ -171,7 +165,7 @@
 }
 
 .spc {
-  margin-left: 45px ;
+  padding-left: 2%;
 }
 
 .car {
@@ -183,33 +177,26 @@
   object-fit: contain;
 }
 
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
   .mon {
     margin-top: 0px;
   }
   .bgn {
-    margin-left: 30px;
-    padding-left: 20px;
-    font-size: 12px;
+    margin-left: 18px;
   }
   .whitecard .months {
     padding-left: 0%;
-    margin-left: 25px;
+    margin-left: 10px;
   }
   .whitecard .num {
-    margin-left: 25px;
+    margin-left: 10px;
   }
   .num {
-    margin-left: 50px;
-    font-size: 20px ;
-  }
-  .nearelm{
-    font-size: 15px ;
+    margin-left: 30px;
   }
    .middle-heading {
    padding-top: -20;
-   padding-left: 50px;
-   font-size: 15px;
+   font-size: 30px;
    color: white;
   } 
   .col-lg-12 {
@@ -218,11 +205,10 @@
   .spc {
     margin-top: 0px;
   }
-} 
+} */
 /* @media all and (max-width: 767px) {
-  .premium{
-    padding-left: 50px;
-   
+  .text-small {
+    font-size: 11px;
   }
 } */
 /* @media all and (max-width: 767px) {
@@ -262,11 +248,11 @@
   .spc {
     padding-left: 6%;
   }
-} */
+}
 @media screen and (max-width: 575px) {
   .nextbtn {
     width: 250px;
     margin: auto;
     display: block;
   }
-}
+} */
