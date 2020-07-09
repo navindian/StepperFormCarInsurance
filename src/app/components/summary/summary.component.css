@@ -51,6 +51,7 @@ mat-label{
 
 .bgn{
   margin-left: auto;
+ 
 }
 
 .panel {
@@ -85,6 +86,16 @@ mat-card{
   font-size: 1vw;
 }
 
+.btn_prop{
+  border:none;
+  border-radius:2rem;
+}
+.btn{
+  font-size:20px;
+  color:rgb(43, 168, 226);
+  outline-color: rgb(43, 168, 226);
+}
+
 
 @media screen and (max-width:600px){
   .middle_text{
@@ -110,6 +121,7 @@ mat-card{
   .checkbox_text{
     font-size: 3vw;
   }
+ 
 
 }
 

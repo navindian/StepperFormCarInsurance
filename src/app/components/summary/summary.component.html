@@ -13,18 +13,18 @@
         <div fxFlex="20%">
             <h1 class="label_prop">Proposal</h1>
         </div>
-        <div fxFlex="30%" style="margin-left: auto;" class="btn">
-            <button mat-stroked-button color="primary" class="btn">send</button>
+        <div fxFlex="30%" style="margin-left: auto;">
+            <button mat-stroked-button class="btn">send</button>
         </div>
     </div>
 
-    <!-- <div fxLayout="column" > -->
-    <div  fxLayout="column" fxLayout.xs="row"  fxLayoutGap.xs="5%">
+    <div fxLayoutGap.md="16px" fxLayoutGap.lg="16px" >
+    <div  fxLayout="column" fxLayout.xs="row">
         <mat-card class="card_color">
             <div fxFlex="20%">
                 <img src="../../../assets/motor_policy.PNG">
             </div>
-            <div fxLayout="row" fxLayout.xs="column">
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap.md="16px" fxLayoutGap.lg="16px">
             <div fxFlex="50%" fxFlex.md="80%" fxFlex.lg="80%" fxFlex.sm="80%" fxLayoutAlign="center">
                 <span class="middle_text">Motor Third Party Liability Policy</span>
             </div>
@@ -35,7 +35,7 @@
           </div>
         </mat-card><br/>
     </div>
-<!-- </div> -->
+</div>
 
     <mat-card fxLayoutGap="10px">
         <div fxLayout="row">
@@ -327,8 +327,9 @@
             style="color:red">required</mat-error>
             <br/>
     </form>
-
-        <button mat-flat-button color="primary" [disabled]="summaryForm.invalid" matStepperNext (click)="saveData()">Continue to payment</button>
+    <div fxLayoutAlign.xs="center">
+        <button class="btn_prop" mat-flat-button color="primary"  [disabled]="summaryForm.invalid" matStepperNext (click)="saveData()">Continue to payment</button>
+    </div>
 
 
 
