@@ -7,7 +7,7 @@
         </div>
         <div fxLayout="column" fxLayout.lt-md="column" fxLayoutWrap>
             <div fxLayout="row">
-                <div class="form-group" fxFlex="70%">
+                <div class="form-group" fxFlex="100%">
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>
                             Full Name
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div fxLayout="row" fxLayoutWrap fxLayoutGap="2%">
-                <div class="form-group" fxFlex="38%" fxLayout="column">
+                <div class="form-group" fxFlex="53%" fxLayout="column">
                     <mat-form-field appearance="fill">
                         <mat-label>Choose City</mat-label>
                         <mat-select formControlName="city">
@@ -34,7 +34,7 @@
                         </mat-error>                        
                     </mat-form-field>
                 </div>
-                <div class="form-group" fxFlex="30%">
+                <div class="form-group" fxFlex="45%">
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Pincode</mat-label>
                         <input matInput placeholder="123456" formControlName="pincode" required>
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div fxLayout="row" fxLayoutWrap fxLayoutGap="2%">
-                <div class="form-group" fxFlex="38%" fxLayout="column">
+                <div class="form-group" fxFlex="53%" fxLayout="column">
                     <mat-form-field appearance="outline">
                         <mat-label>Street</mat-label>
                         <input matInput placeholder="Nelson Street" formControlName="street" required>
@@ -56,7 +56,7 @@
                         </mat-error>                        
                     </mat-form-field>
                 </div>
-                <div class="form-group" fxFlex="30%">
+                <div class="form-group" fxFlex="45%">
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Number</mat-label>
                         <input matInput placeholder="A3" formControlName="number" required>
@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div fxLayout="row" fxLayoutWrap fxLayoutGap="2%">
-                <div class="form-group" fxFlex=22%>
+                <div class="form-group" fxFlex=32%>
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Block</mat-label>
                         <input matInput placeholder="South Block" formControlName="block" required>
@@ -77,7 +77,7 @@
                         </mat-error>
                     </mat-form-field>
                 </div>
-                <div class="form-group" fxFlex=22%>
+                <div class="form-group" fxFlex=32%>
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Entrance</mat-label>
                         <input matInput placeholder="East Gate" formControlName="entrance" required>
@@ -87,7 +87,7 @@
                         </mat-error>
                     </mat-form-field>
                 </div>
-                <div class="form-group" fxFlex=22%>
+                <div class="form-group" fxFlex=32%>
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Appt</mat-label>
                         <input matInput placeholder="Nelson Appartment" formControlName="block" required>
@@ -102,11 +102,11 @@
     </div>
     <br>
     <div fxLayout="column" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="3%">
-        <div class="heading-1" fxFlex="50%">
+        <div class="heading-1" fxFlex="80%">
             Additional Details
         </div>
         <div fxLayout="row">
-            <div fxFlex="50%" fxLayout="column" class="form-group">
+            <div fxFlex="70%" fxLayout="column" class="form-group">
                 <mat-form-field appearance="outline">
                     <mat-label>Contact</mat-label>
                     <input matInput formControlName="contact" placeholder="987654321" required>
@@ -129,14 +129,14 @@
                 </p>
             </div>
             <div fxFlex="50%" fxLayout="column" class="form-group">
-                <mat-radio-group aria-label="Select an option">
-                    <mat-radio-button value="home" formControlName="business" name="business">Home</mat-radio-button>
-                    <mat-radio-button value="business" formControlName="business" name="business">Business</mat-radio-button>
+                <mat-radio-group aria-label="Select an option" formControlName="business">
+                    <mat-radio-button value="Home" name="business">Home</mat-radio-button>
+                    <mat-radio-button value="Business" name="business">Business</mat-radio-button>
                 </mat-radio-group>
             </div>
         </div>
         <div fxLayout="row">
-            <div fxFlex="50%" fxLayout="column">
+            <div fxFlex="80%" fxLayout="column">
                 <mat-form-field appearance="outline">
                     <mat-label>Additional Notes</mat-label>
                     <mat-hint>Optional</mat-hint>
@@ -145,13 +145,13 @@
             </div>
         </div>
         <div fxLayout="row">
-            <div fxFlex="70%" fxLayout="column" class="delivery">
+            <div fxFlex="100%" fxLayout="column" class="delivery">
                 <b>Estimated delivery in your area is 2 days</b>
                 <p><a href="#">More info here</a></p>
             </div>
         </div>
         <div fxLayout="row">
-            <button type="submit" mat-raised-button color="primary" class="rounded-pill">Next</button>
+            <button type="submit" [disabled]="detailsForm.invalid" mat-raised-button color="primary" class="rounded-pill">Next</button>
         </div>
     </div>
 </form>
