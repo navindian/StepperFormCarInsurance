@@ -4,9 +4,9 @@
     <label fxFlex="60%">Are you the owner of this Vehicle</label>
     
         <mat-radio-group fxFlex="40%">
-            <mat-radio-button  name="owner" id="Radios1" value="Yes" [(ngModel)]="Vowner"
+            <mat-radio-button   id="Radios1" value="Yes"  name="owner"
              [checked]="Vowner==='Yes'" (click)="setradio('Yes')" (change)="toggle(true)">Yes</mat-radio-button>
-            <mat-radio-button  name="owner" id="Radios2" value="No" [(ngModel)]="Vowner" 
+            <mat-radio-button   id="Radios2" value="No" name="owner" 
             [checked]="Vowner==='No'" (click)="setradio('No')" (change)="toggle(false)" >No</mat-radio-button>
         </mat-radio-group>
     
