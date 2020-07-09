@@ -54,14 +54,14 @@
 .num {
   color: rgb(8, 56, 95);
 
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
 
   padding: 0%;
 }
 .months {
   color: rgb(8, 56, 95);
-  padding-left: 20%;
+ 
   
 }
 .whitecard {
@@ -170,6 +170,11 @@
 
 .car {
   margin-left: -5px;
+}
+.img{
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
 }
 
 /* @media screen and (max-width: 450px) {
