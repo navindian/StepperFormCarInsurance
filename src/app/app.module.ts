@@ -2,9 +2,12 @@ import { CdkStepper } from '@angular/cdk/stepper';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import 'hammerjs';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -42,9 +46,9 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
-import {MatButtonModule} from '@angular/material/button';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
+
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -74,25 +78,29 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatStepperModule,
+    BrowserAnimationsModule,    
     ReactiveFormsModule,
     FormsModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    MatInputModule,
+    MatToolbarModule,
     MatCardModule,
-    MatSelectModule,
-    MatDatepickerModule,
+    MatCheckboxModule,
     MatNativeDateModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatDividerModule,
     MatGridListModule,
+    MatInputModule,
+    MatSelectModule,
+    MatStepperModule,
     MatTabsModule,
     MatCheckboxModule,
+    MatRadioModule,
     MatDividerModule,
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule,
     HttpClientModule,
-    MatButtonModule,
+    MatRadioModule,
     FlexLayoutModule
 
   ],

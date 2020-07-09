@@ -1,13 +1,7 @@
-/*.container{
-    margin: 200px;
-}*/
+
 
 .user-key {
-  width: 40px;
-  position: absolute;
-  z-index: 1;
-  top: 15px;
-  left: -25px;
+  width: 40px;  
 }
 h1 {
   color: rgb(8, 56, 95);
@@ -30,7 +24,9 @@ label {
 .error {
   color: red;
 }
-
+.line{
+  margin-bottom: 10px;
+}
 @media screen and (max-width: 800px) {
   .line {
     display: none;
