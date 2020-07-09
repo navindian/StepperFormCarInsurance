@@ -1,20 +1,33 @@
-/*.container{
-   
-    padding-top: 50px;
-    width: 2000px;
-   
-      
-}*/
-.mon {
-  padding-left: 25px;
-  text-align: left;
+.bestvalue {
+  margin-left: 25px;
   font-size: 15px;
-  /* background-color: burlywood; */
+  text-align: center;
+  background-color: green;
+
 }
-/* .none{
+.mon{
+  margin-top: 10px;
+ font-size: 15px;
+ margin-left: 10px;
+}
+.mon1{
+  padding-left: 25px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+.spc {
+  margin-left: 25px ;
+  width: 100px;
   
-  background-color: crimson;
-} */
+}
+.best{
+  padding-left: 25px;
+  padding-right: 0px;
+  font-size: 15px;
+  width: 150px;
+ 
+}
+
 
 .heading {
   color: rgb(8, 56, 95);
@@ -36,17 +49,13 @@
 .sub-head {
   font-size: 20px;
   font-weight: bold;
+  color: rgb(8, 56, 95);
 }
-/* .bgn{
-    
-    text-align: right;
-    font-size: 15px;
-    padding-top: 5%;
-    
-} */
+
 .cardrow {
   margin-left: 20px;
   color: rgb(8, 56, 95);
+  height: 50px;
 }
 .nearelm {
   font-size: 20px;
@@ -69,18 +78,18 @@
   margin-top: 20px;
 }
 .firstcard {
-  /*width:800px;*/
+  
   height: auto;
   margin-bottom: 20px;
-  /*min-width:100px;*/
+  
 }
 .secondcard {
-  /*width:800px;*/
+  
   height: auto;
   margin-bottom: 20px;
 }
 .thirdcard {
-  /*width:800px;*/
+ 
   height: auto;
   margin-bottom: 20px;
 }
@@ -98,75 +107,19 @@
 }
 .bgn {
   color: white;
-  padding-left: 20%;
+  padding-left: 10%;
 }
 .card-body {
   padding-top: 2px;
 }
-/* 'Times New Roman',Lucida Grande , Arial, Tahomasans-serifTrebuchet MS' */
 
-/*.firstcard{
-   width:2000px;
-    height:90px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-top: -30px;
-    
-    }
-   
-.discription{
-        color:rgb(8, 56, 95);
-        padding-left: 15px;
-        margin-top: -5px;
-}
-.secondcard{
-       
-    width:2000px;
-    height:110px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-top: -30px;
-    
-        }
-
-.valuebutton{
-            width:80px;
-           height:20px;
-           padding-top: 1px;
-}
-.afterpremium{
-    padding-left: 15px;
-    margin-top: -5px;
-}
-.afterpremium span{
-
-    color:rgb(8, 56, 95);
-}
-.bgnpremium {
-    margin-right: -180px;
-    margin-top: -1px;
-    text-align: right;
-    color:rgb(8, 56, 95);
-    font-size: 20px;
-    
-}
- .thirdcard{
-           
-            width:2000px;
-            height:550px;
-            margin-left: 25px;
-            margin-right: 25px;
-            margin-top: -30px;
- }*/
 .textcolor {
   color: rgb(8, 56, 95);
   margin-top: -20px;
   padding-left: 15px;
 }
 
-.spc {
-  padding-left: 2%;
-}
+
 
 .car {
   margin-left: -5px;
@@ -177,27 +130,54 @@
   object-fit: contain;
 }
 
-/* @media screen and (max-width: 450px) {
+@media screen and ( max-width: 450px) {
   .mon {
-    margin-top: 0px;
+   
+    margin-left: -70px;
+    width: 200px; 
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 12px;
+    
+  
+  }
+  
+  .bestvalue{
+    margin-top: 30px;
+    text-align: center;
+    margin-left: -70px;
+    background-color: green;
+    
   }
   .bgn {
-    margin-left: 18px;
+    margin-left: 25px;
+    color: white;
   }
   .whitecard .months {
-    padding-left: 0%;
-    margin-left: 10px;
+    padding-left: 5%;
+    margin-left: 25px;
   }
   .whitecard .num {
-    margin-left: 10px;
+    margin-left: 25px;
   }
   .num {
     margin-left: 30px;
+    font-size: 15px ;
+   
+  }
+  .months{
+    margin-left: 40px;
+    font-size: 15px ;
+   
+  }
+  .nearelm{
+    font-size: 15px ;
   }
    .middle-heading {
-   padding-top: -20;
-   font-size: 30px;
-   color: white;
+   padding-top: -30;
+   margin-bottom: 9px;
+   margin-left: 30px;
+   color:white ;
   } 
   .col-lg-12 {
     margin-left: 200px;
@@ -205,31 +185,35 @@
   .spc {
     margin-top: 0px;
   }
-} */
-/* @media all and (max-width: 767px) {
-  .text-small {
-    font-size: 11px;
-  }
-} */
-/* @media all and (max-width: 767px) {
-  .num {
-    font-size: 30px;
-    padding-left: 10%;
-    text-align: left;
-    padding-left: 0%;
-    padding-top: 10%;
-  }
+} 
+
+@media all and (max-width: 767px) {
+  
   .nearelm {
     font-size: 13px;
   }
   .bgn {
     font-size: 12px;
-    padding-left: 5%;
     text-align: left;
   }
   .mon {
+    margin-top: 40px;
+    width: 300px;
+    margin-left: -100px;
+    font-size: 12px;
+   
+    
+  }
+  .mon1 {
+    
+    width: 300px;
     font-size: 12px;
   }
+  .months{
+    
+    font-size: 12px;
+   }
+
   .textcolor {
     display: none;
   }
@@ -244,15 +228,38 @@
     padding-left: 0%;
     padding-top: 5%;
   }
-
-  .spc {
-    padding-left: 6%;
+  .cardrow{
+    margin-bottom: 100px;
+  
   }
+  .spc {
+    margin-top: 0px;
+  }
+  
 }
 @media screen and (max-width: 575px) {
+  .mon1 {
+    width: 400px;
+    font-size: 12px;
+  }
+  .mon {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: -120px;
+    padding-left: 0%;
+   
+  }
+  
+  .bestvalue{
+    margin-top: 30px;
+    text-align: center;
+    margin-left: -70px;
+    background-color: green;
+   
+  }
   .nextbtn {
     width: 250px;
     margin: auto;
     display: block;
   }
-} */
+}
