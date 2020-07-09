@@ -15,7 +15,7 @@ export class SignUpComponent implements OnInit {
   @Input() confirmPassword: string;
   @Input() mobile: number;
   signUpForm: FormGroup;
-  errorMessage;
+  errorMessage: string;
   constructor(private fb: FormBuilder, private router: Router, private signUpService: SignUpService) { }
 
   ngOnInit(): void {
