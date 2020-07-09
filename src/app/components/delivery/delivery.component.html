@@ -5,8 +5,8 @@
         <div class="heading" fxFlex="50%">
             Delivery Address
         </div>
-        <div fxLayout="column" fxLayout.lt-md="column" fxLayoutWrap>
-            <div fxLayout="row">
+        <div fxLayout="column" fxLayoutWrap>
+            <div fxLayout="row" fxLayout.lt-md="column">
                 <div class="form-group" fxFlex="100%">
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>
@@ -20,7 +20,7 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div fxLayout="row" fxLayoutWrap fxLayoutGap="2%">
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="2%">
                 <div class="form-group" fxFlex="53%" fxLayout="column">
                     <mat-form-field appearance="fill">
                         <mat-label>Choose City</mat-label>
@@ -46,7 +46,7 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div fxLayout="row" fxLayoutWrap fxLayoutGap="2%">
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="2%">
                 <div class="form-group" fxFlex="53%" fxLayout="column">
                     <mat-form-field appearance="outline">
                         <mat-label>Street</mat-label>
@@ -67,7 +67,7 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div fxLayout="row" fxLayoutWrap fxLayoutGap="2%">
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="2%">
                 <div class="form-group" fxFlex=32%>
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Block</mat-label>
@@ -91,7 +91,7 @@
                 <div class="form-group" fxFlex=32%>
                     <mat-form-field appearance="outline" fxLayout="column">
                         <mat-label>Appt</mat-label>
-                        <input matInput placeholder="Nelson Appartment" formControlName="block" (change)="change()">
+                        <input matInput placeholder="Nelson Appartment" formControlName="appt" (change)="change()">
                         <mat-hint>Optional</mat-hint>
                         <mat-error class="error" *ngIf="formControls.appt.touched && formControls.appt.errors">
                             <mat-error *ngIf="formControls.appt.errors.required">Appartment is required</mat-error>
@@ -102,11 +102,11 @@
         </div>               
     </div>
     <br>
-    <div fxLayout="column" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="3%">
+    <div fxLayout="column" fxLayoutWrap fxLayoutGap="3%">
         <div class="heading-1" fxFlex="80%">
             Additional Details
         </div>
-        <div fxLayout="row">
+        <div fxLayout="row" fxLayout.lt-md="column">
             <div fxFlex="70%" fxLayout="column" class="form-group">
                 <mat-form-field appearance="outline">
                     <mat-label>Contact</mat-label>
@@ -119,7 +119,7 @@
                 </mat-form-field>
             </div>
         </div>
-        <div fxLayout="row">
+        <div fxLayout="row" fxLayout.lt-md="column">
             <div fxFlex="50%" fxLayout="column">
                 <span class="heading-2">
                     Type of Address
@@ -136,7 +136,7 @@
                 </mat-radio-group>
             </div>
         </div>
-        <div fxLayout="row">
+        <div fxLayout="row" fxLayout.lt-md="column">
             <div fxFlex="80%" fxLayout="column">
                 <mat-form-field appearance="outline">
                     <mat-label>Additional Notes</mat-label>
@@ -145,7 +145,7 @@
                 </mat-form-field>
             </div>
         </div>
-        <div fxLayout="row">
+        <div fxLayout="row" fxLayout.lt-md="column">
             <div fxFlex="100%" fxLayout="column" class="delivery">
                 <b>Estimated delivery in your area is 2 days</b>
                 <p><a href="#">More info here</a></p>
