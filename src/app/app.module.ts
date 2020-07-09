@@ -32,7 +32,7 @@ import { MTPLPolicyComponent } from './components/mtpl-policy/mtpl-policy.compon
 import { PaymentComponent } from './components/payment/payment.component';
 import { PersonalComponent } from './components/personal/personal.component';
 import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
-import { ProposalComponent } from './components/proposal/proposal.component';
+import { SummaryComponent } from './components/summary/summary.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { Tab2Component } from './components/tab2/tab2.component';
 import { TabsComponent } from './components/tabs/tabs.component';
@@ -42,6 +42,9 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
+import {MatButtonModule} from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +64,7 @@ import { TabComponent } from './tab/tab.component';
     PersonalComponent,
     PaymentComponent,
     InstallmentComponent,
-    ProposalComponent,
+    SummaryComponent,
     VehicleOwnerComponent,
     ContactComponent,
     SignUpComponent,
@@ -88,14 +91,17 @@ import { TabComponent } from './tab/tab.component';
     MatDividerModule,
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    FlexLayoutModule
+
   ],
   providers: [
     CdkStepper,
     MTPLCalculatorComponent,
     LoggedInGuardGuard,
     LoggedInServiceService,
-    ProposalComponent
+    SummaryComponent
   ],
   bootstrap: [AppComponent]
 })

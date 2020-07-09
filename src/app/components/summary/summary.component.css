@@ -1,0 +1,304 @@
+
+.card_color{
+  background-color: rgb(8, 56, 95);
+  color:white;
+}
+
+.div_prop{
+  font-size: 30px;
+  font-weight:bold;
+}
+.span_prop{
+  font-size: 20px;
+}
+.tick {
+  width: 30px;
+  height: 20px;
+  margin-left: 0rem;
+}
+.text_prop{
+  color: rgb(8, 56, 95);
+}
+.label_prop {
+  color: rgb(8, 56, 95);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+.sub_label_prop {
+  font-size: small;
+}
+mat-label{
+  color: rgb(8, 56, 95);
+  font-size: 15px;
+}
+
+.vehicle_comp{
+  margin-left:-1rem;
+}
+
+.insuring_party{
+  margin-left:-1rem;
+}
+
+.vehicle_owner{
+  margin-left:-1rem;
+}
+
+.delivery_comp{
+  margin-left:-2rem;
+}
+
+.bgn{
+  margin-left: auto;
+}
+
+.panel {
+  border-width: thin;
+  border-style: solid;
+  border-color: orange;
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+mat-card{
+  border: none;
+}
+.user-key {
+  width: 40px;
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  left: -25px;
+}
+
+.middle_text{
+  margin-top: 15px;
+  margin-left: -10px;
+
+}
+.edit{
+  text-decoration: underline;
+  color:rgb(43, 168, 226)
+}
+.checkbox_text{
+  font-size: 1vw;
+}
+
+
+@media screen and (max-width:600px){
+  .middle_text{
+    margin-left: 20px;
+    margin-top: 2px;
+  }
+
+  .div_prop{
+    max-width: 7rem;
+    font-size: 20px;
+  }
+
+  .span_prop{
+    font-size: 12px;
+  }
+  .tick{
+    margin-left: -1rem;
+  }
+  .pay_margin{
+    margin-left:1rem
+  
+  }
+  .checkbox_text{
+    font-size: 3vw;
+  }
+
+}
+
+@media screen and (min-width:600px) and (max-width:960px){
+  .middle_text{
+    margin-left: -2rem;
+    margin-top: 1rem;
+  }
+
+  .div_prop{
+    max-width: 20rem;
+  }
+  .span_prop{
+    font-size: 12px;
+  }
+  .checkbox_text{
+    font-size: 2vw;
+  }
+  .pay_margin{
+    max-width: 10%;
+  }
+
+
+}
+
+
+/*for large screens*/
+@media screen and (min-width:960px) and (max-width:1280){
+  .btn{
+    margin-left: 20px;
+  }
+  .tick{
+    margin-left: 1rem;
+  }
+  .text_prop{
+    margin-left: -3rem;
+  }
+  .chechbox_text{
+    font-size:2vw ;
+  }
+}
+
+@media screen and (min-width:1280px){
+  .tick{
+    margin-left:1rem;
+  }
+  .text_prop{
+    margin-left: 0rem;
+  }
+  .checkbox_text{
+    font-size: 15px;
+  }
+}
+/* _______________ */
+
+
+
+
+
+
+.edit_prop {
+  color: dodgerblue;
+}
+
+.email_btn_prop {
+  border-radius: 3rem;
+  margin-right: 1rem;
+}
+
+.label_prop {
+  color: rgb(8, 56, 95);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+.middle-heading {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  font-size: 17px;
+  padding-left: 20px;
+  /* padding-top: 2rem; */
+}
+.img-middle {
+  align-items: center;
+}
+.card-num {
+  font-size: 20px;
+  font-weight: bold;
+}
+.sub_label_prop {
+  font-size: small;
+}
+h6 {
+  color: rgb(0, 53, 103);
+}
+p {
+  color: rgb(80, 108, 134);
+  text-align: justify;
+}
+input {
+  color: rgb(0, 53, 103);
+  border: none;
+  outline: no;
+}
+.edit {
+  width: 50%;
+}
+
+.card_bg {
+  background-color: #003564;
+  color: #ffffff;
+  /* background-color: 	rgb(0, 53, 103);*/
+  border-radius: 0.5rem;
+}
+
+.shadow {
+  box-shadow: darkgray;
+}
+
+.font_color {
+  color: rgb(0, 53, 103);
+}
+.tick {
+  width: 30px;
+  height: 20px;
+  /* margin-left: 2rem; */
+}
+.text {
+  margin-left: -1rem;
+  color: rgb(8, 56, 95);
+}
+.nearelm {
+  font-size: 20px;
+}
+.num {
+  /* color: rgb(8, 56, 95); */
+  color: white;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  padding: 0%;
+}
+.bgn {
+  color: white;
+  /* margin-left: 30px; */
+  margin-left: auto;
+}
+
+
+
+/* @media screen and (max-width: 450px) {
+  .bgn {
+    margin-left: 18px;
+  }
+  .num {
+    margin-left: 30px;
+  }
+  .middle-heading {
+    margin-left: 20px;
+    font-size: 15px;
+  }
+} */
+
+/* @media all and (max-width: 767px) {
+  .middle-heading {
+    font-size: 15px;
+    padding-left: 5%;
+    height: 80%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+  }
+  .text-small {
+    font-size: 11px;
+  }
+  .num {
+    font-size: 20px;
+    padding-left: 10%;
+    text-align: left;
+    padding-left: 0%;
+    padding-top: 5%;
+  }
+  .nearelm {
+    font-size: 13px;
+  }
+  .bgn {
+    font-size: 12px;
+    padding-left: 5%;
+    text-align: left;
+  }
+} */
