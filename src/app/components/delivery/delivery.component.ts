@@ -11,7 +11,7 @@ import { MediaObserver, MediaChange } from '@angular/flex-layout';
   templateUrl: './delivery.component.html',
   styleUrls: ['./delivery.component.css']
 })
-export class DeliveryComponent implements OnInit, AfterViewInit,OnDestroy {
+export class DeliveryComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private mediaSub: Subscription;
 
@@ -37,11 +37,11 @@ export class DeliveryComponent implements OnInit, AfterViewInit,OnDestroy {
   submitted = false;
 
   constructor( private cdRef: ChangeDetectorRef,
-    private mediaObserver: MediaObserver,
-    private formBuilder: FormBuilder, 
-    private deliveryService:DeliveryServiceService , 
-    private GAService: GoogleAnalyticsService, 
-    private commonDataService: CommonDataService) { }
+               private mediaObserver: MediaObserver,
+               private formBuilder: FormBuilder,
+               private deliveryService: DeliveryServiceService ,
+               private GAService: GoogleAnalyticsService,
+               private commonDataService: CommonDataService) { }
 
     ngOnInit() {
 
@@ -50,8 +50,8 @@ export class DeliveryComponent implements OnInit, AfterViewInit,OnDestroy {
           console.log(change.mqAlias);
           console.log(change.mediaQuery);
         }
-      )
-  
+      );
+
       this.detailsForm = this.formBuilder.group({
         fullName: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]+')])],
         city: ['', Validators.required],
@@ -66,7 +66,7 @@ export class DeliveryComponent implements OnInit, AfterViewInit,OnDestroy {
         notes: ['']
       });
       this.getProvinces();
-    };
+    }
 
   change = () => {
     if (this.detailsForm.valid) {
@@ -82,25 +82,25 @@ export class DeliveryComponent implements OnInit, AfterViewInit,OnDestroy {
 
   toggle1() {
     this.submitted = false;
-  }  
+  }
 
 
 
   ngAfterViewInit(){
 
-  };
+  }
 
   ngOnDestroy(){
     if (this.mediaSub){
       this.mediaSub.unsubscribe();
     }
-  };
+  }
 
   getProvinces() {
     this.deliveryService.getProvinces().subscribe(
-      (response) => { this.provincesArray = response }
-    )
-  };
+      (response) => { this.provincesArray = response; }
+    );
+  }
 
   register() {
     this.GAService.event('Next Button clicked', 'Delivery', 'Next');
