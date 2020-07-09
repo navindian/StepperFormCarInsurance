@@ -2,36 +2,36 @@
     style="color:rgb(8,56,95) ;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
     Policy Details</h1>
 <form [formGroup]="registerForm" (submit)="submit()" style="color:rgb(8,56,95)"><br>
-    
-    <div  fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.lg="space-between center">
+    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.lg="space-between center">
         <label for="city" fxFlex="40%" fxHide.xs>Start Date</label>
-    <mat-form-field appearance="outline" fxFlex="40%">
-        <mat-label>Start Date</mat-label>
-        <input id="policydate" matInput [matDatepicker]="picker" formControlName="policyDate" (dateChange)="change()" [min]="mindate">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi #picker></mat-datepicker>
-      <mat-error *ngIf="formControls.policyDate.hasError('required')">
-        This field is mandatory
-      </mat-error>
-    </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="40%">
+            <mat-label>Start Date</mat-label>
+            <input id="policydate" matInput [matDatepicker]="picker" formControlName="policyDate"
+                (dateChange)="change()" [min]="mindate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
+            <mat-error *ngIf="formControls.policyDate.hasError('required')">
+                This field is mandatory
+            </mat-error>
+        </mat-form-field>
     </div>
     <mat-divider></mat-divider>
-    <br/>
-    <div  fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.lg="space-between center">
+    <br />
+    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.lg="space-between center">
         <label for="city" fxFlex="40%" fxHide.xs>Policy Length</label>
-    <mat-form-field appearance="outline" fxFlex="40%">
-        <mat-label>Policy Length</mat-label>
-        <mat-select formControlName="policyLength" (selectionChange)="change()">
-          <mat-option>None</mat-option>
-          <mat-option *ngFor="let length of policyLength" [value]="length.value">{{length.name}}</mat-option>
-        </mat-select>
-        <mat-error *ngIf="formControls.policyLength.hasError('required')">
-            This field is mandatory
-          </mat-error>
-    </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="40%">
+            <mat-label>Policy Length</mat-label>
+            <mat-select formControlName="policyLength" (selectionChange)="change()">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let length of policyLength" [value]="length.value">{{length.name}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="formControls.policyLength.hasError('required')">
+                This field is mandatory
+            </mat-error>
+        </mat-form-field>
     </div>
     <mat-divider></mat-divider>
-    <br/>
+    <br />
     <mat-card>
         <mat-card-content>
             <mat-checkbox formControlName="check1" (change)="change()"></mat-checkbox>
@@ -41,10 +41,7 @@
     <mat-error *ngIf="((formControls.check1.touched && formControls.check1.errors) && formControls.check1.invalid)">
         This field is mandatory
     </mat-error>
-    <br/>
-    
-    
-
+    <br />
     <mat-card>
         <mat-card-content>
             <mat-checkbox formControlName="check2" (change)="change()"></mat-checkbox>
@@ -54,8 +51,6 @@
     <mat-error *ngIf="((formControls.check2.touched && formControls.check2.errors) && formControls.check2.invalid)">
         This field is mandatory
     </mat-error>
-    <br/>
-    
+    <br />
     <button mat-raised-button color="primary" matStepperNext [disabled]="!registerForm.valid">Calculate</button>
-  
 </form>

@@ -47,7 +47,7 @@ import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
 
-
+import {MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
@@ -109,7 +109,11 @@ import { MatRadioModule } from '@angular/material/radio';
     MTPLCalculatorComponent,
     LoggedInGuardGuard,
     LoggedInServiceService,
-    SummaryComponent
+    SummaryComponent,
+   {
+      provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: 'primary' },
+     }
   ],
   bootstrap: [AppComponent]
 })
