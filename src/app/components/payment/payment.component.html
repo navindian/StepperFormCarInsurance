@@ -1,7 +1,7 @@
 <h1 class="heading">Select payment option</h1>
-<div class="card bg-dark-blue">
-	<div class="card-body p-2">
-		<div fxLayout="row">
+<div fxLayout="column">
+	<mat-card class="bg-dark-blue">
+		<mat-card-content fxLayout="row" fxLayoutAlign="space-between center">
 			<div fxFlex="20" fxLayoutAlign.xs="start start">
 				<img src="../../assets/motor_policy.PNG">
 			</div>
@@ -20,76 +20,83 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
-<div fxLayout="row" fxLayout.xs="column">
-	<!-- <div fxLayout="row"> -->
-		<div fxFlex="40" fxLayoutAlign="start center" fxLayoutAlign.xs="start start">
-			<label class="text-color">Select payment method</label>
-		</div>
-		<div fxFlex="50">
-			<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between stretch" fxLayoutGap="5">
-				<!-- <div > -->
-					<mat-card>
-						<label class="radio-inner d-flex flex-sm-column">
-							<div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline">
-								<mat-radio-button color="primary" [checked]="Ppayment==='Card'" name="optradio"
-									(click)="check()" id="optradio1"></mat-radio-button>
-							</div>
-							<div class="text-center d-flex flex-sm-column align-items-center">
-								<div class="radio-img">
-									<img mat-card-image src="../../assets/credit-card.PNG">
-								</div>
-								<mat-card-content>
-									<div class="text-color">Credit/Debit card</div>
-								</mat-card-content>
-							</div>
-						</label>
-					</mat-card>
-					<mat-card>
-						<label class="radio-inner d-flex flex-sm-column">
-							<div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline">
-								<mat-radio-button color="primary" [checked]="Ppayment==='EPay'" name="optradio"
-									id="optradio2" (click)="check()"></mat-radio-button>
-							</div>
-							<div class="text-center d-flex flex-sm-column align-items-center">
-								<div class="radio-img">
-									<img mat-card-image class="img-card" src="../../assets/e-pay.PNG">
-								</div>
-								<mat-card-content>
-									<div class="text-color">ePay</div>
-								</mat-card-content>
-							</div>
-						</label>
-					</mat-card>
-				<!-- </div> -->
-				
+		</mat-card-content>
+	</mat-card>
+
+	<mat-radio-group (change)="check()">
+		<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
+			<!-- <div fxLayout="row"> -->
+			<div fxFlex="25%" fxLayoutAlign="start center" fxLayoutAlign.xs="start start">
+				<label class="text-color">Select payment method</label>
 			</div>
+
+			<mat-card fxFlex="30%">
+				<mat-card-content fxLayout="row">
+
+					<div fxFlex="40%" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10%">
+						<mat-radio-button name="payment" id="card" value="card">
+
+						</mat-radio-button>
+						<div fxLayout="column" fxLayoutGap="10%">
+							<img src="../../assets/credit-card.PNG">
+							<div>Credit/Debit</div>
+						</div>
+
+
+
+					</div>
+
+
+				</mat-card-content>
+			</mat-card>
+			<mat-card fxFlex="30%">
+				<mat-card-content fxLayout="row">
+
+					<div fxFlex="40%" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10%">
+						<mat-radio-button name="payment" id="epay" value="epay" >
+
+						</mat-radio-button>
+						<div fxLayout="column" fxLayoutGap="10%">
+							<img style="width: 200%;height: 200%;" src="../../assets/e-pay.PNG">
+							<div>ePay</div>
+						</div>
+
+
+
+					</div>
+
+
+				</mat-card-content>
+			</mat-card>
+
+
+
+			<!-- </div> -->
 		</div>
-	<!-- </div> -->	
+	</mat-radio-group>
+
 </div>
 <div *ngIf="optradio">
 	<mat-card class="payment">
 		<img mat-card-image class="img-payment" src="../../assets/user-key.png">
 		<mat-card-content>
-			<p class="card-text pl-3 text-color"
+			<p class="text-color"
 				style="text-align: justify; padding-right: 15px; padding-top: 15px; padding-bottom: 10px;">If you
 				are not the card holder, you will be asked to sign the policy with e-Signature. If you don't own an
 				e-Signature, please pay with your own card</p>
 		</mat-card-content>
 	</mat-card>
-	<mat-card class="col-lg mb-5">
+	<mat-card >
 		<!-- <mat-card-content>
 			<input type="checkbox" (change)="box($event)" id="cbox" name="cbox">
 			I declare I am owner of the card for this payment
 		</mat-card-content> -->
 		<mat-card-content>
-            <mat-checkbox (change)="box($event)" id="cbox" name="cbox"></mat-checkbox>
-            I declare I am owner of the card for this payment
-        </mat-card-content>
+			<mat-checkbox (change)="box($event)" id="cbox" name="cbox"></mat-checkbox>
+			I declare I am owner of the card for this payment
+		</mat-card-content>
 	</mat-card>
 </div>
 
-<button mat-raised-button color="primary" [disabled]="enable" (click)="action();getData()" id="paybtn"
-			name="paybtn">Buy Policy</button>
+<button mat-raised-button color="primary" [disabled]="enable" (click)="action();getData()" id="paybtn" name="paybtn">Buy
+	Policy</button>

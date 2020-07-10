@@ -1,21 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProposalComponent } from './proposal.component';
+// import { ProposalComponent } from './proposal.component';
+import { SummaryComponent } from './summary.component'; 
+
 import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ProposalComponent', () => {
-  let component: ProposalComponent;
-  let fixture: ComponentFixture<ProposalComponent>;
+  let component: SummaryComponent;
+  let fixture: ComponentFixture<SummaryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ProposalComponent],
+      declarations: [SummaryComponent],
       imports: [ReactiveFormsModule]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProposalComponent);
+    fixture = TestBed.createComponent(SummaryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
