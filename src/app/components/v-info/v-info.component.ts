@@ -1,7 +1,9 @@
+import { CommonDataService } from 'src/app/common-data.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
-import { CommonDataService } from 'src/app/common-data.service';
+
+
 
 
 
@@ -19,7 +21,8 @@ export class VInfoComponent implements OnInit {
   @Input() drivingOutsideYesNo: string;
   vehicleInfoForm: FormGroup;
   purposeList = ['Personal Use', 'Public Use'];
-  constructor(private formBuilder: FormBuilder, private commonDataService: CommonDataService, private GAService: GoogleAnalyticsService) { }
+  constructor(private formBuilder: FormBuilder, private commonDataService: CommonDataService, private GAService: GoogleAnalyticsService) 
+  { }
 
   ngOnInit(): void {
     this.vehicleInfoForm = this.formBuilder.group({
@@ -47,5 +50,6 @@ export class VInfoComponent implements OnInit {
     return this.vehicleInfoForm.controls;
   }
 }
+
 
 
