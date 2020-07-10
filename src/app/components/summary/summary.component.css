@@ -140,6 +140,9 @@ mat-card{
   .pay_margin{
     max-width: 10%;
   }
+  .btn{
+    margin-left: 5rem;
+  }
 
 
 }
@@ -160,7 +163,7 @@ mat-card{
     font-size:2vw ;
   }
   .btn{
-    margin-left: 2rem;
+    margin-left: 4rem;
   }
   .middle_text{
     margin-left: -3rem;
@@ -179,7 +182,7 @@ mat-card{
     font-size: 15px;
   }
   .btn{
-    margin-left: 2rem;
+    margin-left: 4rem;
   }
   .middle_text{
     margin-left: -5rem;
