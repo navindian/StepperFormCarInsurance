@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private loginService: LoginService,private fb:FormBuilder) {}
+  constructor(private router: Router, private loginService: LoginService, private fb: FormBuilder) {}
 
   @Output() onLoginError = new EventEmitter<any>();
   @Output() onLoginSuccess = new EventEmitter<any>();
@@ -17,22 +17,23 @@ export class LoginComponent implements OnInit {
   name: string;
   email: string;
   password: string;
-  errorMessage:string;
-  loginForm:FormGroup
+  errorMessage: string;
+  loginForm: FormGroup;
+  hide = true;
 
-  ngOnInit() :void{
-this.loginForm=this.fb.group({
-  email:['',[Validators.required]],
-  password:['',[Validators.required]]
-})
+  ngOnInit(): void{
+this.loginForm = this.fb.group({
+  email: ['', [Validators.required]],
+  password: ['', [Validators.required]]
+});
 
 
   }
   login(): void {
 
-   
-    
-    this.errorMessage=null;
+
+
+    this.errorMessage = null;
     this.loginService
       .getLoginData(
         this.loginForm.value
@@ -64,7 +65,7 @@ this.loginForm=this.fb.group({
       );
   }
 
-  redirect():void {
+  redirect(): void {
     this.asGuestLogin.emit('logged in as a guest');
   }
 }
