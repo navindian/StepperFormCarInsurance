@@ -38,9 +38,9 @@
         <mat-label for="purpose" fxFlex="60%" > What purpose does this vehicle serve?</mat-label>
         
         <mat-form-field fxFlex="40%" appearance="outline" > 
-          <mat-select formControlName="purpose" name="purpose" placeholder="--SELECT--" (change)="change()" [(ngModel)]="purposeSelected">
+          <mat-select formControlName="purpose" name="purpose" placeholder="--SELECT--" (selectionChange)="change()" [(ngModel)]="purposeSelected">
                 <mat-option selected disabled value="">--SELECT--</mat-option>
-                <mat-option *ngFor="let p of purposeList " value='p'>{{p}}</mat-option>
+                <mat-option *ngFor="let p of purposeList" value="{{p}}">{{p}}</mat-option>
           </mat-select>
             <mat-error *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
                 <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve

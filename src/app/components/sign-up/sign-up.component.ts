@@ -16,6 +16,8 @@ export class SignUpComponent implements OnInit {
   @Input() mobile: number;
   signUpForm: FormGroup;
   errorMessage: string;
+  hide = true;
+  hide1 = true;
   constructor(private fb: FormBuilder, private router: Router, private signUpService: SignUpService) { }
 
   ngOnInit(): void {
