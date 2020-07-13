@@ -30,7 +30,7 @@
                                             <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
                                             </button>
                                         <mat-error *ngIf="signUpForm.controls.confirmPassword.errors?.required">Required</mat-error>
-                                        <mat-error *ngIf="(signUpForm.errors?.misMatch && !signUpForm.controls.confirmPassword.errors?.required) && (signUpForm.controls.confirmPassword.dirty && signUpForm.controls.confirmPassword.touched)">Password did not match</mat-error>
+                                        <mat-error *ngIf="(signUpForm.controls.confirmPassword.errors?.misMatch && !signUpForm.controls.confirmPassword.errors?.required) && (signUpForm.controls.confirmPassword.dirty && signUpForm.controls.confirmPassword.touched)">Password did not match</mat-error>
                                       </mat-form-field>
                                       <mat-form-field appearance="outline" >
                                         <mat-label>Phone No.</mat-label>

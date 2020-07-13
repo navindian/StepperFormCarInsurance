@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators, RequiredValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignUpService } from './sign-up.service';
 
@@ -27,7 +27,7 @@ export class SignUpComponent implements OnInit {
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
       mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]]
-    }, { validator: passwordValidator });
+    }, { validator: this.passwordValidator });
   }
 
   register = () => {
@@ -44,12 +44,23 @@ export class SignUpComponent implements OnInit {
       console.log(this.errorMessage);
     });
   }
-}
-function passwordValidator(c: AbstractControl) {
-  const password = c.get('password');
-  const confirmPassword = c.get('confirmPassword');
-  if (password.pristine || confirmPassword.pristine) {
-    return null;
+passwordValidator = (c: AbstractControl) => {
+    console.log(1111);
+    const password = c.get('password');
+    const confirmPassword = c.get('confirmPassword');
+    if (password.pristine || confirmPassword.pristine) {
+      // c.get('confirmPassword').setErrors(null);
+      return null;
+    }
+    else{
+      if(password.value != confirmPassword.value){
+        c.get('confirmPassword').setErrors({ misMatch: true });
+      }
+      else{
+        c.get('confirmPassword').setErrors(null);
+      }
+      return password.value != confirmPassword.value ? { misMatch: true } : null;
+    }
   }
-  return password.value != confirmPassword.value ? { misMatch: true } : null;
 }
+
