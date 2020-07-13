@@ -51,6 +51,7 @@ mat-label{
 
 .bgn{
   margin-left: auto;
+ 
 }
 
 .panel {
@@ -85,11 +86,20 @@ mat-card{
   font-size: 1vw;
 }
 
+.btn_prop{
+  border:none;
+  border-radius:2rem;
+}
+.btn{
+  margin-left: auto;
+}
+
 
 @media screen and (max-width:600px){
   .middle_text{
-    margin-left: 20px;
+    margin-left: 0px;
     margin-top: 2px;
+    font-size: 18px;
   }
 
   .div_prop{
@@ -104,24 +114,23 @@ mat-card{
     margin-left: -1rem;
   }
   .pay_margin{
-    margin-left:1rem
+    margin-left:0rem
   
   }
   .checkbox_text{
     font-size: 3vw;
   }
+ 
 
 }
 
 @media screen and (min-width:600px) and (max-width:960px){
   .middle_text{
-    margin-left: -2rem;
-    margin-top: 1rem;
+    margin-left: -3rem;
+    font-size:20px;
+  
   }
 
-  .div_prop{
-    max-width: 20rem;
-  }
   .span_prop{
     font-size: 12px;
   }
@@ -130,6 +139,9 @@ mat-card{
   }
   .pay_margin{
     max-width: 10%;
+  }
+  .btn{
+    margin-left: 5rem;
   }
 
 
@@ -150,6 +162,13 @@ mat-card{
   .chechbox_text{
     font-size:2vw ;
   }
+  .btn{
+    margin-left: 4rem;
+  }
+  .middle_text{
+    margin-left: -3rem;
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width:1280px){
@@ -162,8 +181,14 @@ mat-card{
   .checkbox_text{
     font-size: 15px;
   }
+  .btn{
+    margin-left: 4rem;
+  }
+  .middle_text{
+    margin-left: -5rem;
+    font-size:18px;
+  }
 }
-/* _______________ */
 
 
 

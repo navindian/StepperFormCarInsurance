@@ -56,15 +56,15 @@ export class SummaryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.commonDataService.vehicleinfo.subscribe(data => {  this.vehicleinfo = data; });
-    this.commonDataService.insuringparty.subscribe(data => {  this.insuringparty = data; });
-    this.commonDataService.policy.subscribe(data => {  this.policy = data; });
-    this.commonDataService.installment.subscribe(data => { this.installment = data; });
-    this.commonDataService.additionalcovers.subscribe(data => { this.additionalcovers = data; });
-    this.commonDataService.contactinformation.subscribe(data => { this.contactinformation = data; });
-    this.commonDataService.deliveryinformation.subscribe(data => { this.deliveryinformation = data; });
-    this.commonDataService.personalinformation.subscribe(data => { this.personalinformation = data; });
-    this.commonDataService.vehicleownerinformation.subscribe(data => { this.vehicleownerinformation = data; });
+    this.commonDataService.vehicleinfo.subscribe(data => {  this.vehicleinfo = data; console.log(data); });
+    this.commonDataService.insuringparty.subscribe(data => {  this.insuringparty = data; console.log(data); });
+    this.commonDataService.policy.subscribe(data => {  this.policy = data; console.log(data); });
+    this.commonDataService.installment.subscribe(data => { this.installment = data; console.log(data); });
+    this.commonDataService.additionalcovers.subscribe(data => { this.additionalcovers = data; console.log(data); });
+    this.commonDataService.contactinformation.subscribe(data => { this.contactinformation = data; console.log(data); });
+    this.commonDataService.deliveryinformation.subscribe(data => { this.deliveryinformation = data; console.log(data); });
+    this.commonDataService.personalinformation.subscribe(data => { this.personalinformation = data; console.log(data); });
+    this.commonDataService.vehicleownerinformation.subscribe(data => { this.vehicleownerinformation = data; console.log(data); });
 
     this.summaryForm = this.fb.group({
       AgreeToAll: [false, Validators.requiredTrue],

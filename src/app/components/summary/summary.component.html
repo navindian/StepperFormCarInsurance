@@ -13,34 +13,33 @@
         <div fxFlex="20%">
             <h1 class="label_prop">Proposal</h1>
         </div>
-        <div fxFlex="30%" style="margin-left: auto;" class="btn">
+        <div fxFlex="30%" style="margin-left: auto;">
             <button mat-stroked-button color="primary" class="btn">send</button>
         </div>
     </div>
-
-    <!-- <div fxLayout="column" > -->
-    <div  fxLayout="column" fxLayout.xs="row"  fxLayoutGap.xs="5%">
+    
         <mat-card class="card_color">
-            <div fxFlex="20%">
-                <img src="../../../assets/motor_policy.PNG">
+            <div  fxLayout="row">
+            <div fxFlex="20%" fxFlex.xs="27%" fxFlex.sm="10%" fxLayoutGap.sm="1%" fxLayoutGap.xs="10%">
+                <img src="../../../assets/motor_policy.PNG"  alt="a car image">
             </div>
-            <div fxLayout="row" fxLayout.xs="column">
-            <div fxFlex="50%" fxFlex.md="80%" fxFlex.lg="80%" fxFlex.sm="80%" fxLayoutAlign="center">
+            <div fxLayout="row" fxLayout.xs="column" fxFlex="100%" fxLayoutGap.xs="4%">
+            <div fxFlex="60%" fxFlex.xs="40%" fxFlex.sm="60%" fxLayoutAlign="center">
                 <span class="middle_text">Motor Third Party Liability Policy</span>
             </div>
-            <div fxFlex.xs="30%" fxFlex.sm="50%" class="pay_margin"> 
+            <div fxFlex.xs="30%" fxFlex="40%" fxFlex.sm="25%" class="pay_margin"> 
                 <div class="div_prop">324<span class="span_prop">,00BGN</span></div>
                 <div>Fourth payment</div>
             </div>
           </div>
+        </div>
         </mat-card><br/>
-    </div>
-<!-- </div> -->
+
 
     <mat-card fxLayoutGap="10px">
         <div fxLayout="row">
         <div fxFlex="10%">
-            <img src="../../../assets/tick.jpg" class="tick">
+            <img src="../../../assets/tick.jpg" class="tick" alt="green tick mark image">
         </div>
         <div fxFlex="80%">
             <p class="text_prop">Premium indicated are final and include Contribution to the Gaurantee and
@@ -50,7 +49,7 @@
 
         <div fxLayout="row">
             <div fxFlex="10%">
-                <img src="../../../assets/tick.jpg" class="tick">
+                <img src="../../../assets/tick.jpg" class="tick" alt="green tick mark image">
             </div>
             <div fxFlex="80%">
                 <p class="text_prop">The insurance payment is calculated with included - 5% discount for insurance with</p>
@@ -59,7 +58,7 @@
 
         <div fxLayout="row">
             <div fxFlex="10%">
-                <img src="../../../assets/tick.jpg" class="tick">
+                <img src="../../../assets/tick.jpg" class="tick" alt="green tick mark image">
             </div>
             <div fxFlex="80%">
                 <p class="text_prop">Annual Technical Inspection Voucher</p>
@@ -89,9 +88,7 @@
                 <button mat-button color="primary" (click)=" moveToCalculator(4)" id="coveredit" name="coveredit">Edit</button>
             </div>
             <div>
-                <div *ngFor='let ele of installment.installments;let indexOfEle=index;'>
                 <mat-label>{{additionalcovers.cover}}</mat-label>
-                </div>
             </div>
        
         </mat-card><br/>
@@ -117,7 +114,7 @@
 
 
         <mat-card>
-            <div fxLayout="row" fxLayout.xs="column">
+            <div fxLayout="row" >
                 <mat-label class="label_prop">Vehicle</mat-label>
                 <button mat-button color="primary" (click)=" moveToCalculator(0)" id="vehicledit" name="vehicledit">Edit</button>
             </div>
@@ -280,11 +277,11 @@
                     <div>{{deliveryinformation.business}}</div>
                 
                 </div>
-                <div fxFlex="25%">
+                <div fxFlex="10%">
                 <mat-label class="sub_label_prop">Block</mat-label>
                 <div>{{deliveryinformation.block}}</div>
             </div>
-            <div fxFlex="25%">
+            <div fxFlex="10%">
                 <mat-label class="sub_label_prop">Apartment</mat-label>
             <div>{{deliveryinformation.appt}}</div>
                 </div>
@@ -327,9 +324,8 @@
             style="color:red">required</mat-error>
             <br/>
     </form>
-
-        <button mat-flat-button color="primary" [disabled]="summaryForm.invalid" matStepperNext (click)="saveData()">Continue to payment</button>
-
-
+    <div fxLayoutAlign.xs="center">
+        <button class="btn_prop" mat-raised-button color="primary"  [disabled]="summaryForm.invalid" matStepperNext (click)="saveData()">Continue to payment</button>
+    </div>
 
 

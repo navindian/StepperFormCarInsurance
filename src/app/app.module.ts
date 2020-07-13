@@ -46,7 +46,7 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
-
+import {MatIconModule} from '@angular/material/icon';
 import {MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
 
@@ -78,7 +78,7 @@ import { MatRadioModule } from '@angular/material/radio';
     BrowserModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     MatToolbarModule,
@@ -101,8 +101,8 @@ import { MatRadioModule } from '@angular/material/radio';
     NgxGoogleAnalyticsRouterModule,
     HttpClientModule,
     MatRadioModule,
-    FlexLayoutModule
-
+    FlexLayoutModule,
+    MatIconModule
   ],
   providers: [
     CdkStepper,
