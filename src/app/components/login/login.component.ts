@@ -14,11 +14,11 @@ export class LoginComponent implements OnInit {
   @Output() onLoginError = new EventEmitter<any>();
   @Output() onLoginSuccess = new EventEmitter<any>();
   @Output() asGuestLogin = new EventEmitter<any>();
-  name: string;
-  email: string;
-  password: string;
-  errorMessage: string;
-  loginForm: FormGroup;
+  name!: any;
+  email!: string;
+  password!: string;
+  errorMessage!: any;
+  loginForm!: FormGroup;
   hide = true;
 
   ngOnInit(): void{
@@ -30,10 +30,7 @@ this.loginForm = this.fb.group({
 
   }
   login(): void {
-
-
-
-    this.errorMessage = null;
+this.errorMessage = null;
     this.loginService
       .getLoginData(
         this.loginForm.value

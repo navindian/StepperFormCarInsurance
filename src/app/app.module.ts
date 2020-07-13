@@ -49,6 +49,7 @@ import { TabComponent } from './tab/tab.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
+import { LoginModule } from './components/login/login.module';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,6 @@ import { MatRadioModule } from '@angular/material/radio';
     TabComponent,
     AdditionalCoversComponent,
     PolicyDetailsComponent,
-    LoginComponent,
     VInfoComponent,
     Tab2Component,
     TabsComponent,
@@ -75,6 +75,7 @@ import { MatRadioModule } from '@angular/material/radio';
     OrdinalPipe
   ],
   imports: [
+    LoginModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
