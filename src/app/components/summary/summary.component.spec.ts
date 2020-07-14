@@ -1,8 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-// import { ProposalComponent } from './proposal.component';
-import { SummaryComponent } from './summary.component'; 
-
+import { SummaryComponent } from './summary.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ProposalComponent', () => {

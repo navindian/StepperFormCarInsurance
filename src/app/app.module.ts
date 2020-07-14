@@ -2,7 +2,6 @@ import { CdkStepper } from '@angular/cdk/stepper';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import 'hammerjs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -46,8 +45,8 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 import { LoggedInServiceService } from './logged-in-service.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
