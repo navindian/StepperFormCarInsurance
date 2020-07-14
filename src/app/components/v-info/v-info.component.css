@@ -18,4 +18,7 @@ form {
   
   border-radius: 50px 50px 50px 50px;
 }
-
+.header{
+  color: rgb(8,56,95);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

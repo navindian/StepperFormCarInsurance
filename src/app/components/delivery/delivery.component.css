@@ -154,8 +154,10 @@ p {
 
 .heading {
   color: rgb(12, 44, 70);
-  font-size: 40px;
+  font-size: 25px;
   padding-top: 10px;
+  font-weight: bold;
+  font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
 .heading-1 {

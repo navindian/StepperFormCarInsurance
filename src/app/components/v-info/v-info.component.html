@@ -1,45 +1,31 @@
-<h1
-    style="color:rgb(8,56,95);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-    <b>Vehicle Information</b></h1>
-
+<h1 class="header">
+    <strong>Vehicle Information</strong>
+</h1>
 <form [formGroup]="vehicleInfoForm" (submit)="submit()"><br>
-    
     <div fxLayout="row" fxLayout.lt-lg="column" >
-            <mat-label for="registrationNumber" fxFlex="60%">Vehicle Registration Number</mat-label>
-            
-        
-        
-        <mat-form-field appearance="outline" fxFlex="40%"  >
-            
-            <input matInput  id="registrationNumber" name="registrationNumber" placeholder="XX0000XX"
+       <mat-label for="registrationNumber" fxFlex="60%">Vehicle Registration Number</mat-label>
+       <mat-form-field appearance="outline" fxFlex="40%"  >
+         <input matInput  id="registrationNumber" name="registrationNumber" placeholder="XX0000XX"
                 formControlName="registrationNumber" (change)="change()" [(ngModel)]="registrationNo" >
-                
-            <mat-error
-                *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
-                <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required
-                </div>
-                <div
-                    *ngIf="formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength">
+         <mat-error *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
+            <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required</div>
+                <div *ngIf="formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength">
                     Vehicle Registartion Number Should be 8 characters </div>
-            </mat-error>
-        </mat-form-field>
+         </mat-error>
+       </mat-form-field>
     </div>
     
     <mat-divider></mat-divider><br>
     
     <div  fxLayout="row" fxLayout.lt-lg="column">
-        
-            <mat-label for="certificateNumber" fxFlex="60%"> Vehicle Certificate Number<br>
-                <a href=""><u>Where can I find this number?</u></a></mat-label>
-        
+        <mat-label for="certificateNumber" fxFlex="60%"> Vehicle Certificate Number<br>
+            <a routerlink =""><u>Where can I find this number?</u></a></mat-label>
         <mat-form-field appearance="outline"  fxFlex="40%" >
             <input matInput id="certificateNumber"  placeholder="000000000"
                 formControlName="certificateNumber" name="certificateNumber" (change)="change()" [(ngModel)]="certificateNo">
             <mat-error *ngIf="formsControl.certificateNumber.touched && formsControl.certificateNumber.errors">
-                <div *ngIf="formsControl.certificateNumber.errors.required">Vehicle Certificate Number is required
-                </div>
-                <div
-                    *ngIf="formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength">
+                <div *ngIf="formsControl.certificateNumber.errors.required">Vehicle Certificate Number is required</div>
+                <div *ngIf="formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength">
                     Vehicle Certificate Number Should be 9 characters </div>
             </mat-error>
         </mat-form-field>
@@ -49,13 +35,13 @@
     
     <div fxLayout="row" fxLayout.lt-lg="column">
         
-            <mat-label for="purpose" fxFlex="60%" > What purpose does this vehicle serve?</mat-label>
+        <mat-label for="purpose" fxFlex="60%" > What purpose does this vehicle serve?</mat-label>
         
         <mat-form-field fxFlex="40%" appearance="outline" > 
-          <mat-select formControlName="purpose" name="purpose" placeholder="--SELECT--" (change)="change()" [(ngModel)]="purposeSelected">
+          <mat-select formControlName="purpose" name="purpose" placeholder="--SELECT--" (selectionChange)="change()" [(ngModel)]="purposeSelected">
                 <mat-option selected disabled value="">--SELECT--</mat-option>
-                <mat-option *ngFor="let p of purposeList" value='p'>{{p}}</mat-option>
-            </mat-select>
+                <mat-option *ngFor="let p of purposeList" value="{{p}}">{{p}}</mat-option>
+          </mat-select>
             <mat-error *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
                 <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve
                 </div>

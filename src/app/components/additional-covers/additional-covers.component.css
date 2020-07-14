@@ -1,22 +1,22 @@
-.bestvalue {
-  margin-left: 25px;
+.bestvalue1 {
+  margin-left: -10px;
   font-size: 15px;
   text-align: center;
-  background-color: green;
+  margin-top: 20px;
 
 }
 .mon{
-  margin-top: 10px;
+ margin-top: 30px;
  font-size: 15px;
- margin-left: 10px;
+ 
 }
 .mon1{
-  padding-left: 25px;
+  padding-left: 27px;
   padding-bottom: 10px;
   font-size: 12px;
 }
 .spc {
-  margin-left: 25px ;
+  margin-left: 27px ;
   width: 100px;
   
 }
@@ -50,6 +50,7 @@
   font-size: 20px;
   font-weight: bold;
   color: rgb(8, 56, 95);
+ 
 }
 
 .cardrow {
@@ -130,54 +131,59 @@
 }
 
 @media screen and ( max-width: 450px) {
-  .mon {
-   
-    margin-left: -70px;
-    width: 200px; 
-    text-align: center;
-    padding-bottom: 10px;
-    font-size: 12px;
-    
   
+  .mon2 {
+   margin-top: 10px;
+   margin-left: -45px;
+ 
   }
-  
   .bestvalue{
-    margin-top: 30px;
-    text-align: center;
-    margin-left: -70px;
-    background-color: green;
-    
+     margin-top: 25px;
+     margin-left: -70px;
+     padding-left: 25px;
+
+     
   }
+  
   .bgn {
-    margin-left: 25px;
+    margin-left: -20px;
     color: white;
-  }
+   }
   .whitecard .months {
-    padding-left: 5%;
+ 
     margin-left: 25px;
   }
   .whitecard .num {
-    margin-left: 10px;
+    margin-left: 25px;
+  }
+  .num1 {
+  
+   margin-left: 35px;
+   width: 200px; 
   }
   .num {
-    margin-left: 30px;
+    
     font-size: 15px ;
    
   }
   .months{
-    margin-left: 40px;
+    
+    margin-left: 60px;
     font-size: 15px ;
    
   }
   .nearelm{
     font-size: 15px ;
   }
-   .middle-heading {
-   padding-top: -30;
-   margin-bottom: 9px;
-   margin-left: 30px;
-   color:white ;
-  } 
+   
+  .middle-heading1{
+    margin-left:35px;
+    max-width:500px;
+  }
+  .middle-heading {
+    margin-left: 0px;
+    padding-left: 0%;
+  }
   .col-lg-12 {
     margin-left: 200px;
   }
@@ -186,7 +192,7 @@
   }
 } 
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 767px) and (min-width: 576px) {
   
   .nearelm {
     font-size: 13px;
@@ -195,67 +201,61 @@
     font-size: 12px;
     text-align: left;
   }
-  .mon {
-    margin-top: 40px;
-    width: 300px;
-    margin-left: -100px;
-    font-size: 12px;
-   
-    
-  }
+
   .mon1 {
     
     width: 300px;
     font-size: 12px;
   }
+  .num1 {
+    margin-left: 40px;
+    width: 200px; 
+   
+   }
+   
+  
   .months{
     
     font-size: 12px;
    }
 
-  .textcolor {
-    display: none;
-  }
-  .middle-heading {
-    font-size: 20px;
-    padding-left: 1%;
-    height: 80%;
-    padding-top: 0%;
-    padding-bottom: 0%;
-  }
-  .adjust {
-    padding-left: 0%;
-    padding-top: 5%;
-  }
-  .cardrow{
-    margin-bottom: 100px;
-  
-  }
-  .spc {
-    margin-top: 0px;
-  }
-  
-}
-@media screen and (max-width: 575px) {
-  .mon1 {
-    width: 400px;
-    font-size: 12px;
-  }
-  .mon {
-    text-align: center;
-    margin-top: 10px;
-    margin-left: -120px;
-    padding-left: 0%;
-    
+ /*  .textcolor {
+    display: none; 
+  }*/
+  .middle-heading1{
+    margin-left:5px;
+    max-width:500px;
   }
   
   .bestvalue{
-    margin-top: 30px;
-    text-align: center;
-    margin-left: -70px;
-    background-color: green;
+    margin-top: 25px;
+    padding-left: 25px;
+    
+ }
+  /* .adjust {
+    padding-left: 0%;
+    padding-top: 5%;
+  } */
+  /* .cardrow{
+    margin-bottom: 100px;
+  
+  } */
+
+  
+}
+@media screen and (max-width: 575px) and (min-width: 451px) {
+  .mon2 {
+ 
+    margin-left: -45px;
    
-  }
+   }
+   .bestvalue{
+    margin-top: 25px;
+    padding-left: 25px;
+    
+ }
+ 
+
   .nextbtn {
     width: 250px;
     margin: auto;

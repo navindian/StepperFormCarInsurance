@@ -1,174 +1,198 @@
-
-.card_color{
-  background-color: rgb(8, 56, 95);
-  color:white;
-}
-
-.div_prop{
-  font-size: 30px;
-  font-weight:bold;
-}
-.span_prop{
-  font-size: 20px;
-}
-.tick {
-  width: 30px;
-  height: 20px;
-  margin-left: 0rem;
-}
-.text_prop{
-  color: rgb(8, 56, 95);
-}
+/* Styles label with specific color and size */
 .label_prop {
-  color: rgb(8, 56, 95);
-  font-family: "Trebuchet MS", Arial, sans-serif;
-  font-weight: bold;
-  margin-left: 1rem;
+	color: rgb(8, 56, 95);
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+	margin-left: 1rem;
 }
+.heading {
+	color: rgb(8, 56, 95);
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	font-weight: bold;
+}
+/* Styles button with proper margin */
+.btn {
+	float: right;
+}
+
+/* Styles card with specific background color */
+.card_color {
+	background-color: rgb(8, 56, 95);
+	color: white;
+}
+
+.div_prop {
+	font-size: 30px;
+	font-weight: bold;
+}
+.span_prop {
+	font-size: 20px;
+}
+
+/* styles image with specific alignment and text with color */
+.tick {
+	width: 30px;
+	height: 20px;
+	margin-left: 0rem;
+}
+.text_prop {
+	color: rgb(8, 56, 95);
+}
+/* styles sub headings with specific font size and color */
 .sub_label_prop {
-  font-size: small;
+	font-size: small;
+	color: rgb(8, 56, 95);
 }
-mat-label{
-  color: rgb(8, 56, 95);
-  font-size: 15px;
-}
-
-.vehicle_comp{
-  margin-left:-1rem;
+/* Allign components data properly */
+.vehicle_comp {
+	margin-left: -1rem;
 }
 
-.insuring_party{
-  margin-left:-1rem;
+.insuring_party {
+	margin-left: -1rem;
 }
 
-.vehicle_owner{
-  margin-left:-1rem;
+.vehicle_owner {
+	margin-left: -1rem;
 }
 
-.delivery_comp{
-  margin-left:-2rem;
+.delivery_comp {
+	margin-left: -2rem;
 }
-
-.bgn{
-  margin-left: auto;
-}
-
+/*Provide alignmnet to note section */
 .panel {
-  border-width: thin;
-  border-style: solid;
-  border-color: orange;
-  border-radius: 5px;
-  padding: 25px;
-  margin-bottom: 20px;
+	border-width: thin;
+	border-style: solid;
+	border-color: orange;
+	border-radius: 5px;
+	padding: 25px;
+	margin-bottom: 20px;
 }
-mat-card{
-  border: none;
+mat-card {
+	border: none;
 }
+/* Align notes image */
 .user-key {
-  width: 40px;
-  position: absolute;
-  z-index: 1;
-  top: 15px;
-  left: -25px;
+	width: 40px;
+	position: absolute;
+	z-index: 1;
+	top: 15px;
+	left: -25px;
+}
+/* aligns text in center */
+.middle_text {
+	margin-top: 15px;
+	margin-left: -10px;
+}
+/* styles edit button */
+.edit {
+	text-decoration: underline;
+	color: rgb(43, 168, 226);
+}
+/* checkbox text sizing */
+.checkbox_text {
+	font-size: 1vw;
+}
+/* styles button at bottom */
+.btn_prop {
+	border: none;
+	border-radius: 2rem;
 }
 
-.middle_text{
-  margin-top: 15px;
-  margin-left: -10px;
+/* For extra small screen */
+@media screen and (max-width: 600px) {
+	.middle_text {
+		margin-left: 0px;
+		margin-top: 2px;
+		font-size: 18px;
+	}
 
+	.div_prop {
+		max-width: 7rem;
+		font-size: 20px;
+	}
+
+	.span_prop {
+		font-size: 12px;
+	}
+	.tick {
+		margin-left: -1rem;
+	}
+	.pay_margin {
+		margin-left: 0rem;
+	}
+	.checkbox_text {
+		font-size: 3vw;
+	}
+	.btn {
+		float: left;
+		margin-left: 5rem;
+	}
 }
-.edit{
-  text-decoration: underline;
-  color:rgb(43, 168, 226)
-}
-.checkbox_text{
-  font-size: 1vw;
-}
+/* For small screen */
+@media screen and (min-width: 600px) and (max-width: 960px) {
+	.middle_text {
+		margin-left: -3rem;
+		font-size: 20px;
+	}
 
-
-@media screen and (max-width:600px){
-  .middle_text{
-    margin-left: 20px;
-    margin-top: 2px;
-  }
-
-  .div_prop{
-    max-width: 7rem;
-    font-size: 20px;
-  }
-
-  .span_prop{
-    font-size: 12px;
-  }
-  .tick{
-    margin-left: -1rem;
-  }
-  .pay_margin{
-    margin-left:1rem
-  
-  }
-  .checkbox_text{
-    font-size: 3vw;
-  }
-
-}
-
-@media screen and (min-width:600px) and (max-width:960px){
-  .middle_text{
-    margin-left: -2rem;
-    margin-top: 1rem;
-  }
-
-  .div_prop{
-    max-width: 20rem;
-  }
-  .span_prop{
-    font-size: 12px;
-  }
-  .checkbox_text{
-    font-size: 2vw;
-  }
-  .pay_margin{
-    max-width: 10%;
-  }
-
-
+	.span_prop {
+		font-size: 12px;
+	}
+	.checkbox_text {
+		font-size: 2vw;
+	}
+	.pay_margin {
+		max-width: 10%;
+	}
+	.btn {
+		margin-left: 4rem;
+		float: right;
+	}
 }
 
+/*for medium screens*/
+@media screen and (min-width: 960px) and (max-width: 1280) {
+	.btn {
+		margin-left: 20px;
+		float: right;
+	}
 
-/*for large screens*/
-@media screen and (min-width:960px) and (max-width:1280){
-  .btn{
-    margin-left: 20px;
-  }
-  .tick{
-    margin-left: 1rem;
-  }
-  .text_prop{
-    margin-left: -3rem;
-  }
-  .chechbox_text{
-    font-size:2vw ;
-  }
+	.tick {
+		margin-left: 1rem;
+	}
+	.text_prop {
+		margin-left: -3rem;
+	}
+	.chechbox_text {
+		font-size: 2vw;
+	}
+	.btn {
+		margin-left: 2rem;
+		margin-left: auto;
+	}
+	.middle_text {
+		margin-left: -3rem;
+		font-size: 18px;
+	}
 }
-
-@media screen and (min-width:1280px){
-  .tick{
-    margin-left:1rem;
-  }
-  .text_prop{
-    margin-left: 0rem;
-  }
-  .checkbox_text{
-    font-size: 15px;
-  }
+/* for large screen */
+@media screen and (min-width: 1280px) {
+	.tick {
+		margin-left: 1rem;
+	}
+	.text_prop {
+		margin-left: 0rem;
+	}
+	.checkbox_text {
+		font-size: 15px;
+	}
+	.btn {
+		float: right;
+	}
+	.middle_text {
+		margin-left: -5rem;
+		font-size: 18px;
+	}
 }
-/* _______________ */
-
-
-
-
-
-
-
-
