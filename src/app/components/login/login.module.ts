@@ -24,10 +24,7 @@ import {MatIconModule} from '@angular/material/icon';
     CommonModule,HttpClientModule ,MatIconModule,FormsModule,ReactiveFormsModule,MatCardModule,FlexLayoutModule,BrowserModule,
     BrowserAnimationsModule,MatButtonModule,MatDividerModule,MatFormFieldModule,MatInputModule,RouterModule
   ],
-  providers: [
-    
-  
-  ],
+ 
   
   exports: [HttpClientModule ,FormsModule,MatIconModule,ReactiveFormsModule,MatCardModule,FlexLayoutModule,BrowserModule,RouterModule,
     BrowserAnimationsModule,MatButtonModule,MatDividerModule,MatFormFieldModule,MatInputModule,LoginComponent
