@@ -13,12 +13,13 @@ export class PaymentComponent implements OnInit {
     private mtplPolicyService: MtplPolicyService
   ) {}
   optradio: boolean;
+  selectedPayment
   @Input() Ppayment: string;
   @Output() OnSubmission = new EventEmitter<any>();
   enable = true;
   dataToPost = {
-    PAYEE_ACCOUNT: 'karanshirsath97@gmail.com',
-	  PAYEE_NAME: 'karan',
+  PAYEE_ACCOUNT: 'karanshirsath97@gmail.com',
+	PAYEE_NAME: 'karan',
 	PAYMENT_AMOUNT: 1,
 	PAYMENT_UNITS: 'USD',
 	PAYMENT_ID: '',
@@ -37,6 +38,8 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit(): void {}
   check() {
+    console.log(this.selectedPayment);
+    
     this.optradio = true;
   }
   box(e) {
@@ -50,7 +53,11 @@ export class PaymentComponent implements OnInit {
     this.OnSubmission.emit('Payment method selected!');
   }
   getData = () => {
-    alert('Check console for see data saved at Backend');
+    if(this.selectedPayment=="epay"){
+      this.ePay()
+    }
+    else{
+alert('Check console for see data saved at Backend');
     const idObj = { id: sessionStorage.getItem('id') };
     this.mtplCalculatorService.getData(idObj).subscribe(
       res => {
@@ -68,8 +75,10 @@ export class PaymentComponent implements OnInit {
         console.log(err);
       }
     );
+    }
+    
   }
-  getData1 = () => {
+  ePay = () => {
     const form = window.document.createElement('form');
     form.setAttribute('method', 'post');
     form.setAttribute('action', 'https://api.epay.com/paymentApi/merReceive');
