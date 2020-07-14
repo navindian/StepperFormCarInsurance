@@ -58,7 +58,7 @@ this.loginForm = this.fb.group({
         },
         err => {
           console.log(err);
-
+          alert('Please validate your credentials');
           this.errorMessage = err.error.error;
           console.log(this.errorMessage);
         }

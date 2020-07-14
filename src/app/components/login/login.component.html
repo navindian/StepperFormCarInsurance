@@ -25,7 +25,9 @@
               </button>
             <mat-error *ngIf="loginForm.controls.password.errors?.required">Required</mat-error>
           </mat-form-field>
-
+          <mat-error *ngIf="errorMessage!=null">
+            {{errorMessage}}
+          </mat-error>
           <button class="example-button-row" color="primary" mat-raised-button (click)="login()" value="Login"
             [disabled]="!loginForm.valid">Login</button>
         </form>
