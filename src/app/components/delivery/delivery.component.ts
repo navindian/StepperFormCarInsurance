@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output, AfterViewInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  AfterViewInit,
+  ChangeDetectorRef,
+  OnDestroy,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { CommonDataService } from 'src/app/common-data.service';
@@ -9,10 +18,9 @@ import { MediaObserver, MediaChange } from '@angular/flex-layout';
 @Component({
   selector: 'app-delivery',
   templateUrl: './delivery.component.html',
-  styleUrls: ['./delivery.component.css']
+  styleUrls: ['./delivery.component.css'],
 })
 export class DeliveryComponent implements OnInit, AfterViewInit, OnDestroy {
-
   private mediaSub: Subscription;
 
   @Output() OnToggle = new EventEmitter();
@@ -30,43 +38,68 @@ export class DeliveryComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() Dcontact: string;
   detailsForm: FormGroup;
   provincesArray;
-  cities: string[] = ['New Delhi', 'Mumbai', 'Chennai', 'Bangalore', 'Kolkata', 'Mysore', 'Pune', 'Jaipur'];
+  cities: string[] = [
+    'New Delhi',
+    'Mumbai',
+    'Chennai',
+    'Bangalore',
+    'Kolkata',
+    'Mysore',
+    'Pune',
+    'Jaipur',
+  ];
 
   codes: number[] = [55, 86, 33, 49, 91];
 
   submitted = false;
 
-  constructor( private cdRef: ChangeDetectorRef,
-               private mediaObserver: MediaObserver,
-               private formBuilder: FormBuilder,
-               private deliveryService: DeliveryServiceService ,
-               private GAService: GoogleAnalyticsService,
-               private commonDataService: CommonDataService) { }
+  constructor(
+    private cdRef: ChangeDetectorRef,
+    private mediaObserver: MediaObserver,
+    private formBuilder: FormBuilder,
+    private deliveryService: DeliveryServiceService,
+    private GAService: GoogleAnalyticsService,
+    private commonDataService: CommonDataService
+  ) {}
 
-    ngOnInit() {
+  ngOnInit() {
+    // tslint:disable-next-line: deprecation
+    this.mediaSub = this.mediaObserver.media$.subscribe(
+      (change: MediaChange) => {
+      }
+    );
 
-      this.mediaSub = this.mediaObserver.media$.subscribe(
-        (change: MediaChange) => {
-          console.log(change.mqAlias);
-          console.log(change.mediaQuery);
-        }
-      );
-
-      this.detailsForm = this.formBuilder.group({
-        fullName: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]+')])],
-        city: ['', Validators.required],
-        pincode: ['', Validators.compose([Validators.required, Validators.maxLength(6)])],
-        street: [''],
-        number: [''],
-        block: [''],
-        entrance: [''],
-        appt: [''],
-        contact: ['', Validators.compose([Validators.required, Validators.max(999999999), Validators.min(10000000)])],
-        business: ['', Validators.required],
-        notes: ['']
-      });
-      this.getProvinces();
-    }
+    this.detailsForm = this.formBuilder.group({
+      fullName: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('^[a-zA-Z ]+'),
+        ]),
+      ],
+      city: ['', Validators.required],
+      pincode: [
+        '',
+        Validators.compose([Validators.required, Validators.maxLength(6)]),
+      ],
+      street: [''],
+      number: [''],
+      block: [''],
+      entrance: [''],
+      appt: [''],
+      contact: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.max(999999999),
+          Validators.min(10000000),
+        ]),
+      ],
+      business: ['', Validators.required],
+      notes: [''],
+    });
+    this.getProvinces();
+  }
 
   change = () => {
     if (this.detailsForm.valid) {
@@ -84,22 +117,18 @@ export class DeliveryComponent implements OnInit, AfterViewInit, OnDestroy {
     this.submitted = false;
   }
 
+  ngAfterViewInit() {}
 
-
-  ngAfterViewInit(){
-
-  }
-
-  ngOnDestroy(){
-    if (this.mediaSub){
+  ngOnDestroy() {
+    if (this.mediaSub) {
       this.mediaSub.unsubscribe();
     }
   }
 
   getProvinces() {
-    this.deliveryService.getProvinces().subscribe(
-      (response) => { this.provincesArray = response; }
-    );
+    this.deliveryService.getProvinces().subscribe((response) => {
+      this.provincesArray = response;
+    });
   }
 
   register() {
