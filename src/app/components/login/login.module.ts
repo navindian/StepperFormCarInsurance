@@ -27,14 +27,7 @@ import {LoginService} from './login.service'
     CommonModule,HttpClientModule,MatIconModule,FormsModule,ReactiveFormsModule,MatCardModule,FlexLayoutModule,BrowserModule,
     BrowserAnimationsModule,MatButtonModule,MatDividerModule,MatFormFieldModule,MatInputModule,RouterModule
   ],
-  /* providers: [
-    
-   {
-      provide: NgZone,
-      useFactory: () => new NgZone  ({  }),
-   
-     }
-  ], */
+ 
   
   exports: [
     HttpClientModule,FormsModule,MatIconModule,ReactiveFormsModule,MatCardModule,FlexLayoutModule,BrowserModule,RouterModule,
