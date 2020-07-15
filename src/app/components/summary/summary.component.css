@@ -30,6 +30,9 @@
 	font-size: 20px;
 }
 
+.error_color{
+	color:red;
+}
 /* styles image with specific alignment and text with color */
 .tick {
 	width: 30px;
