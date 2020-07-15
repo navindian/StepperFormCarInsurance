@@ -13,14 +13,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
-/* import  {NgZone} from '@angular/core'; */
+import {LoginService} from './login.service'
+ /* import  {NgZone} from '@angular/core'; */
 
 
 
 
 @NgModule({
   declarations: [LoginComponent],
+  providers: [LoginService],
   imports: [
+    
     CommonModule,HttpClientModule,MatIconModule,FormsModule,ReactiveFormsModule,MatCardModule,FlexLayoutModule,BrowserModule,
     BrowserAnimationsModule,MatButtonModule,MatDividerModule,MatFormFieldModule,MatInputModule,RouterModule
   ],
@@ -33,7 +36,8 @@ import {MatIconModule} from '@angular/material/icon';
      }
   ], */
   
-  exports: [HttpClientModule,FormsModule,MatIconModule,ReactiveFormsModule,MatCardModule,FlexLayoutModule,BrowserModule,RouterModule,
+  exports: [
+    HttpClientModule,FormsModule,MatIconModule,ReactiveFormsModule,MatCardModule,FlexLayoutModule,BrowserModule,RouterModule,
     BrowserAnimationsModule,MatButtonModule,MatDividerModule,MatFormFieldModule,MatInputModule,LoginComponent
   ]
 })

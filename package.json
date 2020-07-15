@@ -13,7 +13,7 @@
     "build-storybook": "build-storybook"
   },
   "private": true,
-  "dependencies": {
+  "peerDependencies": {
     "@angular-devkit/schematics": "^10.0.1",
     "@angular/animations": "~9.1.7",
     "@angular/cdk": "^8.1.4",
