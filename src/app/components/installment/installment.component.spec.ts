@@ -10,10 +10,9 @@ describe('InstallmentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InstallmentComponent ],
-      imports: [ReactiveFormsModule, RouterTestingModule]
-    })
-    .compileComponents();
+      declarations: [InstallmentComponent],
+      imports: [ReactiveFormsModule, RouterTestingModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

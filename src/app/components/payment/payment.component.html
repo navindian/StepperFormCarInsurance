@@ -23,7 +23,7 @@
 		</mat-card-content>
 	</mat-card>
 
-	<mat-radio-group (change)="check()">
+	<mat-radio-group (change)="check()" [(ngModel)]="selectedPayment">
 		<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
 			<!-- <div fxLayout="row"> -->
 			<div fxFlex="25%" fxLayoutAlign="start center" fxLayoutAlign.xs="start start">

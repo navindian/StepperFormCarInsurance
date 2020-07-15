@@ -35,6 +35,7 @@
     "chokidar": "^3.4.0",
     "hammerjs": "^2.0.8",
     "ngx-google-analytics": "^9.0.0",
+    "prettier": "^2.0.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
