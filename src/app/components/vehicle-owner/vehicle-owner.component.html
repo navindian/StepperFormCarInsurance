@@ -3,23 +3,9 @@
 	<mat-label fxFlex="60%">Are you the owner of this Vehicle</mat-label>
 	<!-- Radio buttons to select are you owner of vehicle -->
 	<mat-radio-group fxFlex="40%">
-		<mat-radio-button
-			id="Radios1"
-			name="owner"
-			value="Yes"
-			[checked]="Vowner === 'Yes'"
-			(click)="setradio('Yes')"
-			(change)="toggle(true)"
-			>Yes</mat-radio-button
+		<mat-radio-button id="Radios1" name="owner" value="Yes" [checked]="Vowner === 'Yes'" (click)="setradio('Yes')" (change)="toggle(true)">Yes</mat-radio-button
 		>
-		<mat-radio-button
-			id="Radios2"
-			name="owner"
-			value="No"
-			[checked]="Vowner === 'No'"
-			(click)="setradio('No')"
-			(change)="toggle(false)"
-			>No</mat-radio-button
+		<mat-radio-button id="Radios2" name="owner" value="No" [checked]="Vowner === 'No'" (click)="setradio('No')" (change)="toggle(false)">No</mat-radio-button
 		>
 	</mat-radio-group>
 </div>
@@ -27,15 +13,7 @@
 <mat-divider></mat-divider>
 <div *ngIf="isSelected('Yes')">
 	<br />
-	<button
-		mat-raised-button
-		matStepperNext
-		color="primary"
-		class="rounded"
-		id="ownerbtn1"
-		name="ownerbtn1"
-		(click)="gaTrigger()"
-		[disabled]="!button"
+	<button mat-raised-button matStepperNext color="primary" class="rounded" id="ownerbtn1" name="ownerbtn1" (click)="gaTrigger()" [disabled]="!button"
 	>
 		Next
 	</button>
@@ -50,14 +28,7 @@
 			>
 			<mat-form-field appearance="outline" fxFlex="40%">
 				<mat-label>LNCH</mat-label>
-				<input
-					matInput
-					id="lnch"
-					name="lnch"
-					placeholder="Enter your Number"
-					formControlName="lnch"
-					(change)="change()"
-					[(ngModel)]="Vlnch"
+				<input matInput id="lnch" name="lnch" placeholder="Enter your Number" formControlName="lnch" (change)="change()" [(ngModel)]="Vlnch"
 				/>
 				<mat-error
 					*ngIf="
@@ -83,44 +54,22 @@
 			<div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between">
 				<mat-form-field appearance="outline" fxFlex="30%">
 					<mat-label>First Name</mat-label>
-					<input
-						matInput
-						id="firstname"
-						name="firstname"
-						placeholder="Enter firstname"
-						formControlName="firstname"
-						[(ngModel)]="Vfirstname"
-						(change)="change()"
+					<input matInput id="firstname" name="firstname" placeholder="Enter firstname" formControlName="firstname" [(ngModel)]="Vfirstname" (change)="change()"
 					/>
 					<mat-error
-						*ngIf="
-							Details.get('fullname')
-								.get('firstname')
-								.hasError('required') &&
-							(Details.get('fullname').get('firstname').dirty ||
-								Details.get('fullname').get('firstname').touched)
+						*ngIf="Details.get('fullname').get('firstname').hasError('required') && (Details.get('fullname').get('firstname').dirty ||Details.get('fullname').get('firstname').touched)
 						"
 						class="error"
 						>This field is mandatory</mat-error
 					>
 					<mat-error
-						*ngIf="
-							Details.get('fullname')
-								.get('firstname')
-								.hasError('pattern') &&
-							(Details.get('fullname').get('firstname').dirty ||
-								Details.get('fullname').get('firstname').touched)
+						*ngIf="Details.get('fullname').get('firstname').hasError('pattern') && (Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)
 						"
 						class="error"
 						>Only alphabets allowed</mat-error
 					>
 					<mat-error
-						*ngIf="
-							Details.get('fullname')
-								.get('firstname')
-								.hasError('maxlength') &&
-							(Details.get('fullname').get('firstname').dirty ||
-								Details.get('fullname').get('firstname').touched)
+						*ngIf="Details.get('fullname').get('firstname').hasError('maxlength') && (Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)
 						"
 						class="error"
 						>Max length can be 20 characters</mat-error
@@ -128,22 +77,10 @@
 				</mat-form-field>
 				<mat-form-field appearance="outline" fxFlex="30%">
 					<mat-label>Last Name</mat-label>
-					<input
-						matInput
-						id="lastname"
-						name="lastname"
-						placeholder="Enter lastname"
-						formControlName="lastname"
-						[(ngModel)]="Vlastname"
-						(change)="change()"
+					<input matInput id="lastname" name="lastname" placeholder="Enter lastname" formControlName="lastname" [(ngModel)]="Vlastname" (change)="change()"
 					/>
 					<mat-error
-						*ngIf="
-							Details.get('fullname')
-								.get('lastname')
-								.hasError('pattern') &&
-							(Details.get('fullname').get('lastname').dirty ||
-								Details.get('fullname').get('lastname').touched)
+						*ngIf="Details.get('fullname').get('lastname').hasError('pattern') && (Details.get('fullname').get('lastname').dirty || Details.get('fullname').get('lastname').touched)
 						"
 						class="error"
 						>Only alphabets allowed</mat-error
@@ -151,44 +88,24 @@
 				</mat-form-field>
 				<mat-form-field appearance="outline" fxFlex="30%">
 					<mat-label>Sur Name</mat-label>
-					<input
-						matInput
-						[(ngModel)]="Vsurname"
-						id="surname"
-						placeholder="Enter lastname"
-						formControlName="surname"
-						name="suname"
-						(change)="change()"
+					<input matInput [(ngModel)]="Vsurname" id="surname" placeholder="Enter lastname" formControlName="surname" name="suname" (change)="change()"
 					/>
 					<mat-error
-						*ngIf="
-							Details.get('fullname')
-								.get('surname')
-								.hasError('required') &&
-							(Details.get('fullname').get('surname').dirty ||
-								Details.get('fullname').get('surname').touched)
+						*ngIf="Details.get('fullname').get('surname').hasError('required') && (Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)
 						"
 						class="error"
 						>This field is mandatory</mat-error
 					>
 					<mat-error
-						*ngIf="
-							Details.get('fullname')
-								.get('surname')
-								.hasError('pattern') &&
-							(Details.get('fullname').get('surname').dirty ||
-								Details.get('fullname').get('surname').touched)
+						*ngIf="Details.get('fullname').get('surname').hasError('pattern') &&
+							(Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)
 						"
 						class="error"
 						>Only alphabets allowed</mat-error
 					>
 					<mat-error
-						*ngIf="
-							Details.get('fullname')
-								.get('surname')
-								.hasError('maxlength') &&
-							(Details.get('fullname').get('surname').dirty ||
-								Details.get('fullname').get('surname').touched)
+						*ngIf="Details.get('fullname').get('surname').hasError('maxlength') &&
+							(Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)
 						"
 						class="error"
 						>Max length can be 20 characters</mat-error
@@ -202,44 +119,23 @@
 			<div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between">
 				<mat-form-field appearance="outline" fxFlex="30%">
 					<mat-label>First Name</mat-label>
-					<input
-						matInput
-						id="firstnameeng"
-						name="firstnameeng"
-						placeholder="Enter firstname"
-						formControlName="firstnameeng"
-						[(ngModel)]="Vfirstnameeng"
-						(change)="change()"
+					<input matInput id="firstnameeng" name="firstnameeng" placeholder="Enter firstname" formControlName="firstnameeng" [(ngModel)]="Vfirstnameeng" (change)="change()"
 					/>
 					<mat-error
-						*ngIf="
-							Details.get('fullnameeng')
-								.get('firstnameeng')
-								.hasError('required') &&
-							(Details.get('fullnameeng').get('firstnameeng').dirty ||
-								Details.get('fullnameeng').get('firstnameeng').touched)
+						*ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('required') && (Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)
 						"
 						class="error"
 						>This field is mandatory</mat-error
 					>
 					<mat-error
-						*ngIf="
-							Details.get('fullnameeng')
-								.get('firstnameeng')
-								.hasError('pattern') &&
-							(Details.get('fullnameeng').get('firstnameeng').dirty ||
-								Details.get('fullnameeng').get('firstnameeng').touched)
+						*ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('pattern') &&
+							(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)
 						"
 						class="error"
 						>Only alphabets allowed</mat-error
 					>
 					<mat-error
-						*ngIf="
-							Details.get('fullnameeng')
-								.get('firstnameeng')
-								.hasError('maxlength') &&
-							(Details.get('fullnameeng').get('firstnameeng').dirty ||
-								Details.get('fullnameeng').get('firstnameeng').touched)
+						*ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('maxlength') && (Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)
 						"
 						class="error"
 						>Max length can be 20 characters</mat-error
@@ -247,66 +143,37 @@
 				</mat-form-field>
 				<mat-form-field appearance="outline" fxFlex="30%">
 					<mat-label>Last Name</mat-label>
-					<input
-						matInput
-						id="lastnameeng"
-						name="lastnameeng"
-						placeholder="Enter lastname"
-						formControlName="lastnameeng"
-						[(ngModel)]="Vlastnameeng"
-						(change)="change()"
+					<input matInput id="lastnameeng" name="lastnameeng" placeholder="Enter lastname" formControlName="lastnameeng" [(ngModel)]="Vlastnameeng" (change)="change()"
 					/>
 					<mat-error
 						*ngIf="
-							Details.get('fullnameeng')
-								.get('lastnameeng')
-								.hasError('pattern') &&
-							(Details.get('fullnameeng').get('lastnameeng').dirty ||
-								Details.get('fullnameeng').get('lastnameeng').touched)
+							Details.get('fullnameeng').get('lastnameeng').hasError('pattern') &&
+							(Details.get('fullnameeng').get('lastnameeng').dirty || Details.get('fullnameeng').get('lastnameeng').touched)
 						"
 						class="error"
 						>Only alphabets allowed</mat-error
 					>
 				</mat-form-field>
 				<mat-form-field appearance="outline" fxFlex="30%">
-					<input
-						matInput
-						[(ngModel)]="Vsurnameeng"
-						id="surnameeng"
-						placeholder="Enter surname"
-						formControlName="surnameeng"
-						name="sunameeng"
-						(change)="change()"
+					<input matInput [(ngModel)]="Vsurnameeng" id="surnameeng" placeholder="Enter surname" formControlName="surnameeng" name="sunameeng" (change)="change()"
 					/>
 					<mat-error
-						*ngIf="
-							Details.get('fullnameeng')
-								.get('surnameeng')
-								.hasError('required') &&
-							(Details.get('fullnameeng').get('surnameeng').dirty ||
-								Details.get('fullnameeng').get('surnameeng').touched)
+						*ngIf="Details.get('fullnameeng').get('surnameeng').hasError('required') &&
+							(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)
 						"
 						class="error"
 						>This field is mandatory</mat-error
 					>
 					<mat-error
-						*ngIf="
-							Details.get('fullnameeng')
-								.get('surnameeng')
-								.hasError('pattern') &&
-							(Details.get('fullnameeng').get('surnameeng').dirty ||
-								Details.get('fullnameeng').get('surnameeng').touched)
+						*ngIf="Details.get('fullnameeng').get('surnameeng').hasError('pattern') &&
+							(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)
 						"
 						class="error"
 						>Only alphabets allowed</mat-error
 					>
 					<mat-error
-						*ngIf="
-							Details.get('fullnameeng')
-								.get('surnameeng')
-								.hasError('maxlength') &&
-							(Details.get('fullnameeng').get('surnameeng').dirty ||
-								Details.get('fullnameeng').get('surnameeng').touched)
+						*ngIf="Details.get('fullnameeng').get('surnameeng').hasError('maxlength') &&
+							(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)
 						"
 						class="error"
 						>Max length can be 20 characters</mat-error
@@ -332,12 +199,7 @@
 			<mat-label for="citizen" fxFlex="60%" class="label">Citizenship</mat-label>
 			<mat-form-field appearance="outline" fxFlex="40%">
 				<mat-label>Citizenship</mat-label>
-				<mat-select
-					id="citizen"
-					name="citizen"
-					formControlName="citizen"
-					[(ngModel)]="Vcitizen"
-					(change)="change()"
+				<mat-select id="citizen" name="citizen" formControlName="citizen" [(ngModel)]="Vcitizen" (change)="change()"
 				>
 					<mat-option selected disabled value="">--SELECT--</mat-option>
 					<mat-option *ngFor="let c of citizens" [value]="c">{{ c }}</mat-option>
@@ -357,15 +219,7 @@
 			<label for="birth" fxFlex="60%" class="label">Birth Date</label>
 			<mat-form-field appearance="outline" fxFlex="40%">
 				<mat-label>Birth Date</mat-label>
-				<input
-					matInput
-					[matDatepicker]="picker"
-					id="birth"
-					name="birth"
-					placeholder="Enter Birth date"
-					formControlName="birth"
-					(change)="change()"
-					[ngModel]="Vdob | date: 'yyyy-MM-dd'"
+				<input matInput [matDatepicker]="picker" id="birth" name="birth" placeholder="Enter Birth date" formControlName="birth" (change)="change()" [ngModel]="Vdob | date: 'yyyy-MM-dd'"
 				/>
 				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
 				<mat-datepicker #picker></mat-datepicker>
@@ -387,12 +241,7 @@
 			<mat-label for="city" fxFlex="40%" class="label">City</mat-label>
 			<mat-form-field appearance="outline" fxFlex="30%">
 				<mat-label>City</mat-label>
-				<mat-select
-					id="sel1"
-					name="city"
-					formControlName="city"
-					[(ngModel)]="Vcity"
-					(change)="change()"
+				<mat-select id="sel1" name="city" formControlName="city" [(ngModel)]="Vcity" (change)="change()"
 				>
 					<mat-option selected disabled value="">--select--</mat-option>
 					<mat-option *ngFor="let city of cities" [value]="city">{{
@@ -409,14 +258,7 @@
 				>
 			</mat-form-field>
 			<mat-form-field appearance="outline" fxFlex="20%">
-				<input
-					matInput
-					[(ngModel)]="Vpincode"
-					placeholder="1000"
-					(change)="change()"
-					formControlName="pincode"
-					id="pincode"
-					name="pincode"
+				<input matInput [(ngModel)]="Vpincode" placeholder="1000" (change)="change()" formControlName="pincode" id="pincode" name="pincode"
 				/>
 				<mat-error
 					*ngIf="
@@ -433,13 +275,7 @@
 			<mat-label for="s&n" fxFlex="40%" class="label">Street & Number </mat-label>
 			<mat-form-field appearance="outline" fxFlex="30%">
 				<mat-label>Street</mat-label>
-				<input
-					matInput
-					[(ngModel)]="Vstreet"
-					formControlName="street"
-					(change)="change()"
-					id="street"
-					name="street"
+				<input matInput [(ngModel)]="Vstreet" formControlName="street" (change)="change()" id="street" name="street"
 				/>
 				<mat-error
 					*ngIf="
@@ -452,13 +288,7 @@
 			</mat-form-field>
 			<mat-form-field appearance="outline" fxFlex="20%">
 				<mat-label>Number</mat-label>
-				<input
-					matInput
-					[(ngModel)]="VNo"
-					formControlName="No"
-					(change)="change()"
-					id="No"
-					name="No"
+				<input matInput [(ngModel)]="VNo" formControlName="No" (change)="change()" id="No" name="No"
 				/>
 				<mat-error
 					*ngIf="
@@ -476,48 +306,22 @@
 				>Block Entrance & Apartment
 			</mat-label>
 			<mat-form-field appearance="outline" fxFlex="15%">
-				<input
-					matInput
-					id="block"
-					name="block"
-					[(ngModel)]="Vblock"
-					(change)="change()"
-					formControlName="block"
+				<input matInput id="block" name="block" [(ngModel)]="Vblock" (change)="change()" formControlName="block"
 				/>
 				<mat-hint>Optional</mat-hint>
 			</mat-form-field>
 			<mat-form-field appearance="outline" fxFlex="15%">
-				<input
-					matInput
-					id="entrance"
-					name="entrance"
-					[(ngModel)]="Ventrance"
-					(change)="change()"
-					formControlName="entrance"
+				<input matInput id="entrance" name="entrance" [(ngModel)]="Ventrance" (change)="change()" formControlName="entrance"
 				/>
 				<mat-hint>Optional</mat-hint>
 			</mat-form-field>
 			<mat-form-field appearance="outline" fxFlex="15%">
-				<input
-					matInput
-					id="appartment"
-					name="appartment"
-					[(ngModel)]="Vappartment"
-					(change)="change()"
-					formControlName="appartment"
+				<input matInput id="appartment" name="appartment" [(ngModel)]="Vappartment" (change)="change()" formControlName="appartment"
 				/>
 				<mat-hint>Optional</mat-hint>
 			</mat-form-field>
 		</div>
-		<button
-			mat-raised-button
-			matStepperNext
-			color="primary"
-			type="submit"
-			class="rounded"
-			id="ownerbtn2"
-			name="ownerbtn2"
-			[disabled]="!Details.valid"
+		<button mat-raised-button matStepperNext color="primary" type="submit" class="rounded" id="ownerbtn2" name="ownerbtn2" [disabled]="!Details.valid"
 		>
 			Next
 		</button>

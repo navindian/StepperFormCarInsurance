@@ -25,10 +25,8 @@ policyLength = [
 { value: 12, name: '12 Months' },
 ];
 
-constructor(
-private formBuilder: FormBuilder,
-private commonDataService: CommonDataService,
-private GAService: GoogleAnalyticsService
+constructor(private formBuilder: FormBuilder, private commonDataService: CommonDataService,
+            private GAService: GoogleAnalyticsService
 ) {}
 
 ngOnInit() {
@@ -55,10 +53,7 @@ this.mindate =
 '' + this.todaydate.getFullYear() + '-' + this.month + '-' + this.day;
 }
 submit = () => {
-this.GAService.event(
-'Calculate Button clicked',
-'Policy Details',
-'Calculate'
+this.GAService.event('Calculate Button clicked', 'Policy Details', 'Calculate'
 );
 
 this.commonDataService.policy.next(this.registerForm.value);

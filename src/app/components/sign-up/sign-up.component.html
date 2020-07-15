@@ -5,30 +5,16 @@
 			<div fxFlex.gt-xs="40%">
 				<mat-card>
 					<mat-card-content>
-						<div
-							fxLayout="column"
-							fxLayoutWrap
-							fxLayoutGap="0.5%"
-							fxLayoutAlign="center stretch"
+						<div fxLayout="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center stretch"
 						>
 							<div fxFlex="40%">
 								<h1 class="heading" fxLayoutAlign="center">Sign Up</h1>
-								<form
-									fxLayout="column"
-									fxLayoutAlign="center"
-									[formGroup]="signUpForm"
-								>
+								<form fxLayout="column" fxLayoutAlign="center" [formGroup]="signUpForm">
 									<mat-form-field appearance="outline">
 										<mat-label>Email</mat-label>
-										<input
-											matInput
-											placeholder="Email"
-											id="email"
-											name="email"
-											formControlName="email"
+										<input matInput placeholder="Email" id="email" name="email" formControlName="email"
 										/>
-										<mat-error
-											*ngIf="signUpForm.controls.email.errors?.required"
+										<mat-error *ngIf="signUpForm.controls.email.errors?.required"
 											>Required</mat-error
 										>
 										<mat-error *ngIf="signUpForm.controls.email.errors?.pattern"
@@ -37,95 +23,49 @@
 									</mat-form-field>
 									<mat-form-field appearance="outline">
 										<mat-label>Password</mat-label>
-										<input
-											matInput
-											placeholder="Password"
-											id="password"
-											name="password"
-											formControlName="password"
-											[type]="hide ? 'password' : 'text'"
+										<input matInput placeholder="Password" id="password" name="password" formControlName="password" [type]="hide ? 'password' : 'text'"
 										/>
-										<button
-											mat-icon-button
-											matSuffix
-											(click)="hide = !hide"
-											[attr.aria-label]="'Hide password'"
-											[attr.aria-pressed]="hide"
+										<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"
 										>
-											<mat-icon>{{
-												hide ? "visibility_off" : "visibility"
-											}}</mat-icon>
+											<mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
 										</button>
-										<mat-error
-											*ngIf="signUpForm.controls.password.errors?.required"
+										<mat-error *ngIf="signUpForm.controls.password.errors?.required"
 											>Required</mat-error
 										>
 									</mat-form-field>
 									<mat-form-field appearance="outline">
 										<mat-label>Confirm Password</mat-label>
-										<input
-											matInput
-											placeholder="Confirm Password"
-											id="confirmPassword"
-											name="confirmPassword"
-											formControlName="confirmPassword"
-											[type]="hide1 ? 'password' : 'text'"
+										<input matInput placeholder="Confirm Password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword" [type]="hide1 ? 'password' : 'text'"
 										/>
-										<button
-											mat-icon-button
-											matSuffix
-											(click)="hide1 = !hide1"
-											[attr.aria-label]="'Hide password'"
-											[attr.aria-pressed]="hide"
+										<button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"
 										>
-											<mat-icon>{{
-												hide1 ? "visibility_off" : "visibility"
-											}}</mat-icon>
+											<mat-icon>{{ hide1 ? "visibility_off" : "visibility" }}</mat-icon>
 										</button>
 										<mat-error
-											*ngIf="
-												signUpForm.controls.confirmPassword.errors?.required
-											"
+											*ngIf="signUpForm.controls.confirmPassword.errors?.required"
 											>Required</mat-error
 										>
 										<mat-error
-											*ngIf="
-												signUpForm.controls.confirmPassword.errors?.misMatch &&
-												!signUpForm.controls.confirmPassword.errors?.required &&
-												signUpForm.controls.confirmPassword.dirty &&
-													signUpForm.controls.confirmPassword.touched
+											*ngIf="signUpForm.controls.confirmPassword.errors?.misMatch && !signUpForm.controls.confirmPassword.errors?.required && signUpForm.controls.confirmPassword.dirty && signUpForm.controls.confirmPassword.touched
 											"
 											>Password did not match</mat-error
 										>
 									</mat-form-field>
 									<mat-form-field appearance="outline">
 										<mat-label>Phone No.</mat-label>
-										<input
-											matInput
-											placeholder="Phone No."
-											id="mobile"
-											name="mobile"
-											formControlName="mobile"
+										<input matInput placeholder="Phone No." id="mobile" name="mobile" formControlName="mobile"
 										/>
-										<mat-error
-											*ngIf="signUpForm.controls.mobile.errors?.required"
+										<mat-error *ngIf="signUpForm.controls.mobile.errors?.required"
 											>Required</mat-error
 										>
 										<mat-error
-											*ngIf="
-												signUpForm.controls.mobile.errors?.minlength ||
-												signUpForm.controls.mobile.errors?.maxlength
+											*ngIf="signUpForm.controls.mobile.errors?.minlength || signUpForm.controls.mobile.errors?.maxlength
 											"
 											>Enter valid phone No.</mat-error
 										>
 									</mat-form-field>
 
-									<button
-										color="primary"
-										mat-raised-button
-										(click)="register()"
-										value="Login"
-										[disabled]="!signUpForm.valid"
+									<button color="primary" mat-raised-button (click)="register()" value="Login" [disabled]="!signUpForm.valid"
 									>
 										Register
 									</button>

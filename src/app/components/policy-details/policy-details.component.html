@@ -1,27 +1,15 @@
 <!-- heading section -->
 <h1 class="heading">Policy Details</h1>
 <!-- policy details form and form fields -->
-<form
-	[formGroup]="registerForm"
-	(submit)="submit()"
-	class="form_elements_color"
+<form [formGroup]="registerForm" (submit)="submit()" class="form_elements_color"
 >
 	<br />
-	<div
-		fxLayout="row"
-		fxLayout.lt-lg="column"
-		fxLayoutAlign.lg="space-between center"
+	<div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.lg="space-between center"
 	>
 		<mat-label for="city" fxFlex="40%" fxHide.xs>Start Date</mat-label>
 		<mat-form-field appearance="outline" fxFlex="40%">
 			<mat-label>Start Date</mat-label>
-			<input
-				id="policydate"
-				matInput
-				[matDatepicker]="picker"
-				formControlName="policyDate"
-				(dateChange)="change()"
-				[min]="mindate"
+			<input id="policydate" matInput [matDatepicker]="picker" formControlName="policyDate" (dateChange)="change()" [min]="mindate"
 			/>
 			<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
 			<mat-datepicker touchUi #picker></mat-datepicker>
@@ -32,10 +20,7 @@
 	</div>
 	<mat-divider></mat-divider>
 	<br />
-	<div
-		fxLayout="row"
-		fxLayout.lt-lg="column"
-		fxLayoutAlign.lg="space-between center"
+	<div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.lg="space-between center"
 	>
 		<mat-label for="city" fxFlex="40%" fxHide.xs>Policy Length</mat-label>
 		<mat-form-field appearance="outline" fxFlex="40%">
@@ -62,10 +47,7 @@
 		</mat-card-content>
 	</mat-card>
 	<mat-error
-		*ngIf="
-			formControls.check1.touched &&
-			formControls.check1.errors &&
-			formControls.check1.invalid
+		*ngIf="formControls.check1.touched && formControls.check1.errors && formControls.check1.invalid
 		"
 	>
 		This field is mandatory
@@ -78,20 +60,13 @@
 		</mat-card-content>
 	</mat-card>
 	<mat-error
-		*ngIf="
-			formControls.check2.touched &&
-			formControls.check2.errors &&
-			formControls.check2.invalid
+		*ngIf="formControls.check2.touched && formControls.check2.errors && formControls.check2.invalid
 		"
 	>
 		This field is mandatory
 	</mat-error>
 	<br />
-	<button
-		mat-raised-button
-		color="primary"
-		matStepperNext
-		[disabled]="!registerForm.valid"
+	<button mat-raised-button color="primary" matStepperNext [disabled]="!registerForm.valid"
 	>
 		Calculate
 	</button>

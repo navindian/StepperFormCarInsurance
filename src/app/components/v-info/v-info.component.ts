@@ -16,10 +16,8 @@ export class VInfoComponent implements OnInit {
 @Input() drivingOutsideYesNo: string;
 vehicleInfoForm: FormGroup;
 purposeList = ['Personal Use', 'Public Use'];
-constructor(
-private formBuilder: FormBuilder,
-private commonDataService: CommonDataService,
-private GAService: GoogleAnalyticsService
+constructor(private formBuilder: FormBuilder, private commonDataService: CommonDataService,
+            private GAService: GoogleAnalyticsService
 ) {}
 // Form field validators
 ngOnInit(): void {

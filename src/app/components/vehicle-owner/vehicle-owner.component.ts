@@ -9,10 +9,8 @@ templateUrl: './vehicle-owner.component.html',
 styleUrls: ['./vehicle-owner.component.css'],
 })
 export class VehicleOwnerComponent implements OnInit {
-constructor(
-private formBuilder: FormBuilder,
-private GAService: GoogleAnalyticsService,
-private commonDataService: CommonDataService
+constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService,
+            private commonDataService: CommonDataService
 ) {}
 
 @Output() OnToggle = new EventEmitter();
@@ -39,14 +37,7 @@ private commonDataService: CommonDataService
 
 Details: FormGroup;
 citizens = ['Indian', 'American', 'African'];
-cities = [
-'Hyderabad',
-'Mumbai',
-'Pune',
-'Chennai',
-'Bangalore',
-'Goa',
-'Maharashtra',
+cities = ['Hyderabad', 'Mumbai', 'Pune', 'Chennai', 'Bangalore', 'Goa', 'Maharashtra',
 ];
 private selectedLink = 'Yes';
 button = false;

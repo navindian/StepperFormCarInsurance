@@ -13,33 +13,32 @@ export class PaymentComponent implements OnInit {
     private mtplPolicyService: MtplPolicyService
   ) {}
   optradio: boolean;
-  selectedPayment
+  selectedPayment;
   @Input() Ppayment: string;
   @Output() OnSubmission = new EventEmitter<any>();
   enable = true;
   dataToPost = {
-  PAYEE_ACCOUNT: 'karanshirsath97@gmail.com',
-	PAYEE_NAME: 'karan',
-	PAYMENT_AMOUNT: 1,
-	PAYMENT_UNITS: 'USD',
-	PAYMENT_ID: '',
-	STATUS_URL: 'https://api.epay.com/pay_result.jsp',
-	PAYMENT_URL: 'https://api.epay.com/pay_result1.jsp',
-	PAYMENT_URL_METHOD: 'post',
-	NOPAYMENT_URL: 'https://api.epay.com/pay_result1.jsp',
-	NOPAYMENT_URL_METHOD: 'post',
-	SUGGESTED_MEMO: 'abc',
-	SUGGESTED_MEMO_NOCHANGE: '',
-	FORCED_PAYER_ACCOUNT: '',
-	INTERFACE_LANGUAGE: 'EN_US',
-	CHARACTER_ENCODING: 'UTF-8',
-  V2_HASH: '96511492bb663818bfb70fc8c51126b0'
-  };
+PAYEE_ACCOUNT: 'karanshirsath97@gmail.com',
+PAYEE_NAME: 'karan',
+PAYMENT_AMOUNT: 1,
+PAYMENT_UNITS: 'USD',
+PAYMENT_ID: '',
+STATUS_URL: 'https://api.epay.com/pay_result.jsp',
+PAYMENT_URL: 'https://api.epay.com/pay_result1.jsp',
+PAYMENT_URL_METHOD: 'post',
+NOPAYMENT_URL: 'https://api.epay.com/pay_result1.jsp',
+NOPAYMENT_URL_METHOD: 'post',
+SUGGESTED_MEMO: 'abc',
+SUGGESTED_MEMO_NOCHANGE: '',
+FORCED_PAYER_ACCOUNT: '',
+INTERFACE_LANGUAGE: 'EN_US',
+CHARACTER_ENCODING: 'UTF-8',
+V2_HASH: '96511492bb663818bfb70fc8c51126b0'
+};
 
   ngOnInit(): void {}
   check() {
     console.log(this.selectedPayment);
-    
     this.optradio = true;
   }
   box(e) {
@@ -53,13 +52,13 @@ export class PaymentComponent implements OnInit {
     this.OnSubmission.emit('Payment method selected!');
   }
   getData = () => {
-    if(this.selectedPayment=="epay"){
-      this.ePay()
+    if (this.selectedPayment === 'epay'){
+      this.ePay();
     }
     else{
 alert('Check console for see data saved at Backend');
-    const idObj = { id: sessionStorage.getItem('id') };
-    this.mtplCalculatorService.getData(idObj).subscribe(
+const idObj = { id: sessionStorage.getItem('id') };
+this.mtplCalculatorService.getData(idObj).subscribe(
       res => {
         console.log(res);
       },
@@ -67,7 +66,7 @@ alert('Check console for see data saved at Backend');
         console.log(err);
       }
     );
-    this.mtplPolicyService.getData(idObj).subscribe(
+this.mtplPolicyService.getData(idObj).subscribe(
       res => {
         console.log(res);
       },
@@ -76,7 +75,7 @@ alert('Check console for see data saved at Backend');
       }
     );
     }
-    
+
   }
   ePay = () => {
     const form = window.document.createElement('form');

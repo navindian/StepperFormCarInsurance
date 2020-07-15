@@ -25,10 +25,7 @@ errorMessage: string;
 hide = true;
 hide1 = true;
 
-constructor(
-private fb: FormBuilder,
-private router: Router,
-private signUpService: SignUpService
+constructor(private fb: FormBuilder, private router: Router, private signUpService: SignUpService
 ) {}
 
 // validators for form elements
