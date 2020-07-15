@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonDataService } from '../common-data.service';
 @Component({
   selector: 'app-stepper',
@@ -13,41 +13,51 @@ export class StepperComponent implements OnInit {
   addressForm: FormGroup;
   toggle = false;
 
-  constructor(private _formBuilder: FormBuilder, private _commonData: CommonDataService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private commonData: CommonDataService
+  ) {}
 
-  ngOnInit(): void {this.personalInformation = this._formBuilder.group({
-    first: ['', [Validators.required, Validators.pattern(/^[A-z][A-z]+$/)]],
-    middle: ['', ],
-    last: ['', [Validators.required, Validators.pattern(/^[A-z][A-z]+$/)]],
-    gender: ['', Validators.required],
-    birth: ['', Validators.required],
-    email: ['', [Validators.required, Validators.pattern(/^[A-z][A-z0-9]+(@)[A-z]+(.com)$/)]],
-    SSN: ['', Validators.required]
-  });
+  ngOnInit(): void {
+    this.personalInformation = this.formBuilder.group({
+      first: ['', [Validators.required, Validators.pattern(/^[A-z][A-z]+$/)]],
+      middle: [''],
+      last: ['', [Validators.required, Validators.pattern(/^[A-z][A-z]+$/)]],
+      gender: ['', Validators.required],
+      birth: ['', Validators.required],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[A-z][A-z0-9]+(@)[A-z]+(.com)$/)
+        ]
+      ],
+      SSN: ['', Validators.required]
+    });
 
-
-                    this.addressForm = this._formBuilder.group({
-    mailingAddress: ['', Validators.required],
-    city: ['', Validators.required],
-    state: ['', Validators.required],
-    phoneNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-
-  });
-
+    this.addressForm = this.formBuilder.group({
+      mailingAddress: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      phoneNo: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(10)
+        ]
+      ]
+    });
   }
-  checked(event){
-this.status = event.checked;
-
+  checked(event) {
+    this.status = event.checked;
   }
-  onSubmit(){
+  onSubmit() {
     console.log(this.personalInformation.value);
     console.log(this.addressForm.value);
-    this._commonData.formData.next(this.personalInformation.value);
-
-
-
+    this.commonData.formData.next(this.personalInformation.value);
   }
   courseReg(data) {
-    console.log(data,'stepper');
+    console.log(data, 'stepper');
   }
 }

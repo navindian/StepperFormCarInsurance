@@ -1,4 +1,10 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import { MatStepper } from '@angular/material/stepper';
 
 @Component({
@@ -7,8 +13,7 @@ import { MatStepper } from '@angular/material/stepper';
   styleUrls: ['./mtpl-policy.component.css']
 })
 export class MTPLPolicyComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
   @Output() switchTab = new EventEmitter();
   @ViewChild('stepper') stepper: MatStepper;
   toggle1 = false;
@@ -17,17 +22,16 @@ export class MTPLPolicyComponent implements OnInit {
   toggle4 = false;
   toggle5 = true;
   toggle6 = true;
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  switch = (index) => {
+  switch = index => {
     this.switchTab.emit(index);
   }
-  move = (index) => {
+  move = index => {
     this.stepper.selectedIndex = index;
   }
 
-  change = (data) => {
+  change = data => {
     console.log(data);
   }
 }
