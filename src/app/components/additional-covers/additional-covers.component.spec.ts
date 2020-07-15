@@ -9,10 +9,9 @@ describe('AdditionalCoversComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdditionalCoversComponent ],
-      imports: [ReactiveFormsModule]
-    })
-    .compileComponents();
+      declarations: [AdditionalCoversComponent],
+      imports: [ReactiveFormsModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

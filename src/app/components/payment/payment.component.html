@@ -3,7 +3,7 @@
   <mat-card class="bg-dark-blue">
     <mat-card-content fxLayout="row" fxLayoutAlign="space-between center">
       <div fxFlex="20" fxLayoutAlign.xs="start start">
-        <img src="../../assets/motor_policy.PNG" alt="Car image"/>
+        <img src="../../assets/motor_policy.PNG" alt="car img"/>
       </div>
       <div fxFlex="80">
         <div fxLayout="row" fxLayout.xs="column">
@@ -20,17 +20,17 @@
       </div>
     </mat-card-content>
   </mat-card>
-  <mat-radio-group (change)="check()">
+  <mat-radio-group (change)="check()" [(ngModel)]="selectedPayment">
     <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
       <div fxFlex="25%" fxLayoutAlign="start center" fxLayoutAlign.xs="start start">
         <label class="text-color">Select payment method</label>
       </div>
-	  <mat-card fxFlex="30%">
+      <mat-card fxFlex="30%">
         <mat-card-content fxLayout="row">
           <div fxFlex="40%" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10%">
             <mat-radio-button name="payment" id="card" value="card"></mat-radio-button>
             <div fxLayout="column" fxLayoutGap="10%">
-              <img src="../../assets/credit-card.PNG" alt="credit"/>
+              <img src="../../assets/credit-card.PNG" />
               <div>Credit/Debit</div>
             </div>
           </div>
@@ -41,7 +41,7 @@
           <div fxFlex="40%" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10%">
             <mat-radio-button name="payment" id="epay" value="epay"></mat-radio-button>
             <div fxLayout="column" fxLayoutGap="10%">
-              <img class="epaystyle" src="../../assets/e-pay.PNG" alt="ePay" />
+              <img class="epaystyle" src="../../assets/e-pay.PNG"/>
               <div>ePay</div>
             </div>
           </div>
@@ -66,4 +66,4 @@
     </mat-card-content>
   </mat-card>
 </div>
-<button mat-raised-button color="primary" [disabled]="enable" (click)="action(); getData1()" id="paybtn" name="paybtn">Buy Policy</button>
+<button mat-raised-button color="primary" [disabled]="enable" (click)="action(); getData()" id="paybtn" name="paybtn">Buy Policy</button>

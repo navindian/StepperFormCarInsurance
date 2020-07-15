@@ -13,6 +13,7 @@ export class PaymentComponent implements OnInit {
     private mtplPolicyService: MtplPolicyService
   ) {}
   optradio: boolean;
+  selectedPayment;
   @Input() Ppayment: string;
   @Output() OnSubmission = new EventEmitter<any>();
   enable = true;
@@ -37,6 +38,7 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit(): void {}
   check() {
+    console.log(this.selectedPayment);
     this.optradio = true;
   }
   box(e) {
@@ -50,26 +52,30 @@ export class PaymentComponent implements OnInit {
     this.OnSubmission.emit('Payment method selected!');
   }
   getData = () => {
-    alert('Check console for see data saved at Backend');
-    const idObj = { id: sessionStorage.getItem('id') };
-    this.mtplCalculatorService.getData(idObj).subscribe(
-      res => {
-        console.log(res);
-      },
-      err => {
-        console.log(err);
-      }
-    );
-    this.mtplPolicyService.getData(idObj).subscribe(
-      res => {
-        console.log(res);
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    if (this.selectedPayment === 'epay') {
+      this.ePay();
+    } else {
+      alert('Check console for see data saved at Backend');
+      const idObj = { id: sessionStorage.getItem('id') };
+      this.mtplCalculatorService.getData(idObj).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+      this.mtplPolicyService.getData(idObj).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    }
   }
-  getData1 = () => {
+  ePay = () => {
     const form = window.document.createElement('form');
     form.setAttribute('method', 'post');
     form.setAttribute('action', 'https://api.epay.com/paymentApi/merReceive');

@@ -25,7 +25,7 @@ export class LoggedInGuardGuard implements CanActivate {
   }
   public isLoggedIn(): boolean {
      let status = false;
-     if (sessionStorage.getItem('isLoggedIn') == 'true') {
+     if (sessionStorage.getItem('isLoggedIn') === 'true') {
         status = true;
      }
      else {
