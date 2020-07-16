@@ -21,7 +21,7 @@ export class AdditionalCoversComponent implements OnInit {
     private formBuilder: FormBuilder,
     private GAService: GoogleAnalyticsService,
     private commonDataService: CommonDataService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.additionalcoverForm = this.formBuilder.group({

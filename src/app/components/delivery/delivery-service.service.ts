@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class DeliveryServiceService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   url = 'http://3.6.39.44:4000/provinces/getProvincesList';
 

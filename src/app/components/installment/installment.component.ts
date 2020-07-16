@@ -29,7 +29,7 @@ export class InstallmentComponent implements OnInit {
     private GAService: GoogleAnalyticsService,
     private installmentService: InstallmentService,
     private commonDataService: CommonDataService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.installmentForm = this.formBuilder.group({
