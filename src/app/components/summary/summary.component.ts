@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CommonDataService } from 'src/app/common-data.service';
+import { CommonDataService } from '../shared/common-data.service';
 import { MtplCalculatorService } from '../mtpl-calculator/mtpl-calculator.service';
 import { MtplPolicyService } from '../mtpl-policy/mtpl-policy.service';
 
@@ -40,7 +40,7 @@ vehicleownerinformation;
 @Output() VehicleOwner = new EventEmitter<any>();
 @Output() Delivery = new EventEmitter<any>();
 @Output() PolicyDates = new EventEmitter<any>();
-
+// redirect to MTPL calculator's respective page on clicking edit button
 moveToCalculator = (index) => {
 this.moveTab.emit(index);
 if (index === 0) {
@@ -59,7 +59,7 @@ if (index === 4) {
 this.AdditionalCovers.emit('Additional Covers edit button clicked');
 }
 }
-
+// on page load we will get data of all pages from commonDataService
 ngOnInit(): void {
 this.commonDataService.vehicleinfo.subscribe((data) => {
 this.vehicleinfo = data;
@@ -95,6 +95,7 @@ receiveNewsletter: [false, Validators.requiredTrue],
 generalTerms: [false, Validators.requiredTrue],
 });
 }
+// Redirect to MTPL policy's respective page on clicking edit button
 edit = (index) => {
 if (index === 2) {
 this.VehicleOwner.emit('Vehicle owner edit button clicked');
@@ -104,6 +105,7 @@ this.Delivery.emit('Delivery edit button clicked');
 }
 this.changeStep.emit(index);
 }
+// Data will be saved and user will redirect to payment page
 saveData = () => {
 confirm('You are about to save data and proceed to payment');
 const mtplCalculator = {

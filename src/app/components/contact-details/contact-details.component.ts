@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
-import { CommonDataService } from 'src/app/common-data.service';
-import { ProvincesService } from '../provinces.service';
+import { CommonDataService } from '../shared/common-data.service';
+import { ProvincesService } from './provinces.service';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css'],
+  selector: 'app-contact-details',
+  templateUrl: './contact-details.component.html',
+  styleUrls: ['./contact-details.component.css'],
 })
-export class ContactComponent implements OnInit {
+export class ContactDetailsComponent implements OnInit {
   @Output() OnToggle = new EventEmitter();
   @Output() OnSubmission = new EventEmitter<any>();
   @Input() Ccity: string;

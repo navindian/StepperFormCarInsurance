@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
-import { CommonDataService } from 'src/app/common-data.service';
+import { CommonDataService } from '../shared/common-data.service';
 
 @Component({
-  selector: 'app-personal',
-  templateUrl: './personal.component.html',
-  styleUrls: ['./personal.component.css']
+  selector: 'app-personal-details',
+  templateUrl: './personal-details.component.html',
+  styleUrls: ['./personal-details.component.css']
 })
-export class PersonalComponent implements OnInit {
+export class PersonalDetailsComponent implements OnInit {
   @Output() OnToggle = new EventEmitter();
   @Output() OnSubmission = new EventEmitter<any>();
 

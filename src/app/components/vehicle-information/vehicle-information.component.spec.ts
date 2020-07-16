@@ -5,24 +5,24 @@ import { DebugElement } from '@angular/core';
 import { BrowserModule, By } from '@angular/platform-browser';
 
 
-import { VInfoComponent } from './v-info.component';
+import { VehicleInformationComponent } from './vehicle-information.component';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('VInfoComponent', () => {
-  let component: VInfoComponent;
-  let fixture: ComponentFixture<VInfoComponent>;
+  let component: VehicleInformationComponent;
+  let fixture: ComponentFixture<VehicleInformationComponent>;
   let de: DebugElement;
   let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VInfoComponent ],
+      declarations: [ VehicleInformationComponent ],
       imports: [ReactiveFormsModule, RouterTestingModule ],
       providers: [GoogleAnalyticsService]
     })
     .compileComponents().then(() => {
-      fixture = TestBed.createComponent(VInfoComponent);
+      fixture = TestBed.createComponent(VehicleInformationComponent);
       component = fixture.componentInstance;
       de = fixture.debugElement.query(By.css('form'));
       el = de.nativeElement;
@@ -30,7 +30,7 @@ describe('VInfoComponent', () => {
 }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VInfoComponent);
+    fixture = TestBed.createComponent(VehicleInformationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
