@@ -24,14 +24,17 @@ export class PersonalComponent implements OnInit {
   @Input() pdob: Date;
   personalForm: FormGroup;
   citizens = ['Indian', 'American', 'African'];
-  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService, private commonDataService: CommonDataService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private GAService: GoogleAnalyticsService,
+    private commonDataService: CommonDataService
+  ) {}
   success() {
     this.GAService.event('Next Button clicked', 'Personal Details', 'Next');
     this.commonDataService.personalinformation.next(this.personalForm.value);
     this.OnSubmission.emit('Personal Details form is submitted!');
   }
   change = () => {
-
     if (this.personalForm.valid) {
       this.OnToggle.emit(true);
       this.commonDataService.personalinformation.next(this.personalForm.value);
@@ -44,18 +47,45 @@ export class PersonalComponent implements OnInit {
     this.personalForm = this.formBuilder.group({
       lnch: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       fullname: this.formBuilder.group({
-        firstname: ['', [Validators.required, Validators.pattern('^[a-zA-Z]*$'), Validators.maxLength(20)]],
+        firstname: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern('^[a-zA-Z]*$'),
+            Validators.maxLength(20)
+          ]
+        ],
         lastname: ['', Validators.pattern('^[a-zA-Z]*$')],
-        surname: ['', [Validators.required, Validators.pattern('^[a-zA-Z]*$'), Validators.maxLength(20)]]
+        surname: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern('^[a-zA-Z]*$'),
+            Validators.maxLength(20)
+          ]
+        ]
       }),
       fullnameeng: this.formBuilder.group({
-        firstnameeng: ['', [Validators.required, Validators.pattern('^[a-zA-Z]*$'), Validators.maxLength(20)]],
+        firstnameeng: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern('^[a-zA-Z]*$'),
+            Validators.maxLength(20)
+          ]
+        ],
         lastnameeng: ['', Validators.pattern('^[a-zA-Z]*$')],
-        surnameeng: ['', [Validators.required, Validators.pattern('^[a-zA-Z]*$'), Validators.maxLength(20)]]
+        surnameeng: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern('^[a-zA-Z]*$'),
+            Validators.maxLength(20)
+          ]
+        ]
       }),
       citizen: ['', Validators.required],
       birth: ['', Validators.required]
     });
   }
-
 }

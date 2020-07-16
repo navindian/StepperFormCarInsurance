@@ -1,85 +1,108 @@
+<!-- Heading section -->
 <h1 class="header">
-    <strong>Vehicle Information</strong>
+	<strong>Vehicle Information</strong>
 </h1>
-<form [formGroup]="vehicleInfoForm" (submit)="submit()"><br>
-    <div fxLayout="row" fxLayout.lt-lg="column" >
-       <mat-label for="registrationNumber" fxFlex="60%">Vehicle Registration Number</mat-label>
-       <mat-form-field appearance="outline" fxFlex="40%"  >
-         <input matInput  id="registrationNumber" name="registrationNumber" placeholder="XX0000XX"
-                formControlName="registrationNumber" (change)="change()" [(ngModel)]="registrationNo" >
-         <mat-error *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
-            <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required</div>
-                <div *ngIf="formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength">
-                    Vehicle Registartion Number Should be 8 characters </div>
-         </mat-error>
-       </mat-form-field>
-    </div>
-    
-    <mat-divider></mat-divider><br>
-    
-    <div  fxLayout="row" fxLayout.lt-lg="column">
-        <mat-label for="certificateNumber" fxFlex="60%"> Vehicle Certificate Number<br>
-            <a routerlink =""><u>Where can I find this number?</u></a></mat-label>
-        <mat-form-field appearance="outline"  fxFlex="40%" >
-            <input matInput id="certificateNumber"  placeholder="000000000"
-                formControlName="certificateNumber" name="certificateNumber" (change)="change()" [(ngModel)]="certificateNo">
-            <mat-error *ngIf="formsControl.certificateNumber.touched && formsControl.certificateNumber.errors">
-                <div *ngIf="formsControl.certificateNumber.errors.required">Vehicle Certificate Number is required</div>
-                <div *ngIf="formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength">
-                    Vehicle Certificate Number Should be 9 characters </div>
-            </mat-error>
-        </mat-form-field>
-    </div>
-    
-    <mat-divider></mat-divider><br>
-    
-    <div fxLayout="row" fxLayout.lt-lg="column">
-        
-        <mat-label for="purpose" fxFlex="60%" > What purpose does this vehicle serve?</mat-label>
-        
-        <mat-form-field fxFlex="40%" appearance="outline" > 
-          <mat-select formControlName="purpose" name="purpose" placeholder="--SELECT--" (selectionChange)="change()" [(ngModel)]="purposeSelected">
-                <mat-option selected disabled value="">--SELECT--</mat-option>
-                <mat-option *ngFor="let p of purposeList" value="{{p}}">{{p}}</mat-option>
-          </mat-select>
-            <mat-error *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
-                <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve
-                </div>
-            </mat-error>
-        </mat-form-field>
-    </div>
-    <br>
-    <mat-divider></mat-divider>
-    <br>
-    
-    <div fxLayout="row" fxLayout.lt-lg="column">
-        <div fxFlex="60%" >
-            <mat-label>
-                Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
-            </mat-label>
-        </div>
-        <div fxFlex="40%" >
-        <mat-radio-group color="primary" formControlName="yesNo" (change)="change()">
-            <mat-radio-button id="DrivingYes" name="yesNo" value="Yes" 
-                 > &nbsp; Yes &nbsp;&nbsp;</mat-radio-button>
-            <mat-radio-button id="DrivingNo"  name="yesNo" value="No" 
-                  > &nbsp; No </mat-radio-button>
-        </mat-radio-group >
-        
-       </div>
-    </div>
+<!-- Vehivcle information form fields -->
+<form [formGroup]="vehicleInfoForm" (submit)="submit()">
+	<br />
+	<div fxLayout="row" fxLayout.lt-lg="column">
+		<mat-label for="registrationNumber" fxFlex="60%"
+			>Vehicle Registration Number</mat-label
+		>
+		<mat-form-field appearance="outline" fxFlex="40%">
+			<input matInput id="registrationNumber" name="registrationNumber" placeholder="XX0000XX" formControlName="registrationNumber" (change)="change()" [(ngModel)]="registrationNo"
+			/>
+			<mat-error *ngIf="formsControl.registrationNumber.errors">
+				<div *ngIf="formsControl.registrationNumber.errors?.required">
+					Vehicle Registartion Number is required
+				</div>
+				<div
+					*ngIf="
+						formsControl.registrationNumber.errors?.minlength || formsControl.registrationNumber.errors?.maxlength
+					"
+				>
+					Vehicle Registartion Number Should be 8 characters
+				</div>
+			</mat-error>
+		</mat-form-field>
+	</div>
 
-    <br>
-    <mat-divider></mat-divider>
-    <br>
-    
-    <button mat-flat-button color="primary" class="n"  style="width : 8em; "  type="submit"  matStepperNext
-    [disabled]="!vehicleInfoForm.valid">Next</button>
-   
+	<mat-divider></mat-divider><br />
+
+	<div fxLayout="row" fxLayout.lt-lg="column">
+		<mat-label for="certificateNumber" fxFlex="60%">
+			Vehicle Certificate Number<br />
+			<a routerlink=""><u>Where can I find this number?</u></a></mat-label
+		>
+		<mat-form-field appearance="outline" fxFlex="40%">
+			<input
+				matInput id="certificateNumber" name="certificateNumber" placeholder="000000000" formControlName="certificateNumber" (change)="change()" [(ngModel)]="certificateNo"
+			/>
+			<mat-error *ngIf="formsControl.certificateNumber.errors">
+				<div *ngIf="formsControl.certificateNumber.errors?.required">
+					Vehicle Certificate Number is required
+				</div>
+				<div
+					*ngIf="
+						formsControl.certificateNumber.errors?.minlength || formsControl.certificateNumber.errors?.maxlength
+					"
+				>
+					Vehicle Certificate Number Should be 9 characters
+				</div>
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<mat-divider></mat-divider><br />
+
+	<div fxLayout="row" fxLayout.lt-lg="column">
+		<mat-label for="purpose" fxFlex="60%">
+			What purpose does this vehicle serve?</mat-label
+		>
+
+		<mat-form-field fxFlex="40%" appearance="outline">
+			<mat-select id="purpose" name="purpose" formControlName="purpose" placeholder="--SELECT--" (selectionChange)="change()" [(ngModel)]="purposeSelected"
+			>
+				<mat-option selected disabled value="">--SELECT--</mat-option>
+				<mat-option *ngFor="let p of purposeList" value="{{ p }}">{{
+					p
+				}}</mat-option>
+			</mat-select>
+			<mat-error *ngIf="formsControl.purpose.errors">
+				<div *ngIf="formsControl.purpose.errors?.required">
+					Please select what purpose does this vehicle serve
+				</div>
+			</mat-error>
+		</mat-form-field>
+	</div>
+	<br />
+	<mat-divider></mat-divider>
+	<br />
+
+	<div fxLayout="row" fxLayout.lt-lg="column">
+		<div fxFlex="60%">
+			<mat-label>
+				Are you Driving outside Bulgarian territory with this vehicle for more than
+				60 days?
+			</mat-label>
+		</div>
+		<div fxFlex="40%">
+			<mat-radio-group color="primary" formControlName="yesNo" (change)="change()">
+				<mat-radio-button id="DrivingYes" name="yesNo" value="Yes">
+					&nbsp; Yes &nbsp;&nbsp;</mat-radio-button
+				>
+				<mat-radio-button id="DrivingNo" name="yesNo" value="No">
+					&nbsp; No
+				</mat-radio-button>
+			</mat-radio-group>
+		</div>
+	</div>
+	<br />
+	<mat-divider></mat-divider>
+	<br />
+
+	<button mat-flat-button color="primary" class="n" type="submit" matStepperNext [disabled]="!vehicleInfoForm.valid"
+	>
+		Next
+	</button>
 </form>
-
-
-
-
-
-

@@ -1,79 +1,8 @@
-/* 
-.login-card-description {
-  font-family: "Trebuchet MS", Arial, sans-serif;
-  font-weight: bold;
-  color: rgb(8, 56, 95);
-  font-size: 20px;
-}
-.login-btn {
-  padding: 10px 20px 10px;
-  background-color: rgb(9, 113, 231);
-  border-radius: 20px;
-  font-size: 15px;
-
-  line-height: 20px;
-  color: #fff;
-  margin-bottom: 24px;
-}
-.hr-text {
-  position: relative;
-  border: none;
-  height: 1px;
-  background: #999;
-}
-.redirect-btn {
-  padding: 10px 20px 10px;
-  background-color: rgb(8, 56, 95);
-  border-radius: 20px;
-  font-size: 15px;
-
-  line-height: 20px;
-  color: #fff;
-  margin-bottom: 24px;
-}
-.login-card-footer-text {
-  color: gray;
-}
-.loginimg {
-  width: 500%;
-
-  padding-right: 0%;
-  padding-left: 10%;
-}
-.card-body {
-  padding-top: 25%;
-}
-@media screen and (max-width: 450px) {
-  .loginimg {
-    display: none;
-  }
-}
-
-@media all and (min-width: 768px) {
-  .card-body {
-    padding-left: 25%;
-  }
-  .loginimg {
-    padding-left: 0%;
-    padding-right: 10%;
-  }
-}
-@media all and (min-width: 1024px) {
-  .card-body {
-    padding-left: 0%;
-  }
-  .loginimg {
-    padding-left: 8%;
-  }
-} */
-.container{
+.container {
   width: 90%;
-padding: 2%;
-
-
-
+  padding: 2%;
 }
-mat-card img{
+mat-card img {
   object-fit: cover; /*this makes the image in src fit to the size specified below*/
   width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
   height: 80%;
@@ -84,12 +13,9 @@ mat-card img{
   color: rgb(8, 56, 95);
   font-size: 20px;
 }
-.example-button-row{
- 
-
+.example-button-row {
   border-radius: 20px;
   font-size: 15px;
- 
 }
 .login-card-footer-text {
   color: gray;
