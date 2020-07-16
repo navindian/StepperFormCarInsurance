@@ -9,10 +9,10 @@ describe('DeliveryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DeliveryComponent ],
+      declarations: [DeliveryComponent],
       imports: [ReactiveFormsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

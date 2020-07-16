@@ -27,7 +27,7 @@ export class ContactComponent implements OnInit {
     private GAService: GoogleAnalyticsService,
     private provServ: ProvincesService,
     private commonDataService: CommonDataService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
