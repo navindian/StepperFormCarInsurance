@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MtplCalculatorService } from '../mtpl-calculator/mtpl-calculator.service';
 import { MtplPolicyService } from '../mtpl-policy/mtpl-policy.service';
-
+import * as CryptoJS from 'crypto-js';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -35,6 +35,8 @@ export class PaymentComponent implements OnInit {
     CHARACTER_ENCODING: 'UTF-8',
     V2_HASH: '96511492bb663818bfb70fc8c51126b0'
   };
+  data = 'MIN=D168454720\nINVOICE=5555559\nAMOUNT=100\nEXP_TIME=01.08.2020\nDESCR=test';
+  secretKey = 'DAKE31QBIB2MGX924034168E1OPAHRPOJXP89EJH075ROUNMCK9SNMCURME0T2YI';
 
   ngOnInit(): void {}
   check() {
@@ -74,6 +76,30 @@ export class PaymentComponent implements OnInit {
         }
       );
     }
+  }
+  ePayBG = () => {
+    const encode = window.btoa(this.data);
+    const hash = CryptoJS.HmacSHA1(encode.toString(), this.secretKey).toString();
+    const form = window.document.createElement('form');
+    form.setAttribute('action', 'https://devep2.datamax.bg/ep2/epay2_demo/');
+    form.setAttribute('target', '_self');
+    form.appendChild(
+      this.createHiddenElement('PAGE', 'paylogin')
+    );
+    form.appendChild(
+      this.createHiddenElement('ENCODED', encode)
+    );
+    form.appendChild(
+      this.createHiddenElement('CHECKSUM', hash)
+    );
+    form.appendChild(
+      this.createHiddenElement('URL_OK', 'www.google.com')
+    );
+    form.appendChild(
+      this.createHiddenElement('URL_CANCEL', 'www.facebook.com')
+    );
+    window.document.body.appendChild(form);
+    form.submit();
   }
   ePay = () => {
     const form = window.document.createElement('form');
