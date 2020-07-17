@@ -71,9 +71,4 @@ export class LoginComponent implements OnInit {
   redirect(): void {
     this.asGuestLogin.emit('logged in as a guest');
   }
-  showGlobalOverlay() {
-    
-    
-    // setTimeout(overlayRef.detach(),3000)
-  }
 }
