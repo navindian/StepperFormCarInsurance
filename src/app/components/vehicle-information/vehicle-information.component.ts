@@ -1,13 +1,13 @@
-import { CommonDataService } from 'src/app/common-data.service';
+import { CommonDataService } from '../shared/common-data.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 @Component({
-selector: 'app-v-info',
-templateUrl: './v-info.component.html',
-styleUrls: ['./v-info.component.css'],
+selector: 'app-vehicle-information',
+templateUrl: './vehicle-information.component.html',
+styleUrls: ['./vehicle-information.component.css'],
 })
-export class VInfoComponent implements OnInit {
+export class VehicleInformationComponent implements OnInit {
 @Output() Toggle = new EventEmitter();
 @Output() Submission = new EventEmitter<any>();
 @Input() registrationNo: string;
