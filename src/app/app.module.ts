@@ -44,6 +44,8 @@ import { TabComponent } from './components/tab/tab.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
+import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { MatRadioModule } from '@angular/material/radio';
     VehicleOwnerComponent,
     ContactDetailsComponent,
     SignUpComponent,
-    OrdinalPipe
+    OrdinalPipe,
+    ProgressSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +97,8 @@ import { MatRadioModule } from '@angular/material/radio';
     HttpClientModule,
     MatRadioModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     CdkStepper,
@@ -106,6 +110,7 @@ import { MatRadioModule } from '@angular/material/radio';
       useValue: { color: 'primary' },
      }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ProgressSpinnerComponent],
 })
 export class AppModule {}
