@@ -1,10 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoginService } from './login.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProgressSpinnerComponent } from '../progress-spinner/progress-spinner.component';
+import { LoginService } from './login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
   }
   login(): void {
     this.errorMessage = null;
-    // this.showGlobalOverlay()
     const overlayRef = this.overlay.create({
       positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
       hasBackdrop: true
@@ -64,6 +63,7 @@ export class LoginComponent implements OnInit {
         overlayRef.detach()
         this.errorMessage = err.error.error;
         console.log(this.errorMessage);
+        alert("Please enter correct Credentials!")
       }
     );
   }
