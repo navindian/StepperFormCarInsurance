@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output, AfterViewInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
-import { CommonDataService } from '../../../../shared/common-data.service';
-import { DeliveryServiceService } from './delivery-service.service';
 import { Subscription } from 'rxjs';
-import { MediaObserver, MediaChange } from '@angular/flex-layout';
+import { CommonDataService } from '../../../../shared/common-data-service/common-data.service';
+import { ProvincesService } from '../../../../shared/provinces-service/provinces.service';
 
 @Component({
   selector: 'app-delivery',
@@ -47,8 +47,8 @@ export class DeliveryComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private cdRef: ChangeDetectorRef,
     private mediaObserver: MediaObserver,
-    private formBuilder: FormBuilder,
-    private deliveryService: DeliveryServiceService,
+    private formBuilder: FormBuilder,    
+    private provServ: ProvincesService,
     private GAService: GoogleAnalyticsService,
     private commonDataService: CommonDataService
   ) {}
@@ -117,7 +117,7 @@ export class DeliveryComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   getProvinces() {
-    this.deliveryService.getProvinces().subscribe((response) => {
+    this.provServ.getProvinces().subscribe((response) => {
       this.provincesArray = response;
     });
   }

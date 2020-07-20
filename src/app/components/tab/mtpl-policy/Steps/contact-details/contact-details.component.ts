@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
-import { CommonDataService } from '../../../../shared/common-data.service';
-import { ProvincesService } from './provinces.service';
+import { CommonDataService } from '../../../../shared/common-data-service/common-data.service';
+import { ProvincesService } from '../../../../shared/provinces-service/provinces.service';
 
 @Component({
   selector: 'app-contact-details',

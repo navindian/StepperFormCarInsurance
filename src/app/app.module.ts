@@ -27,7 +27,7 @@ import { AdditionalCoversComponent } from './components/tab/mtpl-calculator/Step
 import { ContactDetailsComponent } from './components/tab/mtpl-policy/Steps/contact-details/contact-details.component';
 import { DeliveryComponent } from './components/tab/mtpl-policy/Steps/delivery/delivery.component';
 import { InstallmentComponent } from './components/tab/mtpl-calculator/Steps/installment/installment.component';
-import { OrdinalPipe } from './components/tab/mtpl-calculator/Steps/installment/ordinal.pipe';
+import { OrdinalPipe } from './components/shared/ordinal-pipe/ordinal.pipe';
 import { InsuringPartyComponent } from './components/tab/mtpl-calculator/Steps/insuring-party/insuring-party.component';
 import { LoginComponent } from './components/login/login.component';
 import { MTPLCalculatorComponent } from './components/tab/mtpl-calculator/mtpl-calculator.component';
