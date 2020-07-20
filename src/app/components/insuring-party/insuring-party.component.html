@@ -1,99 +1,68 @@
-<h1
-    style="color:rgb(8,56,95);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-    <b>Insuring Party</b></h1>
-<form [formGroup]="insuringParty" (submit)="submit()" style="color:rgb(8,56,95)"><br>
-    <!-- <div class="form-row">
-        <div class="col-12 col-sm-7 col-md-8 col-lg-8">
-            <label for="egn">Enter your EGN/EIK/LNCH<br>
-                <a href=""><u>Who's data should I fill in?</u> </a></label>
-        </div>
-        <div class="col-12 col-sm-5 col-md-4 col-lg-4">
-            <input class="form-control" id="egn" type="text" formControlName="egn" (change)="change()"
-                placeholder="Enter your EGN/EIK/LNCH" [(ngModel)]="egnLnch">
-            <div *ngIf="insuringParty.controls.egn.hasError('required') &&(insuringParty.controls.egn.dirty || insuringParty.controls.egn.touched)"
-                class="error">This field is mandatory</div>
-            <div *ngIf="insuringParty.controls.egn.hasError('pattern') &&(insuringParty.controls.egn.dirty || insuringParty.controls.egn.touched)"
-                class="error">Only 10 digit numerical value allowed</div>
-        </div>
-    </div> -->
-    <div fxLayout="row" fxLayout.lt-lg="column"> 
-        <label for="lnch"  fxFlex="60%">Enter your EGN/EIK/LNCH</label>
-            <mat-form-field appearance="outline"  fxFlex="40%"> 
-              <mat-label>LNCH</mat-label>
-              <input matInput formControlName="egn" id="egn" name="egn" (change)="change()" >
-          <mat-error
-          *ngIf="insuringParty.controls.egn.hasError('required') &&(insuringParty.controls.egn.dirty || insuringParty.controls.egn.touched)"
-          class="error">This field is mandatory</mat-error>
-          <mat-error
-          *ngIf="insuringParty.controls.egn.hasError('pattern') &&(insuringParty.controls.egn.dirty || insuringParty.controls.egn.touched)"
-          class="error">Only 10 digit numerical value allowed</mat-error>
-          </mat-form-field>
-      </div>
-    
-      <mat-divider class="line"></mat-divider>
-      <br/>
-    
-    <!-- <div class="form-row">
-        <div class="col-12 col-sm-7  col-md-8 col-lg-8">
-            <label for="address">Place of Permanent Residence?</label>
-        </div>
-        <div class="col-12 col-sm-5 col-md-4 col-lg-4">
-           
+<h1 class="heading">
+  <b>Insuring Party</b>
+</h1>
+<form [formGroup]="insuringParty" (submit)="submit()" class="heading">
+  <br />
 
-            <select formControlName="address" class="form-control" [(ngModel)]="pAddress" (change)="change()">
-                <option [selected]='""===pAddress' disabled value="" id="address">--SELECT--</option>
-                <option *ngFor="let a of addressList" id="address" value='a' [selected]='a===pAddress'>{{a}}</option>
-            </select>
-            <div class="error" *ngIf="formsControl.address.touched && formsControl.address.errors">
-                <div *ngIf="formsControl.address.errors.required">This field is mandatory</div>
-            </div>
-        </div>
-    </div> -->
-    <div  fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.lg="space-between center">
-        <label for="address" fxFlex="31%" >Place of Permanent Residence?</label>
-    
-        <mat-form-field appearance="outline"  fxFlex="40%"> 
-          <mat-label>Address</mat-label>
-          <mat-select  id="address"  formControlName="address" name="address"
-            (change)="change()">
-            <mat-option>None</mat-option>
-            <mat-option *ngFor='let a of addressList' value="{{a}}">{{a}}</mat-option>
-          </mat-select>
-          <mat-error
-            *ngIf="formsControl.address.errors?.required">
-            This field is mandatory</mat-error>
-        </mat-form-field>
-        
-      </div>
-      <mat-divider class="line"></mat-divider>
-      <br/>
-<!--     
-    <div class="form-row">
-        <div class="col-12 col-sm-7 col-md-8 col-lg-8">
-            <label for="email"> Email</label>
-        </div>
-        <div class="col-12 col-sm-5 col-md-4 col-lg-4">
-            <input class="form-control" id="email" type="email" formControlName="email" (change)="change()"
-                placeholder="Enter you email" [(ngModel)]="emailId">
-            <div class="error" *ngIf="formsControl.email.touched && formsControl.email.errors">
-                <div *ngIf="formsControl.email.errors.required">This field is mandatory</div>
-                <div *ngIf="formsControl.email.errors.pattern">Please enter a valid email</div>
-            </div>
-        </div>
-    </div> -->
-    <div fxLayout="row" fxLayout.lt-lg="column"> 
-        <label for="email"  fxFlex="60%">Email</label>
-            <mat-form-field appearance="outline"  fxFlex="40%"> 
-              <mat-label>Email</mat-label>
-              <input matInput formControlName="email" id="email" name="email" (change)="change()" >
-          <mat-error
-          *ngIf="(formsControl.email.touched && formsControl.email.errors) && formsControl.email.errors.required">This field is mandatory</mat-error>
-          <mat-error
-          *ngIf="(formsControl.email.touched && formsControl.email.errors) && formsControl.email.errors.pattern">Please enter a valid email</mat-error>
-          </mat-form-field>
-      </div>
-    
-    <button type="submit" matStepperNext
-    mat-raised-button color="primary" [disabled]="insuringParty.invalid">Next</button>
-    
+  <div fxLayout="row" fxLayout.lt-lg="column">
+    <label for="lnch" fxFlex="60%">Enter your EGN/EIK/LNCH</label>
+    <mat-form-field appearance="outline" fxFlex="40%">
+      <mat-label>LNCH</mat-label>
+      <input matInput formControlName="egn" id="egn" name="egn" (change)="change()" />
+      <mat-error *ngIf="
+          insuringParty.controls.egn.hasError('required') &&
+          (insuringParty.controls.egn.dirty ||
+            insuringParty.controls.egn.touched)
+        " class="error">This field is mandatory</mat-error>
+      <mat-error *ngIf="
+          insuringParty.controls.egn.hasError('pattern') &&
+          (insuringParty.controls.egn.dirty ||
+            insuringParty.controls.egn.touched)
+        " class="error">Only 10 digit numerical value allowed</mat-error>
+    </mat-form-field>
+  </div>
+
+  <mat-divider class="line"></mat-divider>
+  <br />
+
+  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.lg="space-between center">
+    <label for="address" fxFlex="31%">Place of Permanent Residence?</label>
+
+    <mat-form-field appearance="outline" fxFlex="40%">
+      <mat-label>Address</mat-label>
+      <mat-select id="address" formControlName="address" name="address" (change)="change()">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let a of addressList" value="{{ a }}">{{
+          a
+        }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formsControl.address.errors?.required">
+        This field is mandatory</mat-error>
+    </mat-form-field>
+  </div>
+  <mat-divider class="line"></mat-divider>
+  <br />
+
+  <div fxLayout="row" fxLayout.lt-lg="column">
+    <label for="email" fxFlex="60%">Email</label>
+    <mat-form-field appearance="outline" fxFlex="40%">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" id="email" name="email" (change)="change()" />
+      <mat-error *ngIf="
+          formsControl.email.touched &&
+          formsControl.email.errors &&
+          formsControl.email.errors.required
+        ">This field is mandatory</mat-error>
+      <mat-error *ngIf="
+          formsControl.email.touched &&
+          formsControl.email.errors &&
+          formsControl.email.errors.pattern
+        ">Please enter a valid email</mat-error>
+    </mat-form-field>
+  </div>
+
+  <button id="next" name="next" type="submit" matStepperNext mat-raised-button color="primary"
+    [disabled]="insuringParty.invalid">
+    Next
+  </button>
 </form>

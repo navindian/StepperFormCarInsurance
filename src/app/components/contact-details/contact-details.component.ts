@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
-import { CommonDataService } from 'src/app/common-data.service';
-import { ProvincesService } from '../provinces.service';
+import { CommonDataService } from '../shared/common-data.service';
+import { ProvincesService } from './provinces.service';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  selector: 'app-contact-details',
+  templateUrl: './contact-details.component.html',
+  styleUrls: ['./contact-details.component.css'],
 })
-export class ContactComponent implements OnInit {
+export class ContactDetailsComponent implements OnInit {
   @Output() OnToggle = new EventEmitter();
   @Output() OnSubmission = new EventEmitter<any>();
   @Input() Ccity: string;
@@ -22,8 +22,12 @@ export class ContactComponent implements OnInit {
   @Input() Cphone: string;
   registerForm: FormGroup;
   provincesArray;
-  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService,
-              private provServ: ProvincesService, private commonDataService: CommonDataService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private GAService: GoogleAnalyticsService,
+    private provServ: ProvincesService,
+    private commonDataService: CommonDataService
+  ) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -34,7 +38,15 @@ export class ContactComponent implements OnInit {
       block: [''],
       entrance: [''],
       appartment: [''],
-      phone: ['', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(8), Validators.maxLength(9)]]
+      phone: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[0-9]+$'),
+          Validators.minLength(8),
+          Validators.maxLength(9),
+        ],
+      ],
     });
     this.getProvinces();
   }
@@ -47,7 +59,6 @@ export class ContactComponent implements OnInit {
     this.provServ.getProvinces().subscribe((res) => {
       this.provincesArray = res;
     });
-
   }
   change = () => {
     if (this.registerForm.valid) {

@@ -24,7 +24,7 @@ import { routes } from 'src/app/app-routing.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdditionalCoversComponent } from './components/additional-covers/additional-covers.component';
-import { ContactComponent } from './components/contact/contact.component';
+import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
 import { DeliveryComponent } from './components/delivery/delivery.component';
 import { InstallmentComponent } from './components/installment/installment.component';
 import { OrdinalPipe } from './components/installment/ordinal.pipe';
@@ -33,45 +33,41 @@ import { LoginComponent } from './components/login/login.component';
 import { MTPLCalculatorComponent } from './components/mtpl-calculator/mtpl-calculator.component';
 import { MTPLPolicyComponent } from './components/mtpl-policy/mtpl-policy.component';
 import { PaymentComponent } from './components/payment/payment.component';
-import { PersonalComponent } from './components/personal/personal.component';
+import { PersonalDetailsComponent } from './components/personal-details/personal-details.component';
 import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { Tab2Component } from './components/tab2/tab2.component';
-import { TabsComponent } from './components/tabs/tabs.component';
-import { VInfoComponent } from './components/v-info/v-info.component';
+import { VehicleInformationComponent } from './components/vehicle-information/vehicle-information.component';
 import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.component';
-import { LoggedInGuardGuard } from './logged-in-guard.guard';
-import { LoggedInServiceService } from './logged-in-service.service';
-import { StepperComponent } from './stepper/stepper.component';
-import { TabComponent } from './tab/tab.component';
+import { LoggedInGuardGuard } from './components/login/_guards/logged-in-guard.guard';
+import { TabComponent } from './components/tab/tab.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
+import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StepperComponent,
     TabComponent,
     AdditionalCoversComponent,
     PolicyDetailsComponent,
     LoginComponent,
-    VInfoComponent,
-    Tab2Component,
-    TabsComponent,
+    VehicleInformationComponent,
     InsuringPartyComponent,
     DeliveryComponent,
     MTPLCalculatorComponent,
     MTPLPolicyComponent,
-    PersonalComponent,
+    PersonalDetailsComponent,
     PaymentComponent,
     InstallmentComponent,
     SummaryComponent,
     VehicleOwnerComponent,
-    ContactComponent,
+    ContactDetailsComponent,
     SignUpComponent,
-    OrdinalPipe
+    OrdinalPipe,
+    ProgressSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -101,19 +97,20 @@ import { MatRadioModule } from '@angular/material/radio';
     HttpClientModule,
     MatRadioModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     CdkStepper,
     MTPLCalculatorComponent,
     LoggedInGuardGuard,
-    LoggedInServiceService,
     SummaryComponent,
    {
       provide: MAT_RADIO_DEFAULT_OPTIONS,
       useValue: { color: 'primary' },
      }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ProgressSpinnerComponent],
 })
 export class AppModule {}

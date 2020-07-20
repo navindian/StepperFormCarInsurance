@@ -1,3 +1,7 @@
+.heading {
+  color: rgb(8, 56, 95);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 input[type="text"],
 input[type="date"],
 input[type="email"] {

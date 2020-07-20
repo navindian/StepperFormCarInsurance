@@ -1,5 +1,13 @@
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import { MatStepper } from '@angular/material/stepper';
 
 @Component({
@@ -8,10 +16,10 @@ import { MatStepper } from '@angular/material/stepper';
   styleUrls: ['./mtpl-calculator.component.css']
 })
 export class MTPLCalculatorComponent implements OnInit, OnChanges {
-  constructor() { }
+  constructor() {}
   @Output() selectionChange: EventEmitter<StepperSelectionEvent>;
   @Output() NextTabSwitch = new EventEmitter();
-  @Input () stepChange;
+  @Input() stepChange;
   @ViewChild('stepper') stepper: MatStepper;
 
   toggle1 = false;
@@ -21,25 +29,23 @@ export class MTPLCalculatorComponent implements OnInit, OnChanges {
   toggle5 = false;
   toggle6 = true;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  ngOnChanges(){
-    if (this.stepChange != undefined){
+  ngOnChanges() {
+    if (this.stepChange !== undefined) {
       this.move(this.stepChange);
     }
   }
 
-  move = (index) => {
+  move = index => {
     console.log('calculators', index);
     this.stepper.selectedIndex = index;
-    // this.stepper.selectedIndex = index;
   }
 
-  nextTab = (data) => {
+  nextTab = data => {
     this.NextTabSwitch.emit(data);
   }
-  change = (data) => {
+  change = data => {
     console.log(data);
   }
 }

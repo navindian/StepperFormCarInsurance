@@ -1,98 +1,99 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<h1 class="heading">Instalment options</h1><br />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<h1 class="heading">Installment options</h1>
+<br />
 <form [formGroup]="installmentForm" (submit)="submit()">
-    <!--<div class="form-check" style="padding-left: 0px !important; ">
-                            <div class="form-row">-->
-
-    <div fxLayout="column" fxLayoutGap="5%">
-
-
-        <div fxlayout="column" >
-            <mat-radio-group formControlName="term" (change)="change()">
-                <div fxLayout="column" fxLayoutGap="5%">
-                    <div *ngFor="let element of serviceData">
-
-                        <mat-card>
-                            <mat-card-content fxLayout="column">
-                                <div fxFlex="25%" fxLayout="row" fxLayout.xs="column">
-                                    <div fxFlex="40">
-                                        <mat-radio-button class="sub-head" value={{element.title}}>{{element.title}}
-                                        </mat-radio-button>
-                                    </div>
-                                    <div fxFlex="60%" fxLayoutAlign="end end" fxLayoutAlign.xs="start" fxLayout="column" fxLayoutGap.xs="5%">
-                                        <div class="num">{{element.amount}}<span class="nearelm">BGN</span></div>
-                                        <div class="months">
-                                            You save {{element.saving}} BGN
-                                        </div>
-                                        <div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div fxFlex="10%" fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="5%">
-                                    <div fxFlex="20%">
-                                        <button mat-raised-button color="accent">{{element.subtitle}}</button>
-                                    </div>
-
-                                </div><br>
-                                <div *ngIf="element.installments.length>0" fxFlex="1%" fxLayout="row">
-                                    <mat-divider></mat-divider>
-                                </div>
-                                <div fxFlex="20%" fxLayout="row" fxLayoutGap="5%" fxLayout.xs="column">
-                                    <div 
-                                        *ngFor="let installments of element.installments;let indexOfElement=index;">
-                                        {{indexOfElement + 1 | ordinal}} Installment
-                                        <div style="font-weight: bold;">{{installments}} BGN</div>
-                                    </div>
-                                </div>
-
-                            </mat-card-content>
-
-                        </mat-card>
+  <div fxLayout="column" fxLayoutGap="5%">
+    <div fxlayout="column">
+      <mat-radio-group formControlName="term" (change)="change()">
+        <div fxLayout="column" fxLayoutGap="5%">
+          <div *ngFor="let element of serviceData">
+            <mat-card>
+              <mat-card-content fxLayout="column">
+                <div fxFlex="25%" fxLayout="row" fxLayout.xs="column">
+                  <div fxFlex="40">
+                    <mat-radio-button class="sub-head" value="{{ element.title }}">{{ element.title }}
+                    </mat-radio-button>
+                  </div>
+                  <div fxFlex="60%" fxLayoutAlign="end end" fxLayoutAlign.xs="start" fxLayout="column"
+                    fxLayoutGap.xs="5%">
+                    <div id="amount" name="amount" class="num">
+                      {{ element.amount }}<span class="nearelm">BGN</span>
                     </div>
+                    <div id="saving" name="saving" class="months">
+                      You save {{ element.saving }} BGN
+                    </div>
+                    <div></div>
+                  </div>
                 </div>
-            </mat-radio-group>
-        </div>
-        <div>
-            <mat-divider></mat-divider>
-        </div>
 
-        <div fxLayout="column">
-            <div fxLayout="row">
-                <div class="image" fxFlex="10%">
-                    <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                <span fxFlex="90%" fxLayout="column">Costs of examinations, medical
-                    Premiums indicated are final and include Contribution to the Guarantee and Insurance Fund,
-                    sticker and 2%
-                    tax on insurance premiums.</span>
-            </div>
-            <div fxLayout="row">
-                <div class="image" fxFlex="10%">
-                    <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                <span fxFlex="90%" fxLayout="column">Costs of examinations, medical
-                    The insurance premium is calculated with included - 5% Discount for insurance with "Casco+"</span>
-            </div>
-            
-            <div fxLayout="row">
-                <div class="image" fxFlex="10%">
-                    <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                <span fxFlex="90%" fxLayout="column">Costs of examinations, medical
-                    Annual Technical Inspection Voucher</span>
-            </div>
+                <div fxFlex="10%" fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="5%">
+                  <div fxFlex="20%">
+                    <button id="subtitle" name="subtitle" mat-raised-button color="accent">
+                      {{ element.subtitle }}
+                    </button>
+                  </div>
+                </div>
+                <br />
+                <div *ngIf="element.installments.length > 0" fxFlex="1%" fxLayout="row">
+                  <mat-divider></mat-divider>
+                </div>
+                <div fxFlex="20%" fxLayout="row" fxLayoutGap="5%" fxLayout.xs="column">
+                  <div *ngFor="
+                      let installments of element.installments;
+                      let indexOfElement = index
+                    ">
+                    {{ indexOfElement + 1 | ordinal }} Installment
+                    <div class="sub-head">
+                      {{ installments }} BGN
+                    </div>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
         </div>
-        <div>
-            <mat-divider></mat-divider>
-        </div>
-        <div>
-            <button color="primary" mat-raised-button matStepperNext type="submit"
-        [disabled]="installmentForm.invalid"> Next </button>
-        </div>
-
-
-
+      </mat-radio-group>
+    </div>
+    <div>
+      <mat-divider></mat-divider>
     </div>
 
-   
-    
+    <div fxLayout="column">
+      <div fxLayout="row">
+        <div class="image" fxFlex="10%">
+          <img width="30px" height="20px" src="./assets/tick.jpg" alt="tick" />
+        </div>
+
+        <span fxFlex="90%" fxLayout="column">Costs of examinations, medical Premiums indicated are final and
+          include Contribution to the Guarantee and Insurance Fund, sticker and
+          2% tax on insurance premiums.</span>
+      </div>
+      <div fxLayout="row">
+        <div class="image" fxFlex="10%">
+          <img width="30px" height="20px" src="./assets/tick.jpg" />
+        </div>
+
+        <span fxFlex="90%" fxLayout="column">Costs of examinations, medical The insurance premium is calculated
+          with included - 5% Discount for insurance with "Casco+"</span>
+      </div>
+
+      <div fxLayout="row">
+        <div class="image" fxFlex="10%">
+          <img width="30px" height="20px" src="./assets/tick.jpg" />
+        </div>
+
+        <span fxFlex="90%" fxLayout="column">Costs of examinations, medical Annual Technical Inspection
+          Voucher</span>
+      </div>
+    </div>
+    <div>
+      <mat-divider></mat-divider>
+    </div>
+    <div>
+      <button id="next" name="next" color="primary" mat-raised-button matStepperNext type="submit"
+        [disabled]="installmentForm.invalid">
+        Next
+      </button>
+    </div>
+  </div>
 </form>

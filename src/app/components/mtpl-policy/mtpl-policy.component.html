@@ -1,13 +1,13 @@
 <div class="container">
-  <mat-horizontal-stepper labelPosition="bottom" #stepper (selectionChange)="change($event)" linear >
+  <mat-horizontal-stepper labelPosition="bottom" #stepper (selectionChange)="change($event)" linear>
     <mat-step completed={{toggle1}}>
       <ng-template matStepLabel>Personal details</ng-template>
-      <app-personal (OnToggle)="toggle1=$event"></app-personal>
+      <app-personal-details (OnToggle)="toggle1=$event"></app-personal-details>
     </mat-step>
 
     <mat-step completed={{toggle2}}>
       <ng-template matStepLabel>Contact details</ng-template>
-      <app-contact (OnToggle)="toggle2=$event"></app-contact>
+      <app-contact-details (OnToggle)="toggle2=$event"></app-contact-details>
     </mat-step>
 
     <mat-step completed={{toggle3}}>

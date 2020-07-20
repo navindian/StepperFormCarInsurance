@@ -2,40 +2,28 @@
   <mat-card-content>
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center center">
       <div fxFlex="40%">
-        <img mat-card-image src="../../../assets/cardimg.jpeg" alt="Photo">
+        <img src="../../../assets/cardimg.jpeg" alt="Login Photo">
       </div>
-
       <div fxFlex="50%">
         <p class="login-card-description">Sign In</p>
         <form fxLayout="column" fxLayoutAlign="center" [formGroup]="loginForm">
           <mat-form-field appearance="outline">
-            <mat-label>Email
-            </mat-label>
-            <input matInput placeholder="Email" id="email" formControlName='email'>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" id="email" name="email" formControlName='email'>
             <mat-error *ngIf="loginForm.controls.email.errors?.required">Required</mat-error>
           </mat-form-field>
-
           <mat-form-field appearance='outline'>
-            <mat-label>
-              Password
-            </mat-label>
-            <input matInput id="password" formControlName='password' [type]="hide ? 'password' : 'text'">
+            <mat-label>Password</mat-label>
+            <input matInput id="password" name="password" formControlName='password' [type]="hide ? 'password' : 'text'">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
+            </button>
             <mat-error *ngIf="loginForm.controls.password.errors?.required">Required</mat-error>
           </mat-form-field>
-          <mat-error *ngIf="errorMessage!=null">
-            {{errorMessage}}
-          </mat-error>
-          <button class="example-button-row" color="primary" mat-raised-button (click)="login()" value="Login"
-            [disabled]="!loginForm.valid">Login</button>
+          <button class="example-button-row" color="primary" mat-raised-button (click)="login()" value="Login" [disabled]="!loginForm.valid">Login</button>
         </form>
-        <p class="login-card-footer-text">You can create your account at the end of the process <a
-            [routerLink]="['/signUp']"><u>Register here</u></a></p>
+        <p class="login-card-footer-text">You can create your account at the end of the process <a [routerLink]="['/signUp']"><u>Register here</u></a></p>
       </div>
-
     </div>
   </mat-card-content>
-
 </mat-card>
