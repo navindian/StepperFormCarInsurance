@@ -3,7 +3,7 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProgressSpinnerComponent } from '../progress-spinner/progress-spinner.component';
+import { ProgressSpinnerComponent } from '../shared/progress-spinner/progress-spinner.component';
 import { LoginService } from './login.service';
 @Component({
   selector: 'app-login',

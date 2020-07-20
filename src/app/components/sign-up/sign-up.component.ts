@@ -3,7 +3,7 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProgressSpinnerComponent } from '../progress-spinner/progress-spinner.component';
+import { ProgressSpinnerComponent } from '../shared/progress-spinner/progress-spinner.component';
 import { SignUpService } from './sign-up.service';
 
 @Component({

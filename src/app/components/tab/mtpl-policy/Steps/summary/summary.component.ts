@@ -1,8 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CommonDataService } from '../shared/common-data.service';
-import { MtplCalculatorService } from '../mtpl-calculator/mtpl-calculator.service';
-import { MtplPolicyService } from '../mtpl-policy/mtpl-policy.service';
+import { CommonDataService } from '../../../../shared/common-data.service';
+import { MtplCalculatorService } from '../../../mtpl-calculator/mtpl-calculator.service';
+import { MtplPolicyService } from '../../mtpl-policy.service';
 
 @Component({
 selector: 'app-summary',
