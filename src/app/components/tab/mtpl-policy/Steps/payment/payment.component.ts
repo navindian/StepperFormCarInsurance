@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MtplCalculatorService } from '../mtpl-calculator/mtpl-calculator.service';
-import { MtplPolicyService } from '../mtpl-policy/mtpl-policy.service';
+import { MtplCalculatorService } from '../../../../tab/mtpl-calculator/mtpl-calculator.service';
+import { MtplPolicyService } from '../../mtpl-policy.service';
 import * as CryptoJS from 'crypto-js';
 @Component({
   selector: 'app-payment',
@@ -35,7 +35,7 @@ export class PaymentComponent implements OnInit {
     CHARACTER_ENCODING: 'UTF-8',
     V2_HASH: '96511492bb663818bfb70fc8c51126b0'
   };
-  data = 'MIN=D168454720\nINVOICE=5555560\nAMOUNT=100\nEXP_TIME=01.08.2020\nDESCR=test';
+  data = 'MIN=D168454720\nINVOICE=5555561\nAMOUNT=500\nEXP_TIME=01.08.2020\nDESCR=test';
   secretKey = 'DAKE31QBIB2MGX924034168E1OPAHRPOJXP89EJH075ROUNMCK9SNMCURME0T2YI';
 
   ngOnInit(): void {}
@@ -55,26 +55,27 @@ export class PaymentComponent implements OnInit {
   }
   getData = () => {
     if (this.selectedPayment === 'epay') {
-      this.ePay();
+      this.ePayBG()
     } else {
-      alert('Check console for see data saved at Backend');
-      const idObj = { id: sessionStorage.getItem('id') };
-      this.mtplCalculatorService.getData(idObj).subscribe(
-        res => {
-          console.log(res);
-        },
-        err => {
-          console.log(err);
-        }
-      );
-      this.mtplPolicyService.getData(idObj).subscribe(
-        res => {
-          console.log(res);
-        },
-        err => {
-          console.log(err);
-        }
-      );
+      this.ePay()
+      // alert('Check console for see data saved at Backend');
+      // const idObj = { id: sessionStorage.getItem('id') };
+      // this.mtplCalculatorService.getData(idObj).subscribe(
+      //   res => {
+      //     console.log(res);
+      //   },
+      //   err => {
+      //     console.log(err);
+      //   }
+      // );
+      // this.mtplPolicyService.getData(idObj).subscribe(
+      //   res => {
+      //     console.log(res);
+      //   },
+      //   err => {
+      //     console.log(err);
+      //   }
+      // );
     }
   }
   ePayBG = () => {

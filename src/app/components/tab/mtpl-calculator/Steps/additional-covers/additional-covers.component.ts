@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
-import { CommonDataService } from '../shared/common-data.service';
+import { CommonDataService } from '../../../../shared/common-data-service/common-data.service';
 
 @Component({
   selector: 'app-additional-covers',
