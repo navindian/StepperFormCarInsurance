@@ -21,6 +21,8 @@
             <mat-error *ngIf="loginForm.controls.password.errors?.required">Required</mat-error>
           </mat-form-field>
           <button class="example-button-row" color="primary" mat-raised-button (click)="login()" value="Login" [disabled]="!loginForm.valid">Login</button>
+          <br>
+          <button class="example-button-row" color="primary" mat-raised-button [routerLink]="['/admin']">Login as Admin</button>
         </form>
         <p class="login-card-footer-text">You can create your account at the end of the process <a [routerLink]="['/signUp']"><u>Register here</u></a></p>
       </div>

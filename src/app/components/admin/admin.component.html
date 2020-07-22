@@ -1,0 +1,12 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+            <a mat-list-item routerLink="dashboard" routerLinkActive="is-active">Dashboard</a>
+            <a mat-list-item routerLink="create-user" routerLinkActive="is-active">Users</a>
+            <a mat-list-item routerLink="create-intermediate-master" routerLinkActive="is-active">Broker Company</a>
+            <a mat-list-item routerLink="create-group" routerLinkActive="is-active">Groups</a>
+            <a mat-list-item routerLink="news-list" routerLinkActive="is-active">Content</a>
+          </mat-nav-list>
+        </mat-sidenav>
+    <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+</mat-sidenav-container>
