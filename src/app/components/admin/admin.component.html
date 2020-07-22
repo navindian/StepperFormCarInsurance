@@ -28,7 +28,7 @@
 <div style="height: 80vh;">
     <mat-toolbar color="primary">
         <mat-toolbar-row>
-            <button mat-icon-button (click)="sidenav.toggle()" >
+            <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
                 <mat-icon>menu</mat-icon>
             </button>
             <span>Responsive Navigation</span>
@@ -38,7 +38,8 @@
     </mat-toolbar>
 
     <mat-sidenav-container fxFlexFill >
-        <mat-sidenav #sidenav mode="side" >
+        <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"  [opened]="mobileQuery.matches ? false : true">
 
          
 
