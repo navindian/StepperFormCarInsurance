@@ -1,10 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DebugElement } from '@angular/core';
 import { BrowserModule, By } from '@angular/platform-browser';
-
-
+import { MatRadioModule } from '@angular/material/radio';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VehicleInformationComponent } from './vehicle-information.component';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -18,7 +19,13 @@ describe('VInfoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ VehicleInformationComponent ],
-      imports: [ReactiveFormsModule, RouterTestingModule ],
+      imports: [ReactiveFormsModule,
+                RouterTestingModule,
+                MatSelectModule,
+                BrowserModule,
+                MatRadioModule,
+                MatInputModule,
+                BrowserAnimationsModule ],
       providers: [GoogleAnalyticsService]
     })
     .compileComponents().then(() => {
@@ -50,8 +57,8 @@ describe('VInfoComponent', () => {
   it(`form should be invalid if max length fields are not fulfilled`, async(() => {
     component.vehicleInfoForm.controls.registrationNumber.setValue('2323');
     component.vehicleInfoForm.controls.certificateNumber.setValue('123123');
-    component.vehicleInfoForm.controls.purpose.setValue('def');
-    component.vehicleInfoForm.controls.yesNo.setValue('yes');
+    component.vehicleInfoForm.controls.purpose.setValue('Public Use');
+    component.vehicleInfoForm.controls.yesNo.setValue('Yes');
     expect(component.vehicleInfoForm.valid).toBeFalsy();
   }));
 

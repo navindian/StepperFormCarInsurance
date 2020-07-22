@@ -64,9 +64,9 @@
 			<mat-select id="purpose" name="purpose" formControlName="purpose" placeholder="--SELECT--" (selectionChange)="change()" [(ngModel)]="purposeSelected"
 			>
 				<mat-option selected disabled value="">--SELECT--</mat-option>
-				<mat-option *ngFor="let p of purposeList" value="{{ p }}">{{
-					p
-				}}</mat-option>
+				<mat-option *ngFor="let p of purposeList" value="{{ p }}">
+					{{p}}
+				</mat-option>
 			</mat-select>
 			<mat-error *ngIf="formsControl.purpose.errors">
 				<div *ngIf="formsControl.purpose.errors?.required">
