@@ -51,25 +51,27 @@ this.day = '' + this.todaydate.getDate();
 }
 this.mindate =
 '' + this.todaydate.getFullYear() + '-' + this.month + '-' + this.day;
-}
+};
+
 submit = () => {
 this.GAService.event('Calculate Button clicked', 'Policy Details', 'Calculate'
 );
 
 this.commonDataService.policy.next(this.registerForm.value);
 this.Submission.emit('Policy Details form is submitted!');
-}
+};
 
 change = () => {
 if (this.registerForm.valid) {
-this.Toggle.emit(true);
-this.commonDataService.policy.next(this.registerForm.value);
-} else {
-this.Toggle.emit(false);
-}
-}
+    this.Toggle.emit(true);
+    this.commonDataService.policy.next(this.registerForm.value);
+    } 
+    else {
+        this.Toggle.emit(false);
+    }
+};
 
 get formControls() {
 return this.registerForm.controls;
-}
-}
+    };
+};
