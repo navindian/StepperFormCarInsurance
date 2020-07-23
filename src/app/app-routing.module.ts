@@ -11,40 +11,47 @@ import { UsersComponent } from './components/admin/users/users.component';
 import { BrokerCompanyComponent } from './components/admin/broker-company/broker-company.component';
 import { GroupsComponent } from './components/admin/groups/groups.component';
 import { ContentComponent } from './components/admin/content/content.component';
+import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
+import { AdminLoginGuardGuard } from './components/admin/admin-login-guard.guard';
 
 export const routes: Routes = [
   { path: 'signIn', component: LoginComponent },
   { path: 'tab', component: TabComponent, canActivate: [LoggedInGuardGuard] },
   { path: 'signUp', component: SignUpComponent },
   {
+    path: 'loginAsAdmin',
+    component: AdminLoginComponent
+  },
+  {
     path: 'admin',
     component: AdminComponent,
     children: [
-      {
-        path: 'dashboard', // child route path
-        component: DashboardComponent, // child route component that the router renders
-      },
-      {
-        path: 'create-user',
-        component: UsersComponent,
-      },
-      {
-        path: 'create-intermediate-master',
-        component: BrokerCompanyComponent,
-      },
-      {
-        path: 'create-group',
-        component: GroupsComponent,
-      },
-      {
-        path: 'news-list',
-        component: ContentComponent,
-      },
-      {
-        path: '**',
-        redirectTo: "dashboard",
-      }
-    ],
+          {
+            path: 'dashboard', // child route path
+            component: DashboardComponent,// child route component that the router renders
+          },
+          {
+            path: 'create-user',
+            component: UsersComponent,
+          },
+          {
+            path: 'create-intermediate-master',
+            component: BrokerCompanyComponent,
+          },
+          {
+            path: 'create-group',
+            component: GroupsComponent,
+          },
+          {
+            path: 'news-list',
+            component: ContentComponent,
+          },
+          {
+            path: '**',
+            component: DashboardComponent
+          }
+        ], 
+        canActivate: [AdminLoginGuardGuard]
   },
   { path: '**', redirectTo: '/signIn', pathMatch: 'full' },
 ];
@@ -53,4 +60,4 @@ export const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

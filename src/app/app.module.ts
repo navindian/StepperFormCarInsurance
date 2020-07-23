@@ -60,6 +60,7 @@ import { UsersComponent } from './components/admin/users/users.component';
 import { BrokerCompanyComponent } from './components/admin/broker-company/broker-company.component';
 import { GroupsComponent } from './components/admin/groups/groups.component';
 import { ContentComponent } from './components/admin/content/content.component';
+import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
 // import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -88,8 +89,9 @@ import { ContentComponent } from './components/admin/content/content.component';
     UsersComponent,
     BrokerCompanyComponent,
     GroupsComponent,
-    ContentComponent
-  ],
+    ContentComponent,
+    AdminLoginComponent
+ ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
