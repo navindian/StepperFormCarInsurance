@@ -48,6 +48,8 @@ import { TabComponent } from './tab/tab.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
+import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider } from 'angularx-social-login';
+
 
 @NgModule({
   declarations: [
@@ -101,7 +103,8 @@ import { MatRadioModule } from '@angular/material/radio';
     HttpClientModule,
     MatRadioModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    SocialLoginModule
   ],
   providers: [
     CdkStepper,
@@ -112,7 +115,18 @@ import { MatRadioModule } from '@angular/material/radio';
    {
       provide: MAT_RADIO_DEFAULT_OPTIONS,
       useValue: { color: 'primary' },
-     }
+     },
+     {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('183164983832-8lcgnmpj04mqp8cbogdjngmndhllbd7a.apps.googleusercontent.com'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    } 
   ],
   bootstrap: [AppComponent]
 })

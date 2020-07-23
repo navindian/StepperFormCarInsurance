@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoggedInServiceService } from 'src/app/logged-in-service.service';
+import * as CryptoJS from 'crypto-js';
 
-
+const SECRET_KEY='abc123';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +26,7 @@ export class LoggedInGuardGuard implements CanActivate {
   }
   public isLoggedIn(): boolean {
      let status = false;
-     if (sessionStorage.getItem('isLoggedIn') == 'true') {
+     if (CryptoJS.AES.decrypt(sessionStorage.getItem('isLoggedIn'),SECRET_KEY).toString(CryptoJS.enc.Utf8) == 'true') {
         status = true;
      }
      else {

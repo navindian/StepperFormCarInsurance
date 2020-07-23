@@ -28,6 +28,7 @@
 
           <button class="example-button-row" color="primary" mat-raised-button (click)="login()" value="Login"
             [disabled]="!loginForm.valid">Login</button>
+            <button class="example-button-row mt-2 btn-danger"  (click)="googleLogin()" value="Login">Login with Google</button>
         </form>
         <p class="login-card-footer-text">You can create your account at the end of the process <a
             [routerLink]="['/signUp']"><u>Register here</u></a></p>
