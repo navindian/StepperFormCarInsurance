@@ -61,6 +61,7 @@ import { BrokerCompanyComponent } from './components/admin/broker-company/broker
 import { GroupsComponent } from './components/admin/groups/groups.component';
 import { ContentComponent } from './components/admin/content/content.component';
 import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
+import {MatTableModule} from '@angular/material/table';
 // import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -128,7 +129,8 @@ import { AdminLoginComponent } from './components/admin/admin-login/admin-login.
     ScrollingModule,
     PlatformModule,
     BidiModule,
-    A11yModule
+    A11yModule,
+    MatTableModule
   ],
   providers: [
     CdkStepper,
