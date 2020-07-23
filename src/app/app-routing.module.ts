@@ -18,10 +18,7 @@ export const routes: Routes = [
   { path: 'signIn', component: LoginComponent },
   { path: 'tab', component: TabComponent, canActivate: [LoggedInGuardGuard] },
   { path: 'signUp', component: SignUpComponent },
-  {
-    path: 'loginAsAdmin',
-    component: AdminLoginComponent
-  },
+  {path: 'loginAsAdmin',component: AdminLoginComponent},
   {
     path: 'admin',
     component: AdminComponent,
@@ -52,7 +49,7 @@ export const routes: Routes = [
           }
         ], 
         canActivate: [AdminLoginGuardGuard]
-  },
+   },
   { path: '**', redirectTo: '/signIn', pathMatch: 'full' },
 ];
 
