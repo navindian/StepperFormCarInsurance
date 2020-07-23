@@ -44,8 +44,23 @@ import { TabComponent } from './components/tab/tab.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
+import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider } from 'angularx-social-login';
+
 import { ProgressSpinnerComponent } from './components/shared/progress-spinner/progress-spinner.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { AdminComponent } from './components/admin/admin.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {PlatformModule} from '@angular/cdk/platform/index';
+import {BidiModule} from '@angular/cdk/bidi/index';
+import {A11yModule} from '@angular/cdk/a11y';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { UsersComponent } from './components/admin/users/users.component';
+import { BrokerCompanyComponent } from './components/admin/broker-company/broker-company.component';
+import { GroupsComponent } from './components/admin/groups/groups.component';
+import { ContentComponent } from './components/admin/content/content.component';
+// import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -67,7 +82,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ContactDetailsComponent,
     SignUpComponent,
     OrdinalPipe,
-    ProgressSpinnerComponent
+    ProgressSpinnerComponent,
+    AdminComponent,
+    DashboardComponent,
+    UsersComponent,
+    BrokerCompanyComponent,
+    GroupsComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +119,14 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatRadioModule,
     FlexLayoutModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    SocialLoginModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatListModule,
+    ScrollingModule,
+    PlatformModule,
+    BidiModule,
+    A11yModule
   ],
   providers: [
     CdkStepper,
@@ -108,7 +136,18 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
    {
       provide: MAT_RADIO_DEFAULT_OPTIONS,
       useValue: { color: 'primary' },
-     }
+     },
+     {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('183164983832-8lcgnmpj04mqp8cbogdjngmndhllbd7a.apps.googleusercontent.com'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    } 
   ],
   bootstrap: [AppComponent],
   entryComponents: [ProgressSpinnerComponent],
