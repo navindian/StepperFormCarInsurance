@@ -8,14 +8,12 @@ describe('MTPLCalculatorComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MTPLCalculatorComponent]
-    }).compileComponents();
+    }).compileComponents().then(() => {
+      fixture = TestBed.createComponent(MTPLCalculatorComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MTPLCalculatorComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
