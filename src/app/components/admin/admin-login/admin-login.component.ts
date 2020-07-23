@@ -23,6 +23,8 @@ export class AdminLoginComponent implements OnInit {
       sessionStorage.setItem('isAdminLogged','true');
       this.router.navigate(['admin']);
     }
+    else{
+      alert('Wrong Credentials')
+    }
   }
-
 }
