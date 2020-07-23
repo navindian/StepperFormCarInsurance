@@ -6,10 +6,8 @@
         <div fxLayout="column" fxLayoutWrap fxLayoutGap="0.5%">
             <div fxFlex=30% class="form-group">
                 <mat-form-field appearance="outline" fxFlex="30%" fxLayout='column'>
-                    <mat-label>
-                        Group Name
-                    </mat-label>
-                    <input matInput placeholder="Group Name" formControlName="groupName" id="groupName">
+                    <mat-label>Group Name</mat-label>
+                    <input matInput formControlName="groupName" id="groupName" placeholder="Group Name">
                     <mat-error class="error" *ngIf="formControls.groupName.touched && formControls.groupName.errors">
                         <mat-error *ngIf="formControls.groupName.errors.required">This field is mandatory</mat-error>
                     </mat-error>
@@ -17,10 +15,8 @@
             </div>
             <div fxFlex=30%>
                 <mat-form-field appearance="outline" fxFlex="30%" fxLayout='column'>
-                    <mat-label>
-                        Description
-                    </mat-label>
-                    <input matInput formControlName="description" placeholder="Description" id="description">
+                    <mat-label>Description</mat-label>
+                    <textarea style="resize: none;" id="description" matInput formControlName="description" cols="30" rows="3"></textarea>
                     <mat-error class="error" *ngIf="formControls.description.touched && formControls.description.errors">
                         <mat-error *ngIf="formControls.description.errors.required">This field is mandatory</mat-error>
                     </mat-error>
