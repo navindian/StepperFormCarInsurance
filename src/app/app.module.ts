@@ -23,57 +23,72 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
 import { routes } from 'src/app/app-routing.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdditionalCoversComponent } from './components/additional-covers/additional-covers.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { DeliveryComponent } from './components/delivery/delivery.component';
-import { InstallmentComponent } from './components/installment/installment.component';
-import { OrdinalPipe } from './components/installment/ordinal.pipe';
-import { InsuringPartyComponent } from './components/insuring-party/insuring-party.component';
+import { AdditionalCoversComponent } from './components/tab/mtpl-calculator/Steps/additional-covers/additional-covers.component';
+import { ContactDetailsComponent } from './components/tab/mtpl-policy/Steps/contact-details/contact-details.component';
+import { DeliveryComponent } from './components/tab/mtpl-policy/Steps/delivery/delivery.component';
+import { InstallmentComponent } from './components/tab/mtpl-calculator/Steps/installment/installment.component';
+import { OrdinalPipe } from './components/shared/ordinal-pipe/ordinal.pipe';
+import { InsuringPartyComponent } from './components/tab/mtpl-calculator/Steps/insuring-party/insuring-party.component';
 import { LoginComponent } from './components/login/login.component';
-import { MTPLCalculatorComponent } from './components/mtpl-calculator/mtpl-calculator.component';
-import { MTPLPolicyComponent } from './components/mtpl-policy/mtpl-policy.component';
-import { PaymentComponent } from './components/payment/payment.component';
-import { PersonalComponent } from './components/personal/personal.component';
-import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
-import { SummaryComponent } from './components/summary/summary.component';
+import { MTPLCalculatorComponent } from './components/tab/mtpl-calculator/mtpl-calculator.component';
+import { MTPLPolicyComponent } from './components/tab/mtpl-policy/mtpl-policy.component';
+import { PaymentComponent } from './components/tab/mtpl-policy/Steps/payment/payment.component';
+import { PersonalDetailsComponent } from './components/tab/mtpl-policy/Steps/personal-details/personal-details.component';
+import { PolicyDetailsComponent } from './components/tab/mtpl-calculator/Steps/policy-details/policy-details.component';
+import { SummaryComponent } from './components/tab/mtpl-policy/Steps/summary/summary.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { Tab2Component } from './components/tab2/tab2.component';
-import { TabsComponent } from './components/tabs/tabs.component';
-import { VInfoComponent } from './components/v-info/v-info.component';
-import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.component';
-import { LoggedInGuardGuard } from './logged-in-guard.guard';
-import { LoggedInServiceService } from './logged-in-service.service';
-import { StepperComponent } from './stepper/stepper.component';
-import { TabComponent } from './tab/tab.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
+import { VehicleInformationComponent } from './components/tab/mtpl-calculator/Steps/vehicle-information/vehicle-information.component';
+import { VehicleOwnerComponent } from './components/tab/mtpl-policy/Steps/vehicle-owner/vehicle-owner.component';
+import { LoggedInGuardGuard } from './components/login/_guards/logged-in-guard.guard';
+import { TabComponent } from './components/tab/tab.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
 import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider } from 'angularx-social-login';
 
+import { ProgressSpinnerComponent } from './components/shared/progress-spinner/progress-spinner.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { AdminComponent } from './components/admin/admin.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {PlatformModule} from '@angular/cdk/platform/index';
+import {BidiModule} from '@angular/cdk/bidi/index';
+import {A11yModule} from '@angular/cdk/a11y';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { UsersComponent } from './components/admin/users/users.component';
+import { BrokerCompanyComponent } from './components/admin/broker-company/broker-company.component';
+import { GroupsComponent } from './components/admin/groups/groups.component';
+import { ContentComponent } from './components/admin/content/content.component';
+// import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StepperComponent,
     TabComponent,
     AdditionalCoversComponent,
     PolicyDetailsComponent,
     LoginComponent,
-    VInfoComponent,
-    Tab2Component,
-    TabsComponent,
+    VehicleInformationComponent,
     InsuringPartyComponent,
     DeliveryComponent,
     MTPLCalculatorComponent,
     MTPLPolicyComponent,
-    PersonalComponent,
+    PersonalDetailsComponent,
     PaymentComponent,
     InstallmentComponent,
     SummaryComponent,
     VehicleOwnerComponent,
-    ContactComponent,
+    ContactDetailsComponent,
     SignUpComponent,
-    OrdinalPipe
+    OrdinalPipe,
+    ProgressSpinnerComponent,
+    AdminComponent,
+    DashboardComponent,
+    UsersComponent,
+    BrokerCompanyComponent,
+    GroupsComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -104,13 +119,19 @@ import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider } from '
     MatRadioModule,
     FlexLayoutModule,
     MatIconModule,
-    SocialLoginModule
+    SocialLoginModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatListModule,
+    ScrollingModule,
+    PlatformModule,
+    BidiModule,
+    A11yModule
   ],
   providers: [
     CdkStepper,
     MTPLCalculatorComponent,
     LoggedInGuardGuard,
-    LoggedInServiceService,
     SummaryComponent,
    {
       provide: MAT_RADIO_DEFAULT_OPTIONS,
@@ -128,6 +149,7 @@ import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider } from '
       } as SocialAuthServiceConfig,
     } 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ProgressSpinnerComponent],
 })
 export class AppModule {}

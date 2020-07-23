@@ -9,7 +9,7 @@ export class SignUpService {
   url = 'http://3.6.39.44:4000/user/signup';
 
   registerUser = userData => {
-    console.log(userData);
+
     return this.http.post(this.url, userData);
   }
 }

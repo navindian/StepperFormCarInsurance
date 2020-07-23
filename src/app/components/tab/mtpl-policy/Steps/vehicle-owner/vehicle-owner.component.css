@@ -1,0 +1,61 @@
+/* styles label with color and font-family*/
+.label {
+  color: rgb(8, 56, 95);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Styles image with width */
+.user-key {
+  width: 40px;  
+}
+
+/* styles heading elements */
+h1 {
+  color: rgb(8, 56, 95);
+  font-weight: bold;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+/* styles warning section */
+.panel {
+  border-width: thin;
+  border-style: solid;
+  border-color: yellow;
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+/* styles mat-error with red color */
+.error {
+  color: red;
+}
+
+/* styles line divider */
+.line{
+  margin-bottom: 10px;
+}
+
+.rounded{
+  border: radius 0.5;
+}
+
+@media screen and (max-width: 800px) {
+  .line {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .nextbtn {
+    width: 250px;
+    margin: auto;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .col-lg-4 {
+    padding: 4px;
+  }
+}

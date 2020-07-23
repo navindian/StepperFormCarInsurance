@@ -1,0 +1,229 @@
+.bestvalue1 {
+  margin-left: -10px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 20px;
+}
+.mon {
+  margin-top: 30px;
+  font-size: 15px;
+}
+.mon1 {
+  padding-left: 27px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+.spc {
+  margin-left: 27px;
+  width: 100px;
+}
+.best {
+  padding-left: 25px;
+  padding-right: 0px;
+  font-size: 15px;
+  width: 150px;
+}
+
+.heading {
+  color: rgb(8, 56, 95);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
+}
+.middle-heading {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  font-size: 20px;
+  padding-left: 20px;
+  color: white;
+}
+.bg-dark-blue {
+  background-color: #003564;
+  color: #ffffff;
+}
+.sub-head {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(8, 56, 95);
+}
+
+.cardrow {
+  margin-left: 20px;
+  color: rgb(8, 56, 95);
+  height: 50px;
+}
+.nearelm {
+  font-size: 20px;
+}
+.num {
+  color: rgb(8, 56, 95);
+
+  font-size: 20px;
+  font-weight: bold;
+
+  padding: 0%;
+}
+.months {
+  color: rgb(8, 56, 95);
+}
+.whitecard {
+  padding: 0%;
+  margin-top: 20px;
+}
+.firstcard {
+  height: auto;
+  margin-bottom: 20px;
+}
+.secondcard {
+  height: auto;
+  margin-bottom: 20px;
+}
+.thirdcard {
+  height: auto;
+  margin-bottom: 20px;
+}
+.thirdparty {
+  background-color: rgb(8, 56, 95);
+  height: auto;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.policy {
+  color: white;
+  margin-left: -1px;
+  margin-top: -50px;
+  font-size: 20px;
+}
+.bgn {
+  color: white;
+  padding-left: 10%;
+}
+.card-body {
+  padding-top: 2px;
+}
+
+.textcolor {
+  color: rgb(8, 56, 95);
+  margin-top: -20px;
+  padding-left: 15px;
+}
+
+.car {
+  margin-left: -5px;
+}
+.img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 450px) {
+  .mon2 {
+    margin-top: 10px;
+    margin-left: -45px;
+  }
+  .bestvalue {
+    margin-top: 25px;
+    margin-left: -70px;
+    padding-left: 25px;
+  }
+
+  .bgn {
+    margin-left: -20px;
+    color: white;
+  }
+  .whitecard .months {
+    margin-left: 25px;
+  }
+  .whitecard .num {
+    margin-left: 25px;
+  }
+  .num1 {
+    margin-left: 35px;
+    width: 200px;
+  }
+  .num {
+    font-size: 15px;
+  }
+  .months {
+    margin-left: 60px;
+    font-size: 15px;
+  }
+  .nearelm {
+    font-size: 15px;
+  }
+
+  .middle-heading1 {
+    margin-left: 35px;
+    max-width: 500px;
+  }
+  .middle-heading {
+    margin-left: 0px;
+    padding-left: 0%;
+  }
+  .col-lg-12 {
+    margin-left: 200px;
+  }
+  .spc {
+    margin-top: 0px;
+  }
+}
+
+@media all and (max-width: 767px) and (min-width: 576px) {
+  .nearelm {
+    font-size: 13px;
+  }
+  .bgn {
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .mon1 {
+    width: 300px;
+    font-size: 12px;
+  }
+  .num1 {
+    margin-left: 40px;
+    width: 200px;
+  }
+
+  .months {
+    font-size: 12px;
+  }
+
+  /*  .textcolor {
+    display: none; 
+  }*/
+  .middle-heading1 {
+    margin-left: 5px;
+    max-width: 500px;
+  }
+
+  .bestvalue {
+    margin-top: 25px;
+    padding-left: 25px;
+  }
+  /* .adjust {
+    padding-left: 0%;
+    padding-top: 5%;
+  } */
+  /* .cardrow{
+    margin-bottom: 100px;
+  
+  } */
+}
+@media screen and (max-width: 575px) and (min-width: 451px) {
+  .mon2 {
+    margin-left: -45px;
+  }
+  .bestvalue {
+    margin-top: 25px;
+    padding-left: 25px;
+  }
+
+  .nextbtn {
+    width: 250px;
+    margin: auto;
+    display: block;
+  }
+}
