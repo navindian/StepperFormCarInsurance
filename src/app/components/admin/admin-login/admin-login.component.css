@@ -1,4 +1,4 @@
-@media only screen and (min-width: 700px){mat-card{
+/* @media only screen and (min-width: 700px){mat-card{
     height:300px;
     width:500px;
     margin-top: 10%;
@@ -9,7 +9,7 @@
     width:50%;
     margin-top: 10%;
 }
-}
+} */
 mat-card-title{
     color: orange;
 }
