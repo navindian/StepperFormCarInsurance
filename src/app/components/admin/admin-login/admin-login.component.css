@@ -1,0 +1,31 @@
+/* @media only screen and (min-width: 700px){mat-card{
+    height:300px;
+    width:500px;
+    margin-top: 10%;
+}
+}
+@media only screen and (max-width: 700px){mat-card{
+    height:50%;
+    width:50%;
+    margin-top: 10%;
+}
+} */
+mat-card-title{
+    color: orange;
+}
+a{
+    margin-right: auto;
+}
+button{
+    margin-left: auto;
+}
+mat-card-content{
+    margin-left: 15px;
+}
+body{
+    background: url('../../../../assets/admin-bg.jpg');
+    position: fixed;
+    min-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
