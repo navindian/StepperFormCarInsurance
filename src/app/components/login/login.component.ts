@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private loginService: LoginService,
     private fb: FormBuilder,
-    private overlay: OverlayRef,
     private _socialAuthServ:SocialAuthService
   ) {}
 
@@ -65,7 +64,6 @@ export class LoginComponent implements OnInit {
           });
         },
       err => {
-        this.overlay.detach();
         this.errorMessage = err.error.error;
         console.log(this.errorMessage);
         alert("Please enter correct Credentials!")
