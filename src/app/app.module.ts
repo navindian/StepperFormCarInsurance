@@ -62,6 +62,7 @@ import { GroupsComponent } from './components/admin/groups/groups.component';
 import { ContentComponent } from './components/admin/content/content.component';
 import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
 import {MatTableModule} from '@angular/material/table';
+import { CreateUserComponent } from './components/admin/create-user/create-user.component';
 // import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -91,7 +92,8 @@ import {MatTableModule} from '@angular/material/table';
     BrokerCompanyComponent,
     GroupsComponent,
     ContentComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    CreateUserComponent
  ],
   imports: [
     BrowserModule,
