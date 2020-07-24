@@ -3,34 +3,43 @@
 
 
         <div fxLayoutAlign.lt-md="center" fxFlex.gt-sm="100%" >
-            <form fxFlex="100%" class="example-form" flexLayoutAlign="center stretch">
+            <form fxFlex="100%" class="example-form" flexLayoutAlign="center stretch" [formGroup]="brokerForm"(ngSubmit)="send()">
                 <div flexLayout="column" >
                     <div class="align">
-                        Create Group
+                        Create Broker Company
                     </div>
                     <div fxLayout="row">
                       
                             <mat-form-field fxFlex.gt-sm="60%" fxFlex.sm="90%" class="example-full-width" appearance="outline">
                                 <mat-label>Broker Company Name</mat-label>
-                                <input matInput placeholder="Broker Company Name">
+                                <input matInput placeholder="Broker Company Name" formControlName="companyName">
+                                <mat-error *ngIf="brokerForm.controls.companyName.errors?.required">Required
+                                </mat-error>
                             </mat-form-field>
+                            
                         
                     </div>
 
                     <div fxLayout="row">
                    
                         <mat-form-field fxFlex.gt-sm="60%" fxFlex.sm="90%" class="example-full-width" appearance="outline">
-                            <mat-label>Broker Company Name</mat-label>
-                            <input matInput placeholder="Broker Company type">
+                            <mat-label>Broker Company Type</mat-label>
+                            <input matInput placeholder="Broker Company type" formControlName="companyType">
+                            <mat-error *ngIf="brokerForm.controls.companyType.errors?.required">Required
+                            </mat-error>
+                       
                         </mat-form-field>
-                   
+                        
                     </div>
                     <div fxLayout="row">
                     
                         <mat-form-field fxFlex.gt-sm="60%" fxFlex.sm="90%" class="example-full-width" appearance="outline">
                             <mat-label>Seller Code</mat-label>
-                            <input matInput placeholder="Seller Code">
+                            <input matInput placeholder="Seller Code" formControlName="sellerCode">
+                            <mat-error *ngIf="brokerForm.controls.sellerCode.errors?.required">Required
+                            </mat-error>
                         </mat-form-field>
+                        
            
                     </div>
                     <div fxLayout="row">
