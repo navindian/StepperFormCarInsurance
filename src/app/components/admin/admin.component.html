@@ -1,59 +1,26 @@
-<!-- <div >
-<mat-sidenav-container class="example-container">
-    <mat-toolbar color="primary">
-        <mat-toolbar-row>
-          <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
-            <mat-icon>menu</mat-icon>
-          </button>
-          <span>Responsive Navigation</span>
-          <span class="menu-spacer"></span>
-         
-        </mat-toolbar-row>
-      </mat-toolbar>
-    <mat-sidenav mode="side" opened>
-        
-            <mat-list>
-                <a mat-list-item routerLink="dashboard" routerLinkActive="is-active">Dashboard</a>
-                <a mat-list-item routerLink="create-user" routerLinkActive="is-active">Users</a>
-                <a mat-list-item routerLink="create-intermediate-master" routerLinkActive="is-active">Broker Company</a>
-                <a mat-list-item routerLink="create-group" routerLinkActive="is-active">Groups</a>
-                <a mat-list-item routerLink="news-list" routerLinkActive="is-active">Content</a>
-              </mat-list>
-    
-      
-        </mat-sidenav>
-    <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
-</mat-sidenav-container>
-</div> -->
 <div style="height: 80vh;">
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>Responsive Navigation</span>
+            <span>Admin Dashboard</span>
             <span class="menu-spacer"></span>
-
         </mat-toolbar-row>
     </mat-toolbar>
-
-    <mat-sidenav-container fxFlexFill >
-        <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
-        [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"  [opened]="mobileQuery.matches ? false : true">
-
-         
-
+    <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56" [opened]="mobileQuery.matches ? false : true">
             <mat-list>
                 <a mat-list-item routerLink="dashboard" routerLinkActive="is-active">Dashboard</a>
-                <a mat-list-item routerLink="create-user" routerLinkActive="is-active">Users</a>
+                <a mat-list-item routerLink="users" routerLinkActive="is-active">Users</a>
                 <a mat-list-item routerLink="create-intermediate-master" routerLinkActive="is-active">Broker Company</a>
                 <a mat-list-item routerLink="create-group" routerLinkActive="is-active">Groups</a>
                 <a mat-list-item routerLink="news-list" routerLinkActive="is-active">Content</a>
             </mat-list>
         </mat-sidenav>
-        <mat-sidenav-content >
+        <mat-sidenav-content>
             <router-outlet></router-outlet>
         </mat-sidenav-content>
-       
     </mat-sidenav-container>
 </div>

@@ -45,7 +45,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { MatRadioModule } from '@angular/material/radio';
 import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider } from 'angularx-social-login';
-
 import { ProgressSpinnerComponent } from './components/shared/progress-spinner/progress-spinner.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AdminComponent } from './components/admin/admin.component';
@@ -60,7 +59,12 @@ import { UsersComponent } from './components/admin/users/users.component';
 import { BrokerCompanyComponent } from './components/admin/broker-company/broker-company.component';
 import { GroupsComponent } from './components/admin/groups/groups.component';
 import { ContentComponent } from './components/admin/content/content.component';
-// import { NgModule } from '@angular/core';
+import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
+import {MatTableModule} from '@angular/material/table';
+import { CreateUserComponent } from './components/admin/create-user/create-user.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
@@ -88,8 +92,10 @@ import { ContentComponent } from './components/admin/content/content.component';
     UsersComponent,
     BrokerCompanyComponent,
     GroupsComponent,
-    ContentComponent
-  ],
+    ContentComponent,
+    AdminLoginComponent,
+    CreateUserComponent
+ ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
@@ -126,7 +132,10 @@ import { ContentComponent } from './components/admin/content/content.component';
     ScrollingModule,
     PlatformModule,
     BidiModule,
-    A11yModule
+    A11yModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     CdkStepper,
