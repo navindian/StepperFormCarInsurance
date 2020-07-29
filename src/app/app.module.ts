@@ -64,6 +64,7 @@ import { AdminLoginComponent } from './components/admin/admin-login/admin-login.
 import {MatTableModule} from '@angular/material/table';
 import { CreateUserComponent } from './components/admin/create-user/create-user.component';
 // import { NgModule } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -153,7 +154,8 @@ import { CreateUserComponent } from './components/admin/create-user/create-user.
           },
         ],
       } as SocialAuthServiceConfig,
-    } 
+    },
+    CookieService
   ],
   bootstrap: [AppComponent],
   entryComponents: [ProgressSpinnerComponent],

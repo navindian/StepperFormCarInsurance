@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-tab',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabComponent implements OnInit {
   welcomeuser = sessionStorage.getItem('welcomename');
+  // welcomeuser=this.cookie.get('welcomename');
   activeTab = 0;
   policyTabToggle = true;
   mtplCalculatorStep;
-  constructor() {}
+  constructor(private cookie:CookieService) {}
 
   ngOnInit(): void {}
 
