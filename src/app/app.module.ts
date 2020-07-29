@@ -64,6 +64,8 @@ import {MatTableModule} from '@angular/material/table';
 import { CreateUserComponent } from './components/admin/create-user/create-user.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { ProfileComponent } from './components/admin/profile/profile.component';
+import { ChangePasswordComponent } from './components/admin/change-password/change-password.component';
 
 
 @NgModule({
@@ -94,7 +96,9 @@ import {MatSortModule} from '@angular/material/sort';
     GroupsComponent,
     ContentComponent,
     AdminLoginComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    ProfileComponent,
+    ChangePasswordComponent
  ],
   imports: [
     BrowserModule,
