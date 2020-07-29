@@ -14,6 +14,8 @@ import { ContentComponent } from './components/admin/content/content.component';
 import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
 import { AdminLoginGuardGuard } from './components/admin/admin-login-guard.guard';
 import { CreateUserComponent } from './components/admin/create-user/create-user.component';
+import { ProfileComponent } from './components/admin/profile/profile.component';
+import { ChangePasswordComponent } from './components/admin/change-password/change-password.component';
 
 export const routes: Routes = [
   { path: 'signIn', component: LoginComponent },
@@ -47,6 +49,14 @@ export const routes: Routes = [
           {
             path: 'news-list',
             component: ContentComponent,
+          },
+          {
+            path: 'profile',
+            component: ProfileComponent
+          },
+          {
+            path: 'profile/change-password',
+            component: ChangePasswordComponent
           },
           {
             path: '**',

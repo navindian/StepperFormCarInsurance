@@ -53,22 +53,18 @@ export class LoginComponent implements OnInit {
         res => {
           const response = JSON.parse(JSON.stringify(res));
           sessionStorage.setItem('id', response.id);
-          // sessionStorage.setItem('token', response.token);
-          // this.cookie.HttpOnly(true)
-          // this.cookie.set('id',response.id);
           this.cookie.set('token',response.token);
-          // response.cookie(response.id, response.token, { httpOnly: false, secure: true});
-          // this.cookie.set('isLoggedIn', CryptoJS.AES.encrypt('true', SECRET_KEY).toString());
+          
           sessionStorage.setItem('isLoggedIn', CryptoJS.AES.encrypt('true', SECRET_KEY).toString());
           this.name = prompt('How do you like to call you!!');
           console.log(this.name);
           if (this.name != null) {
-            // this.cookie.set('welcomename', this.name);
+           
             sessionStorage.setItem('welcomename', this.name);
           }
           else {
             https://developer.salesforce.com/signup?d=70130000000td6N
-            // this.cookie.set('welcomename','');
+          
             sessionStorage.setItem('welcomename', '');
           }
           setTimeout(() => {
@@ -91,30 +87,23 @@ export class LoginComponent implements OnInit {
     this._socialAuthServ.signIn(platformProvider).then(response => {
     console.log(platformProvider = 'logged in user data is=', response);
     this.user = response;
-    // this.cookie.set('id',response.id);
+    
     this.cookie.set('token',response.authToken);
     sessionStorage.setItem('id', response.id);
-    // sessionStorage.setItem('token', response.authToken);
-    // response.cookie( response.id, response.authToken, {httpOnly: false, secure: true });
+    
     sessionStorage.setItem('isLoggedIn', CryptoJS.AES.encrypt('true', SECRET_KEY).toString());
-    // this.cookie.set('isLoggedIn',CryptoJS.AES.encrypt('true', SECRET_KEY).toString());
+    
     this.name = response.name;
     if (this.name != null) {
-      // this.cookie.set('welcomename',this.name);
-      // console.log('welcome name',this.cookie.get('welcomename'));
+     
       sessionStorage.setItem('welcomename', this.name);
     }
     else {
-      // this.cookie.set('welcomename','');
+      
       sessionStorage.setItem('welcomename', '');
     }
     this.router.navigate(['tab']);});
     }
 
-    // ngOnDestroy(){
-    //   this.cookie.delete('id');
-    //   this.cookie.delete('token');
-    //   this.cookie.delete('welcomename');
-    //   this.cookie.delete('isLoggedIn');
-    // }
+   
 }

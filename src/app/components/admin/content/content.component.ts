@@ -1,33 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+
+const ELEMENT_DATA = [
+  {
+    id: 1,
+    title: '34 Critical illness Benefit',
+    description:
+      'This optional benifits gives full claim payoout on the first diagnosis of 34Critical Illnesses like cancer, heart attack and kidney failure. No hospital bills required. You stay covered for a maximum of 30 years without any change in premium.',
+  },
+  {
+    id: 2,
+    title: 'Option to increase life cover',
+    description:
+      'Life stage benefit gives you an option to increase the cover after Marriage (50% increase), 1st (25% increase) & 2nd (25% increase) childbirth, without any medicals. Additional premium will be calculated based on the increased life cover and remaining policy term as per your age at the time of each such increase.',
+  },
+  {
+    id: 3,
+    title: 'Insurance',
+    description:
+      'Premium paid and benefits received are eligible for tax benefits U/S, 80C and 10 (10D)',
+  },
 ];
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  styleUrls: ['./content.component.css'],
 })
 export class ContentComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['id', 'title', 'description'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

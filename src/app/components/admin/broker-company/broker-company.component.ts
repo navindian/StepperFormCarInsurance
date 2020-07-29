@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-broker-company',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrokerCompanyComponent implements OnInit {
 
-  constructor() { }
+  brokerForm: FormGroup;
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.brokerForm=this.fb.group({
+      companyName:['',[Validators.required]],
+      companyType:['',[Validators.required]],
+      sellerCode:['',[Validators.required]]
+    })
+  }
+  send=()=>{
+    console.log(this.brokerForm.value);
+    
   }
 
 }

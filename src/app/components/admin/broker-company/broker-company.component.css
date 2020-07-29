@@ -1,0 +1,14 @@
+.align{
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: bold;
+    color: #3498DB 
+}
+.example-form{
+    margin-left: 1%;
+}
+.button-color{
+    background-color: #3F51B5;
+    color: white;
+}
