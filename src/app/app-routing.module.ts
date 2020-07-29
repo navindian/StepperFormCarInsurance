@@ -13,6 +13,7 @@ import { GroupsComponent } from './components/admin/groups/groups.component';
 import { ContentComponent } from './components/admin/content/content.component';
 import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
 import { AdminLoginGuardGuard } from './components/admin/admin-login-guard.guard';
+import { CreateUserComponent } from './components/admin/create-user/create-user.component';
 
 export const routes: Routes = [
   { path: 'signIn', component: LoginComponent },
@@ -28,8 +29,12 @@ export const routes: Routes = [
             component: DashboardComponent,// child route component that the router renders
           },
           {
-            path: 'create-user',
+            path: 'users',
             component: UsersComponent,
+          },
+          {
+            path: 'users/create-user',
+            component: CreateUserComponent,
           },
           {
             path: 'create-intermediate-master',

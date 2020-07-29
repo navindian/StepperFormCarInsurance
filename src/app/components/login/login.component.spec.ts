@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { SocialLoginModule, SocialAuthServiceConfig,GoogleLoginProvider } from 'angularx-social-login';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -24,7 +25,21 @@ describe('LoginComponent', () => {
                 BrowserModule,
                 MatRadioModule,
                 MatInputModule,
-                BrowserAnimationsModule]
+                SocialLoginModule,
+                BrowserAnimationsModule],
+      providers: [
+        {
+          provide: 'SocialAuthServiceConfig',
+          useValue: {
+            providers: [
+              {
+                id: GoogleLoginProvider.PROVIDER_ID,
+                provider: new GoogleLoginProvider('183164983832-8lcgnmpj04mqp8cbogdjngmndhllbd7a.apps.googleusercontent.com'),
+              },
+            ],
+          } as SocialAuthServiceConfig,
+        } 
+      ]
     })
       .compileComponents()
       .then(() => {
