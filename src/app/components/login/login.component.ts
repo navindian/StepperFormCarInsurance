@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
           console.log(this.name);
           if (this.name != null) {
            
-            sessionStorage.setItem('welcomename', this.name);
+            sessionStorage.setItem('welcomename', this.name)
           }
           else {
             https://developer.salesforce.com/signup?d=70130000000td6N
