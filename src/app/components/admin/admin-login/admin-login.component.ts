@@ -22,7 +22,7 @@ export class AdminLoginComponent implements OnInit {
     })
   }
   login() :void {
-    console.log(this.loginForm.value);
+    
     this.errorMessage=null;
     this.adminLoginService.getLoginData1(this.loginForm.value).subscribe(
       res =>{
