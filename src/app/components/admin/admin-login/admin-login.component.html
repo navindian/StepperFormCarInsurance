@@ -12,7 +12,7 @@
             <mat-card-content>
                 <form fxLayout="column" fxLayoutAlign="center" [formGroup]="loginForm" (ngSubmit)="login()">
                     <mat-form-field appearance="outline">
-                        <input matInput placeholder="Username" id="Username" formControlName="userName">
+                        <input matInput placeholder="Username" id="Username" formControlName="username">
                     </mat-form-field>
                     <mat-form-field appearance='outline'>
                         <input matInput id="password" formControlName="password" placeholder="Password" [type]="hide ? 'password' : 'text'">
