@@ -1,5 +1,6 @@
 import { CdkStepper } from '@angular/cdk/stepper';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -52,20 +53,19 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {PlatformModule} from '@angular/cdk/platform/index';
-import {BidiModule} from '@angular/cdk/bidi/index';
-import {A11yModule} from '@angular/cdk/a11y';
+import { BidiModule} from '@angular/cdk/bidi/index';
+import { A11yModule} from '@angular/cdk/a11y';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { UsersComponent } from './components/admin/users/users.component';
 import { BrokerCompanyComponent } from './components/admin/broker-company/broker-company.component';
 import { GroupsComponent } from './components/admin/groups/groups.component';
 import { ContentComponent } from './components/admin/content/content.component';
 import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { CreateUserComponent } from './components/admin/create-user/create-user.component';
-// import { NgModule } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSortModule} from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 import { ProfileComponent } from './components/admin/profile/profile.component';
 import { ChangePasswordComponent } from './components/admin/change-password/change-password.component';
 
@@ -129,6 +129,7 @@ import { ChangePasswordComponent } from './components/admin/change-password/chan
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule,
     HttpClientModule,
+    HttpModule,
     MatRadioModule,
     FlexLayoutModule,
     MatIconModule,
