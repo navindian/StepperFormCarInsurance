@@ -6,8 +6,9 @@ import { ProgressSpinnerComponent } from '../shared/progress-spinner/progress-sp
 import { LoginService } from './login.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SocialAuthService, GoogleLoginProvider } from 'angularx-social-login';
+import { CookieService } from 'ngx-cookie-service';
 import * as CryptoJS from 'crypto-js';
-const SECRET_KEY='abc123';
+const SECRET_KEY = 'abc123';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private loginService: LoginService,
     private fb: FormBuilder,
-    private _socialAuthServ:SocialAuthService
+    private _socialAuthServ: SocialAuthService,
+    private cookie: CookieService
   ) {}
 
   @Output() LoginError = new EventEmitter<any>();
@@ -29,10 +31,11 @@ export class LoginComponent implements OnInit {
   password: string;
   errorMessage: string;
   loginForm: FormGroup;
-  user:any;
+  user: any;
   hide = true;
 
   ngOnInit(): void {
+    this.cookie.deleteAll();
     this.loginForm = this.fb.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]]
@@ -40,6 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
+   
     this.errorMessage = null;
     this.loginService
       .getLoginData(
@@ -49,14 +53,18 @@ export class LoginComponent implements OnInit {
         res => {
           const response = JSON.parse(JSON.stringify(res));
           sessionStorage.setItem('id', response.id);
-          sessionStorage.setItem('token', response.token);
-          sessionStorage.setItem('isLoggedIn', CryptoJS.AES.encrypt('true',SECRET_KEY).toString());
+          this.cookie.set('token',response.token);
+          
+          sessionStorage.setItem('isLoggedIn', CryptoJS.AES.encrypt('true', SECRET_KEY).toString());
           this.name = prompt('How do you like to call you!!');
           console.log(this.name);
           if (this.name != null) {
-            sessionStorage.setItem('welcomename', this.name);
+           
+            sessionStorage.setItem('welcomename', this.name)
           }
           else {
+            https://developer.salesforce.com/signup?d=70130000000td6N
+          
             sessionStorage.setItem('welcomename', '');
           }
           setTimeout(() => {
@@ -66,7 +74,7 @@ export class LoginComponent implements OnInit {
       err => {
         this.errorMessage = err.error.error;
         console.log(this.errorMessage);
-        alert("Please enter correct Credentials!")
+        alert ('Please enter correct Credentials!');
       }
     );
   }
@@ -75,20 +83,27 @@ export class LoginComponent implements OnInit {
     this.asGuestLogin.emit('logged in as a guest');
   }
   googleLogin(){
-    let platformProvider= GoogleLoginProvider.PROVIDER_ID;
-    this._socialAuthServ.signIn(platformProvider).then(response=>{
-    console.log(platformProvider= "logged in user data is=",response);
-    this.user=response;    
+    let platformProvider = GoogleLoginProvider.PROVIDER_ID;
+    this._socialAuthServ.signIn(platformProvider).then(response => {
+    console.log(platformProvider = 'logged in user data is=', response);
+    this.user = response;
+    
+    this.cookie.set('token',response.authToken);
     sessionStorage.setItem('id', response.id);
-    sessionStorage.setItem('token', response.authToken);
-    sessionStorage.setItem('isLoggedIn', CryptoJS.AES.encrypt('true',SECRET_KEY).toString());
-    this.name=response.name;
+    
+    sessionStorage.setItem('isLoggedIn', CryptoJS.AES.encrypt('true', SECRET_KEY).toString());
+    
+    this.name = response.name;
     if (this.name != null) {
+     
       sessionStorage.setItem('welcomename', this.name);
     }
     else {
+      
       sessionStorage.setItem('welcomename', '');
     }
     this.router.navigate(['tab']);});
     }
+
+   
 }

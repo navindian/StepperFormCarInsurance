@@ -62,8 +62,13 @@ import { ContentComponent } from './components/admin/content/content.component';
 import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
 import {MatTableModule} from '@angular/material/table';
 import { CreateUserComponent } from './components/admin/create-user/create-user.component';
+// import { NgModule } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { ProfileComponent } from './components/admin/profile/profile.component';
+import { ChangePasswordComponent } from './components/admin/change-password/change-password.component';
+
 
 
 @NgModule({
@@ -94,7 +99,9 @@ import {MatSortModule} from '@angular/material/sort';
     GroupsComponent,
     ContentComponent,
     AdminLoginComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    ProfileComponent,
+    ChangePasswordComponent
  ],
   imports: [
     BrowserModule,
@@ -135,7 +142,7 @@ import {MatSortModule} from '@angular/material/sort';
     A11yModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
   ],
   providers: [
     CdkStepper,
@@ -156,7 +163,8 @@ import {MatSortModule} from '@angular/material/sort';
           },
         ],
       } as SocialAuthServiceConfig,
-    } 
+    },
+    CookieService
   ],
   bootstrap: [AppComponent],
   entryComponents: [ProgressSpinnerComponent],

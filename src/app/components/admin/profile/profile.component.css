@@ -1,0 +1,11 @@
+table{
+    width:50%;
+    border-color: lightgray;
+}
+td{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+h2{
+    color: #3498DB 
+}
