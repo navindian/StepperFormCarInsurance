@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
+import { CreateUserService } from './create-user.service';
+import { Router } from '@angular/router';
 
 interface User {
   value: string;
@@ -42,25 +43,55 @@ export class CreateUserComponent implements OnInit {
     {value: 'group-2', viewValue: 'Group-3'}
   ];
 
-  firstName: string;
-  middleName: string;
-  lastName: string;
-  email: string;
-  password: string;
+  @Input() firstName: string;
+  @Input() middleName: string;
+  @Input() lastName: string;
+  @Input() email: string;
+  password: string="14081997";
+  mobile: string="8550021450";
+  groupId:number;
+  is2FAEnabled:boolean;
+  isActive:boolean;
+
   errorMessage: string;
   userForm: FormGroup;
-
+  adminerrorMessage: string;
   constructor(
     private fb: FormBuilder,
+    private router: Router,
+    private adminSignUpService: CreateUserService
   ) { }
 
   ngOnInit(): void {
     this.userForm = this.fb.group(
       {
+        'middleName':[this.middleName],
+        'groupId': [this.groupId],
+        'is2FAEnabled': [this.is2FAEnabled],
+        'isActive': [this.isActive],
+        'password': [this.password],
+        'mobile': [this.mobile],
         'firstName': [this.firstName, [Validators.required]],
         'lastName': [this.lastName, [Validators.required]],
         'email': [this.email, [Validators.required, Validators.email]]
       })
     }
+    register(){
+    this.adminSignUpService.createUser(this.userForm.value).subscribe(
+      (res) => {
+      const response = JSON.parse(JSON.stringify(res));
+      alert('You have created new user Succussfully');
+      console.log(response);
+      /* this.router.navigate(['/users/create-user']); */
+     
+      },
+      (err) => {
 
-}
+        this.errorMessage = err.error.error;
+        console.log(this.errorMessage);
+        alert('Please enter valid credentials'); 
+  
+      }
+      );
+    }
+  }
