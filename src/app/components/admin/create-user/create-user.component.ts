@@ -48,7 +48,7 @@ export class CreateUserComponent implements OnInit {
   @Input() lastName: string;
   @Input() email: string;
   password: string="14081997";
-  mobile: string="8550021450";
+  @Input() mobile: string;
   groupId:number;
   is2FAEnabled:boolean;
   isActive:boolean;
@@ -70,7 +70,7 @@ export class CreateUserComponent implements OnInit {
         'is2FAEnabled': [this.is2FAEnabled],
         'isActive': [this.isActive],
         'password': [this.password],
-        'mobile': [this.mobile],
+        'mobile': [this.mobile,[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
         'firstName': [this.firstName, [Validators.required]],
         'lastName': [this.lastName, [Validators.required]],
         'email': [this.email, [Validators.required, Validators.email]]
