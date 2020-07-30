@@ -2,63 +2,77 @@
   <mat-toolbar>
     <span class="mat-primary">Create User</span>
   </mat-toolbar>
-      <!-- Form Layout -->
-      <form fxLayout="column" class="container1" [formGroup]="userForm" (ngSubmit)= "userForm.valid">
-      <!-- First Name -->
-      <mat-form-field appearance="outline">
-        <mat-label>First Name</mat-label>
-        <input matInput placeholder="First Name" formControlName="firstName" [(ngModel)]="this.firstName">
-      </mat-form-field>
-      <br>
-      <!-- Middle Name -->
-      <mat-form-field appearance="outline">
-          <mat-label>Middle Name</mat-label>
-          <input matInput placeholder="Middle Name">
-      </mat-form-field>
-      <br>
-      <!-- Last Name -->
-      <mat-form-field appearance="outline">
-          <mat-label>Last Name</mat-label>
-          <input matInput placeholder="Last Name" formControlName="lastName" [(ngModel)]="this.lastName">
-      </mat-form-field>
-      <br>
-      <!-- Email -->
-      <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input id= "email" matInput formControlName="email" [(ngModel)]="this.email" placeholder="Email" >
-      </mat-form-field>
-      <br>
-      <!-- User Type -->
-      <mat-form-field appearance="outline">
-        <mat-label>Select User Type</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let u of users" [value]="u.value">
-            {{u.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
-      <!-- Seller Code -->
-      <mat-form-field appearance="outline">
-        <mat-label>Select Seller Code</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let s of sellers" [value]="s.value">
-            {{s.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
-      <!-- Group -->
-      <mat-form-field appearance="outline">
-        <mat-label>Select Group</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let g of groups" [value]="g.value">
-            {{g.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
-      <button type="submit" class="mat-raised-button mat-primary" (click)="register()" [disabled]="!userForm.valid">Create</button>
-    </form>
-    </div>
-  
+  <!-- Form Layout -->
+  <form fxLayout="column" class="container1" [formGroup]="userForm" (ngSubmit)="userForm.valid">
+    <!-- First Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="First Name" formControlName="firstName" [(ngModel)]="this.firstName">
+    </mat-form-field>
+    <br>
+    <!-- Middle Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>Middle Name</mat-label>
+      <input matInput placeholder="Middle Name">
+    </mat-form-field>
+    <br>
+    <!-- Last Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Last Name" formControlName="lastName" [(ngModel)]="this.lastName">
+    </mat-form-field>
+    <br>
+    <!-- Email -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input id="email" matInput formControlName="email" [(ngModel)]="this.email" placeholder="Email">
+      <mat-error *ngIf="userForm.controls.email.errors?.required">Required
+      </mat-error>
+      <mat-error *ngIf="userForm.controls.email.errors?.email">enter valid emailId
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <!-- Mobile Number -->
+    <mat-form-field appearance="outline">
+      <mat-label>Mobile Number</mat-label>
+      <input id="nobile" matInput formControlName="mobile" [(ngModel)]="this.mobile" placeholder="Mobile No.">
+      <mat-error *ngIf="userForm.controls.mobile.errors?.required">Required
+      </mat-error>
+      <mat-error *ngIf="userForm.controls.mobile.errors?.minlength || userForm.controls.mobile.errors?.maxlength">
+        Enter valid phone No.</mat-error>
+    </mat-form-field>
+    <br>
+    <!-- User Type -->
+    <mat-form-field appearance="outline">
+      <mat-label>Select User Type</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let u of users" [value]="u.value">
+          {{u.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <!-- Seller Code -->
+    <mat-form-field appearance="outline">
+      <mat-label>Select Seller Code</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let s of sellers" [value]="s.value">
+          {{s.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <!-- Group -->
+    <mat-form-field appearance="outline">
+      <mat-label>Select Group</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let g of groups" [value]="g.value">
+          {{g.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <button type="submit" class="mat-raised-button mat-primary" (click)="register()"
+      [disabled]="!userForm.valid">Create</button>
+  </form>
+</div>
