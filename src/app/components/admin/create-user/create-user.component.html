@@ -58,7 +58,7 @@
         </mat-select>
       </mat-form-field>
       <br>
-      <button type="submit" class="mat-raised-button mat-primary" [disabled]="!userForm.valid">Create</button>
+      <button type="submit" class="mat-raised-button mat-primary" (click)="register()" [disabled]="!userForm.valid">Create</button>
     </form>
     </div>
   
