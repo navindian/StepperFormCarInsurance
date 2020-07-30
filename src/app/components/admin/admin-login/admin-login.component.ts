@@ -16,7 +16,7 @@ export class AdminLoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       userName: ['', [Validators.required]],
       password: ['', [Validators.required]]
-    })
+    });
   }
   login() {
     if (this.loginForm.controls['userName'].value === 'admin' && this.loginForm.controls['password'].value === 'admin') {
