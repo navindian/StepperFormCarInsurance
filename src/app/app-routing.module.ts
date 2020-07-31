@@ -16,12 +16,17 @@ import { AdminLoginGuardGuard } from './components/admin/admin-login-guard.guard
 import { CreateUserComponent } from './components/admin/create-user/create-user.component';
 import { ProfileComponent } from './components/admin/profile/profile.component';
 import { ChangePasswordComponent } from './components/admin/change-password/change-password.component';
+import { RequestResetComponent } from './components/forget-password/request-reset/request-reset.component';
+import { ResponseResetComponent } from './components/forget-password/response-reset/response-reset.component';
 
 export const routes: Routes = [
   { path: 'signIn', component: LoginComponent },
   { path: 'tab', component: TabComponent, canActivate: [LoggedInGuardGuard] },
   { path: 'signUp', component: SignUpComponent },
   {path: 'loginAsAdmin',component: AdminLoginComponent},
+  { path: 'request', component: RequestResetComponent},
+ { path: 'response', component: ResponseResetComponent },
+          
   {
     path: 'admin',
     component: AdminComponent,
@@ -58,6 +63,7 @@ export const routes: Routes = [
             path: 'profile/change-password',
             component: ChangePasswordComponent
           },
+          
           {
             path: '**',
             component: DashboardComponent
