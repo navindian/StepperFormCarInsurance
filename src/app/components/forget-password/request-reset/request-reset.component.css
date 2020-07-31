@@ -1,0 +1,22 @@
+.container {
+    width: 90%;
+    padding: 2%;
+  }
+  mat-card img {
+    object-fit: cover; /*this makes the image in src fit to the size specified below*/
+    width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+    height: 80%;
+  }
+  .login-card-description {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-weight: bold;
+    color: rgb(8, 56, 95);
+    font-size: 20px;
+  }
+  .example-button-row {
+    border-radius: 20px;
+    font-size: 15px;
+  }
+  .login-card-footer-text {
+    color: gray;
+  }

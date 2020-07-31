@@ -70,6 +70,8 @@ import { ProfileComponent } from './components/admin/profile/profile.component';
 import { ChangePasswordComponent } from './components/admin/change-password/change-password.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './components/shared/token-interceptor-service/token-interceptor.service';
+import { RequestResetComponent } from './components/forget-password/request-reset/request-reset.component';
+import { ResponseResetComponent } from './components/forget-password/response-reset/response-reset.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +103,9 @@ import { TokenInterceptorService } from './components/shared/token-interceptor-s
     AdminLoginComponent,
     CreateUserComponent,
     ProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    RequestResetComponent,
+    ResponseResetComponent
  ],
   imports: [
     BrowserModule,
