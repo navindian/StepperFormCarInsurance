@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-tab',
   templateUrl: './tab.component.html',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabComponent implements OnInit {
   welcomeuser = sessionStorage.getItem('welcomename');
+ 
   activeTab = 0;
   policyTabToggle = true;
   mtplCalculatorStep;

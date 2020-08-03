@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import {AdminLoginService } from './admin-login.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -10,21 +12,41 @@ import { Router } from '@angular/router';
 export class AdminLoginComponent implements OnInit {
   hide = true;
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router,private cookie: CookieService,private adminLoginService: AdminLoginService) { }
+  errorMessage: string;
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      userName: ['', [Validators.required]],
+      username: ['', [Validators.required]],
       password: ['', [Validators.required]]
-    })
+    });
   }
-  login() {
-    if (this.loginForm.controls['userName'].value === 'admin' && this.loginForm.controls['password'].value === 'admin') {
+  login() :void {
+    
+    this.errorMessage=null;
+    this.adminLoginService.getLoginData1(this.loginForm.value).subscribe(
+      res =>{
+        const response = JSON.parse(JSON.stringify(res));
+          sessionStorage.setItem('isAdminLogged', 'true');
+          this.cookie.set('token',response.token);
+          this.router.navigate(['admin']);
+         
+        
+    },
+      err => {
+        this.errorMessage = err.error.error;
+        console.log(this.errorMessage);
+        alert ('Please enter correct Credentials!');
+      });
+    
+   /* if (this.loginForm.controls['userName'].value === 'admin' && this.loginForm.controls['password'].value === 'admin') {
       sessionStorage.setItem('isAdminLogged', 'true');
+      this.cookie.set('token','response token value');
       this.router.navigate(['admin']);
     }
     else {
       alert('Wrong Credentials')
-    }
+    }*/
   }
 }
+
