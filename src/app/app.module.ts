@@ -68,8 +68,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ProfileComponent } from './components/admin/profile/profile.component';
 import { ChangePasswordComponent } from './components/admin/change-password/change-password.component';
-
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from './components/shared/token-interceptor-service/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -150,6 +150,11 @@ import { ChangePasswordComponent } from './components/admin/change-password/chan
     MTPLCalculatorComponent,
     LoggedInGuardGuard,
     SummaryComponent,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    },
    {
       provide: MAT_RADIO_DEFAULT_OPTIONS,
       useValue: { color: 'primary' },
