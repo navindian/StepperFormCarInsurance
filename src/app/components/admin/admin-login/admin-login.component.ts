@@ -19,7 +19,7 @@ export class AdminLoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
-    })
+    });
   }
   login() :void {
     
