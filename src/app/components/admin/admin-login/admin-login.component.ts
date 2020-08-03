@@ -23,7 +23,7 @@ export class AdminLoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
   login(): void {
