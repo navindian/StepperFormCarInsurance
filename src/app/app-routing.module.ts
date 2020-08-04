@@ -16,6 +16,7 @@ import { AdminLoginGuardGuard } from './components/admin/admin-login-guard.guard
 import { CreateUserComponent } from './components/admin/create-user/create-user.component';
 import { ProfileComponent } from './components/admin/profile/profile.component';
 import { ChangePasswordComponent } from './components/admin/change-password/change-password.component';
+import { CreateGroupComponent } from './components/admin/create-group/create-group.component';
 
 export const routes: Routes = [
   { path: 'signIn', component: LoginComponent },
@@ -45,6 +46,10 @@ export const routes: Routes = [
           {
             path: 'create-group',
             component: GroupsComponent,
+          },
+          {
+            path:'create-group/new-group',
+            component:CreateGroupComponent,
           },
           {
             path: 'news-list',

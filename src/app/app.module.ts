@@ -68,6 +68,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { ProfileComponent } from './components/admin/profile/profile.component';
 import { ChangePasswordComponent } from './components/admin/change-password/change-password.component';
+import { CreateGroupComponent } from './components/admin/create-group/create-group.component';
 
 
 
@@ -101,7 +102,8 @@ import { ChangePasswordComponent } from './components/admin/change-password/chan
     AdminLoginComponent,
     CreateUserComponent,
     ProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    CreateGroupComponent
  ],
   imports: [
     BrowserModule,

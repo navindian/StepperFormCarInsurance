@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 interface User {
-  value: string;
+  value: string; 
   viewValue: string;
 }
 
